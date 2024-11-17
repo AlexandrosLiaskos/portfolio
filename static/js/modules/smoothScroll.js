@@ -12,31 +12,28 @@ export function initSmoothScroll() {
             const targetElement = document.querySelector(targetId);
             if (!targetElement) return;
             
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition - navbarHeight - 20;
+            // Use native smooth scrolling with scroll-margin support
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest'
+            });
             
-            // Smooth scroll with RAF for better performance
-            let startTime = null;
-            const duration = 800; // Duration in ms
-            
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1);
-                
-                // Easing function for smoother animation
-                const ease = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-                
-                window.scrollTo(0, startPosition + distance * ease(progress));
-                
-                if (timeElapsed < duration) {
-                    requestAnimationFrame(animation);
+            // Update active state of nav cards
+            const navCards = document.querySelectorAll('.nav-card');
+            navCards.forEach(card => {
+                if (card === link) {
+                    card.classList.add('active');
+                    card.style.transform = 'translate3d(8px, 0, 0)';
+                    card.style.backgroundColor = 'rgba(0, 255, 234, 0.05)';
+                    card.style.color = 'rgb(0, 255, 234)';
+                } else {
+                    card.classList.remove('active');
+                    card.style.transform = '';
+                    card.style.backgroundColor = '';
+                    card.style.color = '';
                 }
-            }
-            
-            requestAnimationFrame(animation);
+            });
         });
     });
 }
