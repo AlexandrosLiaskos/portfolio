@@ -1,0 +1,3 @@
+- Volunteer Firefighter, 12th Fire Station of Athens, February 2023 – Present
+- Student Group Coordinator, Mission Anthropos, October 2022 – Present
+- Softwere Developer, Github Project Contribution

@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+
+{% block title %}Personal Portfolio{% endblock %}
+
+{% block content %}
+<section class="min-h-screen w-full flex items-center justify-start px-8 relative">
+    <div class="max-w-[95vw] xl:max-w-[1400px] mx-auto w-full relative z-10 text-left py-16">
+        <div class="inline-block bg-[rgb(10,10,27,0.75)] text-primary px-4 py-2 rounded-full text-sm mb-8">
+            <i class="fas fa-star"></i> Latest Update • Nov 2024
+        </div>
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold mb-6 leading-tight max-w-3xl text-left animate-slide-up">Alexandros P. Liaskos</h1>
+        <p class="text-[clamp(1.2rem,3vw,1.8rem)] mb-12 max-w-2xl text-left animate-slide-up-delay">Software developer • Geospatial Analyst</p>
+        <div class="flex gap-6 flex-wrap">
+            <a href="#experience" class="px-8 py-4 rounded-full bg-primary text-background font-semibold text-lg tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(127,255,242,1)] whitespace-nowrap">Explore My Work</a>
+            <a href="/static/CV_LIASKOS_24.pdf" class="px-8 py-4 rounded-full bg-[rgb(10,10,27,0.75)] text-primary font-semibold text-lg tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(127,255,242,1)] whitespace-nowrap" target="_blank">Download CV</a>
+        </div>
+    </div>
+</section>
+
+<div class="px-8">
+    <section id="experience" class="bg-[rgb(10,10,27,0.55)] rounded-2xl p-10 mb-8 transition-all backdrop-blur max-w-[95vw] xl:max-w-[1400px] mx-auto opacity-100 transform-none">
+        <h2 class="text-primary mb-8 pb-2 border-b-2 border-[rgb(127,255,212,0.2)] flex items-center"><i class="fas fa-briefcase text-secondary mr-2"></i> Professional Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-laptop-code text-secondary"></i> Software Developer</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2023 - Present</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                    <i class="fas fa-map-marker-alt text-primary w-5 text-center"></i>
+                    <span>Freelancer</span>
+                </div>
+            </div>
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-map text-secondary"></i> Geospatial Analyst</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2022 - Present</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                    <i class="fas fa-map-marker-alt text-primary w-5 text-center"></i>
+                    <span>Freelancer</span>
+                </div>
+            </div>
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-utensils text-secondary"></i> Assistant Waiter</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2018 – 2024</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                    <i class="fas fa-map-marker-alt text-primary w-5 text-center"></i>
+                    <span>The Old Tavern of Psarras (VS Global Holding Group)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="bg-[rgb(10,10,27,0.55)] rounded-2xl p-10 mb-8 transition-all backdrop-blur max-w-[95vw] xl:max-w-[1400px] mx-auto">
+        <h2 class="text-primary mb-8 pb-2 border-b-2 border-[rgb(127,255,212,0.2)] flex items-center"><i class="fas fa-graduation-cap text-secondary mr-2"></i> Academic Education</h2>
+        <div class="grid grid-cols-1 gap-6 mt-8">
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-university text-secondary"></i> BSc in Geology and Geo-environment</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2018 - 2024</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-4 hover:translate-x-2 transition-all">
+                    <i class="fas fa-map-marker-alt text-primary w-5 text-center"></i>
+                    <span>National and Kapodistrian University of Athens</span>
+                </div>
+                <ul class="space-y-3 w-full">
+                    <li class="flex items-start gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-users text-primary w-5 text-center mt-1"></i>
+                        Member of Prof. Niki Evelpidou's Research Team
+                    </li>
+                    <li class="flex items-start gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-file-alt text-primary w-5 text-center mt-1"></i>
+                        Thesis: Computational Framework in Coastal Vulnerability Assessment (CompCVA)
+                    </li>
+                    <li class="flex items-start gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-star text-primary w-5 text-center mt-1"></i>
+                        GPA: 7.8/10
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="bg-[rgb(10,10,27,0.55)] rounded-2xl p-10 mb-8 transition-all backdrop-blur max-w-[95vw] xl:max-w-[1400px] mx-auto">
+        <h2 class="text-primary mb-8 pb-2 border-b-2 border-[rgb(127,255,212,0.2)] flex items-center"><i class="fas fa-book text-secondary mr-2"></i> Scientific Publications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-graduation-cap text-secondary"></i> Computational Framework in Coastal Vulnerability Assessment</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2024</span>
+                </div>
+                <div class="flex flex-col gap-1 mt-2 w-full">
+                    <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-user text-primary w-5 text-center"></i>
+                        <span>Liaskos, A.</span>
+                    </div>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-file-alt text-primary mr-2"></i>
+                    <span>Thesis</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-water text-secondary"></i> Coastal erosion: The future of sandy beaches</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2022</span>
+                </div>
+                <div class="flex flex-col gap-1 mt-2 w-full">
+                    <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-user text-primary w-5 text-center"></i>
+                        <span>Evelpidou, N.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-user text-primary w-5 text-center"></i>
+                        <span>Tzouxanioti, M.</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-user text-primary w-5 text-center"></i>
+                        <span>Liaskos, A.</span>
+                    </div>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-book text-primary mr-2"></i>
+                    <span>PEASA</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-cloud-sun text-secondary"></i> Climate Variability & Climate Change</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2022</span>
+                </div>
+                <div class="flex flex-col gap-1 mt-2 w-full">
+                    <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-user text-primary w-5 text-center"></i>
+                        <span>Liaskos, A.</span>
+                    </div>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-file-alt text-primary mr-2"></i>
+                    <span>Unpublished</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-chart-bar text-secondary"></i> Standardized Precipitation Index (SPI) in Greece</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2022</span>
+                </div>
+                <div class="flex flex-col gap-1 mt-2 w-full">
+                    <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
+                        <i class="fas fa-user text-primary w-5 text-center"></i>
+                        <span>Liaskos, A.</span>
+                    </div>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-file-alt text-primary mr-2"></i>
+                    <span>Unpublished</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-[rgb(10,10,27,0.55)] rounded-2xl p-10 mb-8 transition-all backdrop-blur max-w-[95vw] xl:max-w-[1400px] mx-auto">
+        <h2 class="text-primary mb-8 pb-2 border-b-2 border-[rgb(127,255,212,0.2)] flex items-center"><i class="fas fa-tools text-secondary mr-2"></i> Technical Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-language text-secondary"></i> Languages</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all w-full text-left">
+                    <span class="fi fi-gr"></span>
+                    Greek (Native)
+                </div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all w-full text-left">
+                    <span class="fi fi-gb"></span>
+                    English (C2)
+                </div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all w-full text-left">
+                    <span class="fi fi-es"></span>
+                    Spanish (B2)
+                </div>
+            </div>
+            
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-code text-secondary"></i> Programming Languages</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-rust text-primary w-6 text-center"></i> Rust</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-golang text-primary w-6 text-center"></i> Go</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-python text-primary w-6 text-center"></i> Python</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-js text-primary w-6 text-center"></i> Javascript</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-css3-alt text-primary w-6 text-center"></i> CSS</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-terminal text-primary w-6 text-center"></i> Bash</div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-tools text-secondary"></i> Development Tools</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-map text-primary w-6 text-center"></i> ArcGIS Pro</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-github text-primary w-6 text-center"></i> GitHub</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-file-word text-primary w-6 text-center"></i> Office Suite</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-docker text-primary w-6 text-center"></i> Docker</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-brain text-primary w-6 text-center"></i> Obsidian</div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-window-restore text-secondary"></i> Web Frameworks</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-react text-primary w-6 text-center"></i> React</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-vuejs text-primary w-6 text-center"></i> Vue.js</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-node-js text-primary w-6 text-center"></i> Node.js</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-cube text-primary w-6 text-center"></i> Next.js</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-cogs text-primary w-6 text-center"></i> Actix Web</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-box text-primary w-6 text-center"></i> HUGO</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-book text-primary w-6 text-center"></i> Vitepress</div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-file-code text-secondary"></i> Markup Languages</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-html5 text-primary w-6 text-center"></i> HTML</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-markdown text-primary w-6 text-center"></i> Markdown</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-code text-primary w-6 text-center"></i> JSON</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-subscript text-primary w-6 text-center"></i> LaTeX</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-file-alt text-primary w-6 text-center"></i> YAML</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-file-code text-primary w-6 text-center"></i> TOML</div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-desktop text-secondary"></i> Operating Systems</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-linux text-primary w-6 text-center"></i> Arch Linux</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-ubuntu text-primary w-6 text-center"></i> Ubuntu</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-windows text-primary w-6 text-center"></i> Windows</div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-edit text-secondary"></i> Code Editors & IDEs</h3>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-code text-primary w-6 text-center"></i> VSCode</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fab fa-python text-primary w-6 text-center"></i> Jupyter Notebooks</div>
+                <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all"><i class="fas fa-terminal text-primary w-6 text-center"></i> CLI</div>              
+            </div>
+        </div>
+    </section>
+
+    <section id="international" class="bg-[rgb(10,10,27,0.55)] rounded-2xl p-10 mb-8 transition-all backdrop-blur max-w-[95vw] xl:max-w-[1400px] mx-auto">
+        <h2 class="text-primary mb-8 pb-2 border-b-2 border-[rgb(127,255,212,0.2)] flex items-center"><i class="fas fa-globe text-secondary mr-2"></i> International Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-university text-secondary"></i> Latin America in the Global Networks</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>3-9 July 2022</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <span class="fi fi-es"></span>
+                    <span>Madrid, Spain</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-award text-primary mr-2"></i>
+                    <span>CIVIS Program</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-camera text-secondary"></i> Culture on My Camera</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>17-24 July 2022</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <span class="fi fi-tr"></span>
+                    <span>Denizli, Turkey</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-exchange-alt text-primary mr-2"></i>
+                    <span>Erasmus+ Program</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-fire text-secondary"></i> Facing Fire</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>19-25 September 2022</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <span class="fi fi-gr"></span>
+                    <span>Athens, Greece</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-exchange-alt text-primary mr-2"></i>
+                    <span>Erasmus+ Program</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-fire text-secondary"></i> Facing Fire</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>23 June – 20 July 2023</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <span class="fi fi-es"></span>
+                    <span>Lugo, Spain</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-briefcase text-primary mr-2"></i>
+                    <span>Internship Program</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="volunteer" class="bg-[rgb(10,10,27,0.55)] rounded-2xl p-10 mb-8 transition-all backdrop-blur max-w-[95vw] xl:max-w-[1400px] mx-auto">
+        <h2 class="text-primary mb-8 pb-2 border-b-2 border-[rgb(127,255,212,0.2)] flex items-center"><i class="fas fa-hands-helping text-secondary mr-2"></i> Volunteer Work</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-fire-extinguisher text-secondary"></i> Volunteer Firefighter</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2023 – Present</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="fas fa-map-marker-alt text-primary w-5 text-center"></i>
+                    <span>12th Fire Station of Athens</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-shield-alt text-primary mr-2"></i>
+                    <span>Emergency Services</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fas fa-users text-secondary"></i> Student Group Coordinator</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="far fa-calendar-alt text-primary w-5 text-center"></i>
+                    <span>2022 – Present</span>
+                </div>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="fas fa-map-marker-alt text-primary w-5 text-center"></i>
+                    <span>Mission Anthropos</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-heart text-primary mr-2"></i>
+                    <span>Student Organization</span>
+                </div>
+            </div>
+
+            <div class="bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left"><i class="fab fa-github text-secondary"></i> Software Developer</h3>
+                <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
+                    <i class="fas fa-code-branch text-primary w-5 text-center"></i>
+                    <span>Github Project Contribution</span>
+                </div>
+                <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center mt-2 text-white/90 text-sm w-full hover:translate-x-2 transition-all">
+                    <i class="fas fa-code text-primary mr-2"></i>
+                    <span>Open Source</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+- Evelpidou, N., Tzouxanioti, M., & Liaskos, A. (2022). Coastal erosion: The future of sandy beaches. Proceedings of the European Academy of Sciences and Arts, 1(1). DOI
+- Liaskos, A. (2024). Computational Framework in Coastal Vulnerability Assessment (CompCVA): Coastal Vulnerability Index for Island Coastlines in ArcGIS Pro (CompCVA-CVI-Isl-v01). (Dissertation - Research)
+- Liaskos, A. (2022). Climate Variability & Climate Change. (Unpublished)
+- Liaskos, A. (2022). Standardized Precipitation Index (SPI) in Greece. (Unpublished)
