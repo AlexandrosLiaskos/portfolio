@@ -22,7 +22,7 @@
     }
     
     .main-content.sidebar-visible {
-        padding-left: calc(var(--sidebar-width) + 3rem);
+        padding-left: calc(4rem + 3rem);
     }
 }
 

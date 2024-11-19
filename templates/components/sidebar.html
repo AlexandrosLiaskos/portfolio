@@ -1,6 +1,6 @@
 {% macro sidebar() %}
 <aside id="desktopSidebar" 
-       class="fixed top-20 left-4 w-64 
+       class="fixed top-20 left-4 w-16 
               bg-black/20 backdrop-blur-sm
               border border-[#00FFEA]/10 rounded-2xl
               transform -translate-x-full
@@ -14,16 +14,13 @@
               hidden md:flex">
     
     <!-- Enhanced Profile Section - More Compact -->
-    <div class="relative p-4 border-b border-[#00FFEA]/10 
+    <div class="relative p-3 border-b border-[#00FFEA]/10 
                 bg-black/20 backdrop-blur-sm
                 opacity-0 transition-all duration-500 delay-100
-                group-[.visible]/sidebar:opacity-100"
-         x-data="{ showBio: false }">
+                group-[.visible]/sidebar:opacity-100">
         
-        <!-- Profile Image Container - More Compact -->
-        <div class="relative w-16 h-16 mx-auto mb-3 group/image 
-             @mouseenter="showBio = true"
-             @mouseleave="showBio = false">
+        <!-- Profile Image Container -->
+        <div class="relative w-10 h-10 mx-auto group/image">
             <!-- Profile Image -->
             <div class="relative w-full h-full rounded-xl overflow-hidden 
                         ring-2 ring-[#00FFEA]/10 ring-offset-2 ring-offset-black/20
@@ -37,41 +34,20 @@
             </div>
             
             <!-- Status Indicator -->
-            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-[#00FFEA]/20 rounded-full p-0.5
+            <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-[#00FFEA]/20 rounded-full p-0.5
                         ring-2 ring-black/20 animate-pulse">
                 <div class="w-full h-full bg-[#00FFEA] rounded-full"></div>
-            </div>
-        </div>
-        
-        <!-- Profile Info - More Compact -->
-        <div class="relative text-center space-y-1 transform -translate-y-4 opacity-0 
-                    transition-all duration-500 delay-300
-                    group-[.visible]/sidebar:translate-y-0 group-[.visible]/sidebar:opacity-100">
-            <h2 class="text-base font-semibold text-[#00FFEA] tracking-wide
-                       hover:text-[#00FFEA]/90 transition-colors duration-300">
-                Alexandros P. Liaskos
-            </h2>
-            
-            <div class="flex flex-col gap-0.5">
-                <div class="flex items-center justify-center gap-2 text-xs text-white/80">
-                    <i class="fas fa-code text-[#00FFEA]/70"></i>
-                    <span>Software Developer</span>
-                </div>
-                <div class="flex items-center justify-center gap-2 text-xs text-white/60">
-                    <i class="fas fa-globe text-[#FF00FF]/50"></i>
-                    <span>Geospatial Analyst</span>
-                </div>
             </div>
         </div>
     </div>
 
     <!-- Navigation - More Compact -->
-    <nav class="flex-1 p-3 space-y-1 overflow-y-auto scrollbar-thin scrollbar-track-white/5 scrollbar-thumb-[#00FFEA]/20"
+    <nav class="flex-1 p-2 space-y-1 overflow-y-auto scrollbar-thin scrollbar-track-white/5 scrollbar-thumb-[#00FFEA]/20"
          x-data="{ navItems: window.navItems || [] }">
         <div class="space-y-1">
             <template x-for="(item, index) in navItems" :key="item.href">
                 <a :href="item.href" 
-                   class="group flex items-center gap-2 p-2 rounded-xl 
+                   class="group flex items-center justify-center p-2 rounded-xl 
                           nav-item
                           transform translate-x-4 opacity-0
                           hover:bg-[#00FFEA]/5 hover:-translate-y-0.5 hover:shadow-lg
@@ -79,7 +55,8 @@
                           relative overflow-hidden
                           transition-all duration-300 ease-out
                           group-[.visible]/sidebar:translate-x-0 group-[.visible]/sidebar:opacity-100"
-                   :style="`transition-delay: ${300 + (index * 50)}ms`">
+                   :style="`transition-delay: ${300 + (index * 50)}ms`"
+                   :title="item.title">
                     
                     <div class="absolute inset-0 bg-gradient-to-r from-[#00FFEA]/10 via-[#00FFEA]/5 to-transparent 
                                opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -90,28 +67,21 @@
                                relative z-10">
                         <i :class="[item.icon, 'text-[#00FFEA]']"></i>
                     </div>
-                    
-                    <div class="flex flex-col relative z-10">
-                        <span class="text-xs font-medium text-white/90 
-                                   group-hover:text-[#00FFEA] transition-colors"
-                              x-text="item.title"></span>
-                        <span class="text-[10px] text-white/50" 
-                              x-text="item.subtitle"></span>
-                    </div>
                 </a>
             </template>
         </div>
     </nav>
 
     <!-- Social Links - More Compact -->
-    <div class="p-3 border-t border-[#00FFEA]/10 
+    <div class="p-2 border-t border-[#00FFEA]/10 
                 bg-black/20 backdrop-blur-sm
                 transform translate-y-4 opacity-0 transition-all duration-500 delay-700
                 group-[.visible]/sidebar:translate-y-0 group-[.visible]/sidebar:opacity-100">
-        <div class="flex justify-center gap-2">
+        <div class="flex justify-center">
             <a href="https://github.com/yourusername" 
                target="_blank" 
                rel="noopener noreferrer"
+               title="GitHub Profile"
                class="w-8 h-8 rounded-xl bg-black/20 
                       flex items-center justify-center
                       hover:bg-[#00FFEA]/20 transition-all duration-300 

@@ -4,6 +4,21 @@
 {% block title %}Personal Portfolio{% endblock %}
 
 {% block content %}
+<style>
+    .status-upcoming {
+        background-color: rgb(255, 0, 255, 0.2);
+        color: rgb(255, 255, 255);
+    }
+    .status-present {
+        background-color: rgba(94, 255, 0, 0.239);
+        color: rgb(255, 255, 255);
+    }
+    .status-past {
+        background-color: rgba(255, 0, 51, 0.253);
+        color: rgb(255, 255, 255);
+    }
+</style>
+
 <div class="space-y-24">
     <!-- Hero Section - in its own container without centering -->
     <div class="w-full">
@@ -260,7 +275,7 @@
                                 <div class="p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
                                         <h3 class="text-primary text-sm font-medium">Assistant Waiter</h3>
-                                        <span class="text-[10px] px-1 py-0.5 rounded status-past">2018 - 2022</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded status-past">Past</span>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
