@@ -333,146 +333,723 @@
                         mx-auto 
                         max-w-4xl 
                         w-full 
-                        mt-24  <!-- Added margin top for spacing between sections -->
+                        mt-24
                         transform 
                         hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
                         group">
-            <div class="ml-12">
-                <h2 class="text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
-                    <i class="fas fa-graduation-cap text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
-                    <span class="text-xl font-bold">Academic Education</span>
-                    <div class="ml-auto text-sm font-normal text-white/50">2018 - 2024</div>
+            <div class="space-y-6">
+                <!-- Section Header -->
+                <h2 class="text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
+                    <i class="fas fa-graduation-cap text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                    <span class="text-base font-bold">Academic Education</span>
+                    <div class="ml-auto text-xs font-normal text-white/50">2018 - Per</div>
                 </h2>
 
-                <!-- Formal Education -->
-                <div class="grid grid-cols-1 gap-6 mt-8">
-                    <div class="group/card bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
-                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
-                            <i class="fas fa-university text-primary"></i>
+                <!-- Content sections -->
+                <div class="mt-4 mb-4">
+                    <!-- University Education Section -->
+                    <div class="mb-6">
+                        <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
+                            <i class="fas fa-university text-primary text-xs"></i>
+                            <h3 class="text-primary text-sm font-medium">University Education</h3>
                         </div>
 
-                        <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
-                            BSc in Geology and Geo-environment
-                        </h3>
+                        <div class="grid grid-cols-1 gap-3">
+                            <!-- BSc Card -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <!-- Card image -->
+                                <div class="w-full">
+                                    <img src="/static/nkua.jpg" alt="NKUA" 
+                                         class="w-full h-32 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <!-- Card content -->
+                                <div class="p-4 w-full space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">BSc in Geology and Geo-environment</h3>
+                                        <span class="text-[10px] px-1 py-0.5 rounded status-past">Completed</span>
+                                    </div>
 
-                        <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
-                            <i class="fas fa-calendar text-primary text-sm w-4"></i>
-                            2018 - 2024
-                        </div>
+                                    <div class="flex items-center gap-1.5 text-white/90 text-sm">
+                                        <i class="fas fa-calendar text-primary text-sm w-4"></i>
+                                        2018 - 2024
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-sm">
+                                        <i class="fas fa-university text-primary text-sm w-4"></i>
+                                        National and Kapodistrian University of Athens
+                                    </div>
 
-                        <div class="flex items-center gap-2 text-white/90 text-sm mb-4 hover:translate-x-2 transition-all">
-                            <i class="fas fa-university text-primary text-sm w-4"></i>
-                            National and Kapodistrian University of Athens
-                        </div>
+                                    <div class="flex items-center gap-1.5 text-white/90 text-sm">
+                                        <i class="fas fa-star text-primary text-sm w-4"></i>
+                                        GPA: 7.8/10
+                                    </div>
 
-                        <div class="space-y-2 text-white/80 text-sm w-full mb-4">
-                            <div class="flex items-start gap-2 hover:translate-x-2 transition-all">
-                                <i class="fas fa-check text-primary mt-1"></i>
-                                Member of Prof. Niki Evelpidou's Research Team
-                            </div>
-                            <div class="flex items-start gap-2 hover:translate-x-2 transition-all">
-                                <i class="fas fa-check text-primary mt-1"></i>
-                                Thesis: Computational Framework in Coastal Vulnerability Assessment (CompCVA)
-                            </div>
-                        </div>
-
-                        <div class="mt-4 pt-4 border-t border-white/5 w-full">
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary">Geology</span>
-                                <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary">GIS</span>
-                                <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary">Research</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="text-xs px-2 py-1 rounded bg-primary/20 text-primary">
-                                    <i class="fas fa-star text-xs mr-1"></i>
-                                    GPA: 7.8/10
+                                    <div class="space-y-2 text-white/80 text-sm">
+                                        <div class="flex items-start gap-2">
+                                            <i class="fas fa-check text-primary mt-1"></i>
+                                            Member of Prof. Niki Evelpidou's Research Team
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <i class="fas fa-check text-primary mt-1"></i>
+                                            Thesis: Computational Framework in Coastal Vulnerability Assessment (CompCVA)
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="pt-3 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Geology</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Research</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Coastal Analysis</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Online Courses Section -->
-                <div class="mt-12">
-                    <h3 class="text-primary mb-6 flex items-center gap-3 text-xl">
-                        <i class="fas fa-laptop-code text-xl opacity-80"></i>
-                        Online Courses
-                    </h3>
+                    <!-- Online Courses Section -->
+                    <div class="mt-12">
+                        <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
+                            <i class="fas fa-laptop-code text-primary text-xs"></i>
+                            <h3 class="text-primary text-sm font-medium">Online Courses</h3>
+                        </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Data Science Course -->
-                        <div class="group/card bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
-                            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
-                                <i class="fas fa-chart-line text-primary"></i>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Data Science Course -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <!-- Card image -->
+                                <div class="w-full">
+                                    <img src="/static/R.png" alt="R Programming" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Data Science: R Basics</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        PH125.1x
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        HarvardX
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        December 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Data Science</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Programming</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <h4 class="text-primary text-lg mb-4 group-hover/card:translate-x-1 transition-all font-medium">
-                                Data Science: R Basics
-                            </h4>
-                    
-                            <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
-                                <i class="fas fa-code-branch text-primary text-sm w-4"></i>
-                                PH125.1x
+
+                            <!-- Astrophysics Course -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/astro1.png" alt="Astrophysics" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Greatest Unsolved Mysteries of the Universe</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        ANU-ASTRO1x
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        ANUx
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        December 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Astrophysics</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Cosmology</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                    
-                            <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
-                                <i class="fas fa-university text-primary text-sm w-4"></i>
-                                HarvardX
+
+                            <!-- Astrophysics: Exploring Exoplanets -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/astro2.png" alt="Astrophysics: Exploring Exoplanets" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Exploring Exoplanets</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        ANU-ASTRO2x
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        ANUx
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        January 2022
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Astrophysics</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Exoplanets</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                    
-                            <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
-                                <i class="fas fa-calendar text-primary text-sm w-4"></i>
-                                December 2021
+
+                            <!-- Climate Change Course -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/clim.jpeg" alt="Climate Change: The Science and Global Impact" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Climate Change: The Science and Global Impact</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        CCSI001
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        SDGAcademyX
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        December 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate Science</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Environmental</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                    
-                            <div class="mt-4 pt-4 border-t border-white/5 w-full">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary">Data Science</span>
-                                    <span class="text-xs px-2 py-1 rounded bg-primary/10 text-primary">Programming</span>
+
+                            <!-- Differential Equations Course -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/maths.jpeg" alt="Differential Equations 1" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Differential Equations 1</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        MATH2.1
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        June 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Mathematics</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Analysis</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Justice Today Course -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/MMM.jpeg" alt="Justice Today" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Justice Today</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        MMM
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        HarvardX
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        December 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Ethics</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Economics</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- World History 1 -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/world1.png" alt="World History 1" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Man Facing Nature</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        Hist3.1
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        May 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- World History 2 -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/world2.png" alt="World History 2" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Man Facing Divine</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        Hist3.2
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        September 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- World History 3 -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/world3.png" alt="World History 3" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Man Facing Himself - Part A</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        Hist3.3
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        November 2021
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- World History 4 -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/world4.png" alt="World History 4" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Man Facing Himself - Part B</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        Hist3.4
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        February 2022
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Science and 4th Industrial Revolution -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/rev.png" alt="Science and 4th Industrial Revolution" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Science and 4th Industrial Revolution</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        SC1.1
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        March 2022
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Technology</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Society</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Plato -->
+                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                        flex flex-col items-start hover:-translate-y-1 
+                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                                <div class="w-full">
+                                    <img src="/static/plato.png" alt="Plato" 
+                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                                transition-transform duration-300" />
+                                </div>
+                                
+                                <div class="p-2 w-full space-y-1">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-primary text-lg font-semibold">Plato</h3>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-code-branch text-primary text-[10px] w-3"></i>
+                                        PHL3
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-primary text-[10px] w-3"></i>
+                                        Mathesis
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                        April 2022
+                                    </div>
+                                    
+                                    <div class="pt-1.5 border-t border-white/5 w-full">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Philosophy</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Ancient Greece</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Continue with other courses... -->
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
-            <div class="ml-12">
-                <h2 class="text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
-                    <i class="fas fa-book text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
-                    <span class="text-xl font-bold">Scientific Publications</span>
-                    <div class="ml-auto text-sm font-normal text-white/50">2022 - 2024</div>
+        <section id="publications" 
+                 class="section 
+                        bg-black/20 backdrop-blur-sm 
+                        rounded-lg p-6 
+                        mx-auto 
+                        max-w-4xl 
+                        w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="space-y-6">
+                <!-- Section Header -->
+                <h2 class="text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
+                    <i class="fas fa-book text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                    <span class="text-base font-bold">Scientific Publications</span>
+                    <div class="ml-auto text-xs font-normal text-white/50">2022 - 2024</div>
                 </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div class="group/card bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
-                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
-                            <i class="fas fa-file-alt text-primary"></i>
+                <!-- Content sections -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Thesis Publication -->
+                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full">
+                            <img src="/static/compcva.png" alt="Thesis" 
+                                 class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
                         </div>
+                        
+                        <div class="p-4 w-full space-y-2">
+                            <h3 class="text-primary text-lg font-semibold">
+                                Computational Framework in Coastal Vulnerability Assessment
+                            </h3>
 
-                        <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
-                            Computational Framework in Coastal Vulnerability Assessment
-                        </h3>
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                2024
+                            </div>
 
-                        <div class="flex items-center gap-2 text-white/90 text-sm mb-2 hover:translate-x-2 transition-all">
-                            2024
-                        </div>
-
-                        <div class="flex flex-col gap-1 mt-2 w-full">
-                            <div class="flex items-center gap-2 text-white/90 text-sm hover:translate-x-2 transition-all">
-                                <i class="fas fa-user text-primary"></i>
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-user text-primary text-[10px] w-3"></i>
                                 Liaskos, A.
                             </div>
-                        </div>
 
-                        <div class="mt-4 w-full">
-                            <div class="bg-primary/10 px-3 py-2 rounded flex items-center justify-center text-white/90 text-sm hover:translate-x-2 transition-all">
-                                <i class="fas fa-graduation-cap mr-2 text-primary"></i>
-                                Thesis
+                            <div class="pt-2 border-t border-white/5 w-full">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Thesis</span>
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Coastal</span>
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coastal Erosion Publication -->
+                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full">
+                            <img src="/static/coastal.png" alt="Coastal Erosion" 
+                                 class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="p-4 w-full space-y-2">
+                            <h3 class="text-primary text-lg font-semibold">
+                                Coastal erosion: The future of sandy beaches
+                            </h3>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                2022
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-users text-primary text-[10px] w-3"></i>
+                                Evelpidou, N., Tzouxanioti, M., & Liaskos, A.
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-book text-primary text-[10px] w-3"></i>
+                                Proceedings of the European Academy of Sciences and Arts (PEASA)
+                            </div>
+
+                            <div class="pt-2 border-t border-white/5 w-full">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Published</span>
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Coastal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Climate Variability Publication -->
+                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full">
+                            <img src="/static/climvar.png" alt="Climate Variability" 
+                                 class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="p-4 w-full space-y-2">
+                            <h3 class="text-primary text-lg font-semibold">
+                                Climate Variability & Climate Change
+                            </h3>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                2022
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-user text-primary text-[10px] w-3"></i>
+                                Liaskos, A.
+                            </div>
+
+                            <div class="pt-2 border-t border-white/5 w-full">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Unpublished</span>
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SPI Publication -->
+                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full">
+                            <img src="/static/SPI.png" alt="SPI Analysis" 
+                                 class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="p-4 w-full space-y-2">
+                            <h3 class="text-primary text-lg font-semibold">
+                                Standardized Precipitation Index (SPI) in Greece
+                            </h3>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
+                                2022
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-user text-primary text-[10px] w-3"></i>
+                                Liaskos, A.
+                            </div>
+
+                            <div class="pt-2 border-t border-white/5 w-full">
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">Unpublished</span>
+                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Analysis</span>
+                                </div>
                             </div>
                         </div>
                     </div>
