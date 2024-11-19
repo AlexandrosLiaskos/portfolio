@@ -17,11 +17,10 @@ export function initTypewriter(element, options = {}) {
     // Clear any existing content
     element.textContent = '';
     
-    // Create cursor element
+    // Create cursor element with enhanced styling
     const cursor = document.createElement('span');
-    cursor.textContent = '|';
-    cursor.style.color = settings.cursorColor;
-    cursor.style.animation = 'blink 1s step-end infinite';
+    cursor.className = 'typewriter-cursor';
+    cursor.style.background = settings.cursorColor;
     
     setTimeout(() => {
         let i = 0;
@@ -32,12 +31,23 @@ export function initTypewriter(element, options = {}) {
                 if (cursor.parentNode === element) {
                     cursor.remove();
                 }
-                element.textContent += text.charAt(i);
+                
+                // Add character with potential styling
+                const char = document.createElement('span');
+                char.textContent = text.charAt(i);
+                char.style.opacity = '0';
+                element.appendChild(char);
+                
+                // Fade in the character
+                requestAnimationFrame(() => {
+                    char.style.transition = 'opacity 0.1s ease-in';
+                    char.style.opacity = '1';
+                });
+                
                 element.appendChild(cursor);
                 i++;
                 setTimeout(type, settings.delay);
             }
-            // No else block needed - cursor is already appended
         }
         
         type();

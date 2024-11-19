@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="/static/css/utils/background.css">
         <link rel="stylesheet" href="/static/css/components/animations.css">
         <link rel="stylesheet" href="/static/css/components/sidebar.css">
+        <link rel="stylesheet" href="/static/css/components/aceternity.css">
         
         <script>
             // Initialize navItems before Alpine loads
@@ -105,6 +106,9 @@
                 text-shadow: 0 0 8px currentColor;
             }
         </style>
+        <script src="https://unpkg.com/@floating-ui/core@1.5.0"></script>
+        <script src="https://unpkg.com/@floating-ui/dom@1.5.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
     </head>
     <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased">
         <!-- Dark overlay -->
@@ -121,7 +125,7 @@
                 
                 <!-- Main content area -->
                 <main class="flex-1 w-full transition-all duration-500 ease-out">
-                    <div class="container mx-auto px-4 py-6 max-w-5xl">
+                    <div class="w-full">
                         <div class="space-y-24">
                             {% block content %}{% endblock %}
                         </div>

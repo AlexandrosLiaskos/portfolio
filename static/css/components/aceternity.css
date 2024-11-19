@@ -1,0 +1,427 @@
+/* Spotlight/Tracing Beam Effect */
+.spotlight {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+
+.spotlight > .beam {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    width: 2px;
+    height: 100vh;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        #00FFEA 50%,
+        transparent 100%
+    );
+    animation: beam-move 8s ease infinite;
+    opacity: 0.3;
+}
+
+@keyframes beam-move {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.3;
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* 3D Card Effect */
+.card-3d {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.3s ease, background 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-3d > * {
+    transform-style: preserve-3d;
+}
+
+.card-3d .card-body {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+    transition: transform 0.1s ease-out, background 0.1s ease-out;
+}
+
+.card-3d::before,
+.card-3d::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    transition: opacity 0.2s ease-out;
+}
+
+.card-3d::before {
+    inset: -1px;
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(0, 255, 234, 0.1),
+        transparent 40%
+    );
+    opacity: 0;
+}
+
+.card-3d::after {
+    inset: -1px;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(0, 255, 234, 0.4),
+        transparent 40%
+    );
+    opacity: 0;
+}
+
+.card-3d:hover::before {
+    opacity: 1;
+}
+
+.card-3d:hover::after {
+    opacity: 1;
+}
+
+/* Image Focus Effect */
+.image-focus {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-focus::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(0, 255, 234, 0.2),
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.image-focus:hover::before {
+    opacity: 1;
+}
+
+.image-focus img {
+    transition: transform 0.3s ease;
+}
+
+.image-focus:hover img {
+    transform: scale(1.05);
+}
+
+/* Lens Effect */
+.lens-effect {
+    position: relative;
+    overflow: hidden;
+    border-radius: inherit;
+    transform-style: preserve-3d;
+}
+
+.lens-effect::before {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: radial-gradient(
+        20px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(0, 255, 234, 0.3),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.lens-effect.lens-active::before {
+    opacity: 1;
+}
+
+.lens-effect:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+
+/* Hover Card Effect (updated) */
+.hover-card {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(0, 255, 234, 0.1),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hover-card:hover::before {
+    opacity: 1;
+}
+
+/* Text Gradient */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #00FFEA, #00A3FF);
+}
+
+/* Add these styles for the shimmer effect */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+.shimmer-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 90deg at 50% 50%,
+        #00FFEA 0%,
+        transparent 50%,
+        #00FFEA 100%
+    );
+    animation: spin 2s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.shimmer-button:hover::after {
+    opacity: 0.5;
+}
+
+/* Gradient flow animation */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient-flow {
+    background-size: 200% auto;
+    animation: gradient-flow 4s ease infinite;
+}
+
+/* Slow pulse animation */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Enhanced typewriter cursor */
+.typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #00FFEA;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Add these styles for the Meteors effect */
+@keyframes meteor {
+    0% {
+        transform: rotate(215deg) translateX(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(215deg) translateX(-500px);
+        opacity: 0;
+    }
+}
+
+.meteor-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, #00FFEA, transparent);
+    transform: rotate(215deg) translateX(0);
+    animation: meteor var(--duration) linear infinite;
+    animation-delay: var(--delay);
+}
+
+.meteor-line::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-top: -2px;
+    background: #00FFEA;
+    box-shadow: 0 0 20px #00FFEA,
+                0 0 40px #00FFEA,
+                0 0 60px #00FFEA,
+                0 0 80px #00FFEA;
+}
+
+/* Shimmer effect */
+.group-hover\/shimmer\:translate-y-\[100\%\] {
+    transform: translateY(100%);
+}
+
+[mask-image\:linear-gradient\(white\,transparent\)] {
+    mask-image: linear-gradient(white, transparent);
+    -webkit-mask-image: linear-gradient(white, transparent);
+}
+
+.animate-shimmer {
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Spotlight Text Effect */
+.spotlight-text {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.spotlight-text::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(0, 255, 234, 0.15),
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.spotlight-text:hover::before {
+    opacity: 1;
+}
+
+/* Add mouse tracking for spotlight effect */
+.group:hover .spotlight-text::before {
+    opacity: 1;
+}
+
+/* Gradient Border Animation */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 3s linear infinite;
+}
+
+/* Mac-style Container */
+.mac-style {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 234, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mac-style-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 255, 234, 0.1);
+}
+
+.mac-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.mac-close { background-color: #FF5F56; }
+.mac-minimize { background-color: #FFBD2E; }
+.mac-expand { background-color: #27C93F; } 

@@ -34,13 +34,13 @@
 </style>
 
 <div class="space-y-24">
-    <!-- Hero Section - in its own container without centering -->
+    <!-- Hero Section - Full width without centering -->
     <div class="w-full">
         {{ hero::hero() }}
     </div>
 
     <!-- Rest of the content in centered container -->
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-8 sm:px-12 lg:px-16">
         <!-- Experience Section - Centered with Tailwind -->
         <section id="experience" 
                  class="section 
@@ -54,7 +54,7 @@
                         group">
             <div class="space-y-6">  <!-- Added spacing between elements -->
                 <!-- Section Header -->
-                <h2 class="text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
+                <h2 class="magic text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
                     <i class="fas fa-briefcase text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
                     <span class="text-base font-bold">Professional Experience</span>
                     <div class="ml-auto text-xs font-normal text-white/50">2018 - Present</div>
@@ -66,25 +66,25 @@
                     <div class="mb-6">  <!-- Added margin bottom for section separation -->
                         <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
                             <i class="fas fa-microscope text-primary text-xs"></i>  <!-- Changed icon -->
-                            <h3 class="text-primary text-sm font-medium">Scientific Research</h3>
+                            <h3 class="text-gradient text-primary text-sm font-medium">Scientific Research</h3>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                             <!-- CVI and Geoinformation Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <!-- Card image -->
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/Geoinfo_Geospa.png" alt="Geoinformation" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
                                 <!-- Card content -->
-                                <div class="p-2 w-full space-y-1">  <!-- Reduced padding and spacing -->
+                                <div class="card-body p-2 w-full space-y-1">  <!-- Reduced padding and spacing -->
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">EO-PERSIST</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">EO-PERSIST</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-upcoming">Upcoming</span>
                                     </div>
                 
@@ -117,18 +117,18 @@
                             </div>
 
                             <!-- GIS and Coastal Analysis Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/Gis_Coastal.png" alt="GIS and Coastal" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Coastal Analysis</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Coastal Analysis</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -162,25 +162,25 @@
                     <div class="mb-6">
                         <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
                             <i class="fas fa-code text-primary text-xs"></i>
-                            <h3 class="text-primary text-sm font-medium">Software Development</h3>
+                            <h3 class="text-gradient text-primary text-sm font-medium">Software Development</h3>
                         </div>
 
 
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 
                             <!-- Geospatial Analyst Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/Geospa_Ana.jpg" alt="Geospatial Analysis" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Geospatial Analyst</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Geospatial Analyst</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -206,18 +206,18 @@
                             </div>
 
                             <!-- Web Developer Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/Web_Dev.png" alt="Web Development" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Web Developer</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Web Developer</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -241,18 +241,18 @@
                             </div>
 
                             <!-- Data Analyst Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/Info_Manag.png" alt="Information Systems" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Data Analyst</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Data Analyst</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -281,23 +281,23 @@
                     <div>
                         <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
                             <i class="fas fa-concierge-bell text-primary text-xs"></i>
-                            <h3 class="text-primary text-sm font-medium">Service Industry</h3>
+                            <h3 class="text-gradient text-primary text-sm font-medium">Service Industry</h3>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                             <!-- Assistant Waiter Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/psarras.png" alt="Psarras Restaurant" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Assistant Waiter</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Assistant Waiter</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-past">Past</span>
                                     </div>
 
@@ -339,7 +339,7 @@
                         group">
             <div class="space-y-6">
                 <!-- Section Header -->
-                <h2 class="text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
+                <h2 class="magic text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
                     <i class="fas fa-graduation-cap text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
                     <span class="text-base font-bold">Academic Education</span>
                     <div class="ml-auto text-xs font-normal text-white/50">2018 - Per</div>
@@ -351,25 +351,25 @@
                     <div class="mb-6">
                         <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
                             <i class="fas fa-university text-primary text-xs"></i>
-                            <h3 class="text-primary text-sm font-medium">University Education</h3>
+                            <h3 class="text-gradient text-primary text-sm font-medium">University Education</h3>
                         </div>
 
                         <div class="grid grid-cols-1 gap-3">
                             <!-- BSc Card -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <!-- Card image -->
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/nkua.jpg" alt="NKUA" 
                                          class="w-full h-32 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
                                 <!-- Card content -->
-                                <div class="p-4 w-full space-y-3">
+                                <div class="card-body p-4 w-full space-y-3">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">BSc in Geology and Geo-environment</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">BSc in Geology and Geo-environment</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-past">Completed</span>
                                     </div>
 
@@ -416,24 +416,24 @@
                     <div class="mt-12">
                         <div class="inline-flex items-center gap-1.5 px-2 py-1 mb-3 rounded-lg bg-[rgba(0,255,234,0.1)]">
                             <i class="fas fa-laptop-code text-primary text-xs"></i>
-                            <h3 class="text-primary text-sm font-medium">Online Courses</h3>
+                            <h3 class="text-gradient text-primary text-sm font-medium">Online Courses</h3>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <!-- Data Science Course -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <!-- Card image -->
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/R.png" alt="R Programming" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Data Science: R Basics</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Data Science: R Basics</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -461,18 +461,18 @@
                             </div>
 
                             <!-- Astrophysics Course -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/astro1.png" alt="Astrophysics" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Greatest Unsolved Mysteries of the Universe</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Greatest Unsolved Mysteries of the Universe</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -500,18 +500,18 @@
                             </div>
 
                             <!-- Astrophysics: Exploring Exoplanets -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/astro2.png" alt="Astrophysics: Exploring Exoplanets" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Exploring Exoplanets</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Exploring Exoplanets</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -539,18 +539,18 @@
                             </div>
 
                             <!-- Climate Change Course -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/clim.jpeg" alt="Climate Change: The Science and Global Impact" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Climate Change: The Science and Global Impact</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Climate Change: The Science and Global Impact</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -578,18 +578,18 @@
                             </div>
 
                             <!-- Differential Equations Course -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/maths.jpeg" alt="Differential Equations 1" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Differential Equations 1</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Differential Equations 1</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -617,18 +617,18 @@
                             </div>
 
                             <!-- Justice Today Course -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/MMM.jpeg" alt="Justice Today" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Justice Today</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Justice Today</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -656,18 +656,18 @@
                             </div>
 
                             <!-- World History 1 -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/world1.png" alt="World History 1" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Man Facing Nature</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Man Facing Nature</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -694,18 +694,18 @@
                             </div>
 
                             <!-- World History 2 -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/world2.png" alt="World History 2" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Man Facing Divine</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Man Facing Divine</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -732,18 +732,18 @@
                             </div>
 
                             <!-- World History 3 -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/world3.png" alt="World History 3" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Man Facing Himself - Part A</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Man Facing Himself - Part A</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -770,18 +770,18 @@
                             </div>
 
                             <!-- World History 4 -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/world4.png" alt="World History 4" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Man Facing Himself - Part B</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Man Facing Himself - Part B</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -808,18 +808,18 @@
                             </div>
 
                             <!-- Science and 4th Industrial Revolution -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/rev.png" alt="Science and 4th Industrial Revolution" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Science and 4th Industrial Revolution</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Science and 4th Industrial Revolution</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -847,18 +847,18 @@
                             </div>
 
                             <!-- Plato -->
-                            <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <div class="w-full">
+                                <div class="w-full image-focus">
                                     <img src="/static/plato.png" alt="Plato" 
                                          class="w-full h-16 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
-                                <div class="p-2 w-full space-y-1">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-lg font-semibold">Plato</h3>
+                                        <h3 class="text-gradient text-primary text-lg font-semibold">Plato</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -904,7 +904,7 @@
                         group">
             <div class="space-y-6">
                 <!-- Section Header -->
-                <h2 class="text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
+                <h2 class="magic text-[#00FFEA] mb-3 pb-1 border-b border-[#00FFEA]/20 flex items-center gap-2">
                     <i class="fas fa-book text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
                     <span class="text-base font-bold">Scientific Publications</span>
                     <div class="ml-auto text-xs font-normal text-white/50">2022 - 2024</div>
@@ -913,17 +913,17 @@
                 <!-- Content sections -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Thesis Publication -->
-                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                    <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                 flex flex-col items-start hover:-translate-y-1 
                                 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                        <div class="w-full">
+                        <div class="w-full image-focus">
                             <img src="/static/compcva.png" alt="Thesis" 
                                  class="w-full h-16 object-cover group-hover/card:scale-105 
                                         transition-transform duration-300" />
                         </div>
                         
-                        <div class="p-4 w-full space-y-2">
-                            <h3 class="text-primary text-lg font-semibold">
+                        <div class="card-body p-4 w-full space-y-2">
+                            <h3 class="text-gradient text-primary text-lg font-semibold">
                                 Computational Framework in Coastal Vulnerability Assessment
                             </h3>
 
@@ -948,17 +948,17 @@
                     </div>
 
                     <!-- Coastal Erosion Publication -->
-                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                    <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                 flex flex-col items-start hover:-translate-y-1 
                                 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                        <div class="w-full">
+                        <div class="w-full image-focus">
                             <img src="/static/coastal.png" alt="Coastal Erosion" 
                                  class="w-full h-16 object-cover group-hover/card:scale-105 
                                         transition-transform duration-300" />
                         </div>
                         
-                        <div class="p-4 w-full space-y-2">
-                            <h3 class="text-primary text-lg font-semibold">
+                        <div class="card-body p-4 w-full space-y-2">
+                            <h3 class="text-gradient text-primary text-lg font-semibold">
                                 Coastal erosion: The future of sandy beaches
                             </h3>
 
@@ -987,17 +987,17 @@
                     </div>
 
                     <!-- Climate Variability Publication -->
-                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                    <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                 flex flex-col items-start hover:-translate-y-1 
                                 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                        <div class="w-full">
+                        <div class="w-full image-focus">
                             <img src="/static/climvar.png" alt="Climate Variability" 
                                  class="w-full h-16 object-cover group-hover/card:scale-105 
                                         transition-transform duration-300" />
                         </div>
                         
-                        <div class="p-4 w-full space-y-2">
-                            <h3 class="text-primary text-lg font-semibold">
+                        <div class="card-body p-4 w-full space-y-2">
+                            <h3 class="text-gradient text-primary text-lg font-semibold">
                                 Climate Variability & Climate Change
                             </h3>
 
@@ -1021,17 +1021,17 @@
                     </div>
 
                     <!-- SPI Publication -->
-                    <div class="group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                    <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                 flex flex-col items-start hover:-translate-y-1 
                                 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                        <div class="w-full">
+                        <div class="w-full image-focus">
                             <img src="/static/SPI.png" alt="SPI Analysis" 
                                  class="w-full h-16 object-cover group-hover/card:scale-105 
                                         transition-transform duration-300" />
                         </div>
                         
-                        <div class="p-4 w-full space-y-2">
-                            <h3 class="text-primary text-lg font-semibold">
+                        <div class="card-body p-4 w-full space-y-2">
+                            <h3 class="text-gradient text-primary text-lg font-semibold">
                                 Standardized Precipitation Index (SPI) in Greece
                             </h3>
 
@@ -1060,19 +1060,19 @@
         <!-- Skills Section -->
         <section id="skills" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
             <div class="ml-12">
-                <h2 class="text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
+                <h2 class="magic text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
                     <i class="fas fa-code text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
                     <span class="text-xl font-bold">Technical Expertise</span>
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
                     <!-- Languages -->
-                    <div class="group/card bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                    <div class="card-3d bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
                         <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
                             <i class="fas fa-language text-primary"></i>
                         </div>
 
-                        <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
+                        <h3 class="text-gradient text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
                             Languages
                         </h3>
 
@@ -1090,12 +1090,12 @@
                     </div>
 
                     <!-- Programming Languages -->
-                    <div class="group/card bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                    <div class="card-3d bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
                         <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
                             <i class="fas fa-code text-primary"></i>
                         </div>
 
-                        <h3 class="text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
+                        <h3 class="text-gradient text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
                             Programming Languages
                         </h3>
 
@@ -1115,7 +1115,7 @@
         <!-- International Section -->
         <section id="international" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
             <div class="ml-12">
-                <h2 class="text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
+                <h2 class="magic text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
                     <i class="fas fa-globe text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
                     <span class="text-xl font-bold">International Experience</span>
                 </h2>
@@ -1126,7 +1126,7 @@
         <!-- Volunteer Section -->
         <section id="volunteer" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
             <div class="ml-12">
-                <h2 class="text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
+                <h2 class="magic text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
                     <i class="fas fa-hands-helping text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
                     <span class="text-xl font-bold">Volunteer Work</span>
                 </h2>
