@@ -10,7 +10,8 @@
               flex flex-col
               overflow-hidden
               pointer-events-none
-              group/sidebar">
+              group/sidebar
+              hidden md:flex">
     
     <!-- Enhanced Profile Section -->
     <div class="relative p-6 border-b border-white/10 
@@ -163,4 +164,72 @@
         </div>
     </div>
 </aside>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu"
+     class="fixed inset-y-0 right-0 w-72 
+            bg-[rgb(10,10,27)]/95 backdrop-blur-lg
+            border-l border-white/10
+            transform translate-x-full
+            transition-all duration-300 ease-out
+            z-50 md:hidden
+            flex flex-col">
+    
+    <!-- Mobile Menu Header -->
+    <div class="p-6 border-b border-white/10">
+        <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-white">Menu</h2>
+            <button id="closeMobileMenu" 
+                    class="text-white/70 hover:text-white transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="flex-1 p-4 space-y-2 overflow-y-auto"
+         x-data="{ navItems: window.navItems || [] }">
+        <template x-for="(item, index) in navItems" :key="item.href">
+            <a :href="item.href" 
+               class="group flex items-center gap-3 p-3 rounded-xl 
+                      hover:bg-white/5 transition-all duration-300
+                      relative overflow-hidden">
+                <div class="w-9 h-9 rounded-xl bg-white/5 
+                           flex items-center justify-center
+                           group-hover:bg-primary/20 transition-all duration-300">
+                    <i :class="[item.icon, 'text-primary']"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-sm font-medium text-white/90 
+                               group-hover:text-primary transition-colors"
+                          x-text="item.title"></span>
+                    <span class="text-xs text-white/50" 
+                          x-text="item.subtitle"></span>
+                </div>
+            </a>
+        </template>
+    </nav>
+    
+    <!-- Mobile Social Links -->
+    <div class="p-4 border-t border-white/10">
+        <div class="flex justify-center gap-3">
+            <a href="https://github.com/yourusername" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-10 h-10 rounded-xl bg-white/5 
+                      flex items-center justify-center
+                      hover:bg-primary/20 transition-all duration-300">
+                <i class="fab fa-github text-primary"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div id="mobileOverlay"
+     class="fixed inset-0 bg-black/50 backdrop-blur-sm
+            opacity-0 pointer-events-none
+            transition-opacity duration-300
+            z-40 md:hidden">
+</div>
 {% endmacro %} 

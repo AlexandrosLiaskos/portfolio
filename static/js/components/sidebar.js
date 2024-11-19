@@ -1,19 +1,17 @@
 export function initializeSidebar() {
     // DOM Elements
     const desktopSidebar = document.getElementById('desktopSidebar');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const menuButton = document.getElementById('menuButton');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const experienceSection = document.getElementById('experience');
+    const mainContent = document.querySelector('.main-content');
+    
     if (!desktopSidebar) {
         console.error('Desktop sidebar element not found');
         return;
     }
-    
-    const experienceSection = document.getElementById('experience');
-    if (!experienceSection) {
-        console.warn('Experience section not found');
-    }
-    
-    const menuButton = document.getElementById('menuButton');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
     
     // Animation state management
     let isAnimating = false;
@@ -31,7 +29,6 @@ export function initializeSidebar() {
             clearTimeout(animationTimeout);
         }
         
-        const mainContent = document.querySelector('.main-content');
         const profile = desktopSidebar.querySelector('.profile-section');
         const navItems = desktopSidebar.querySelectorAll('.nav-item');
         const socialLinks = desktopSidebar.querySelectorAll('.social-link');
@@ -151,7 +148,7 @@ export function initializeSidebar() {
     
     // Scroll handling
     const handleScroll = () => {
-        if (!experienceSection) return;
+        if (!experienceSection || window.innerWidth <= 767) return; // Skip for mobile
         
         const heroSection = document.querySelector('section:first-of-type');
         const lastSection = document.querySelector('section:last-of-type');
@@ -168,39 +165,62 @@ export function initializeSidebar() {
         }
     };
     
-    // Mobile menu handling
-    const toggleMenu = () => {
-        const isOpen = mobileMenu.classList.contains('translate-x-0');
+    // Toggle mobile menu
+    const toggleMobileMenu = () => {
+        if (!mobileMenu || !mobileOverlay) return;
         
-        mobileMenu.classList.toggle('translate-x-0');
-        mobileMenu.classList.toggle('translate-x-full');
-        overlay.classList.toggle('opacity-0');
-        overlay.classList.toggle('pointer-events-none');
+        const isOpen = !mobileMenu.classList.contains('translate-x-full');
         
-        document.body.style.overflow = isOpen ? '' : 'hidden';
-        menuButton.innerHTML = isOpen ? 
-            '<i class="fas fa-bars"></i>' : 
-            '<i class="fas fa-times"></i>';
+        if (!isOpen) {
+            // Opening
+            mobileMenu.classList.remove('translate-x-full');
+            mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Closing
+            mobileMenu.classList.add('translate-x-full');
+            mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
     };
-    
-    // Event listeners
-    menuButton?.addEventListener('click', toggleMenu);
-    overlay?.addEventListener('click', toggleMenu);
-    
-    document.querySelectorAll('#mobileMenu a[href^="#"]').forEach(link => {
-        link.addEventListener('click', toggleMenu);
+
+    // Event listeners for mobile menu
+    menuButton?.addEventListener('click', toggleMobileMenu);
+    closeMobileMenu?.addEventListener('click', toggleMobileMenu);
+    mobileOverlay?.addEventListener('click', toggleMobileMenu);
+
+    // Close mobile menu when clicking navigation items
+    const mobileNavItems = mobileMenu?.querySelectorAll('a[href^="#"]');
+    mobileNavItems?.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                toggleMobileMenu(); // Close menu
+                setTimeout(() => {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 300); // Wait for menu close animation
+            }
+        });
     });
     
     // Window resize handling
     window.addEventListener('resize', () => {
-        if (window.innerWidth < 768) {
-            desktopSidebar.classList.add('-translate-x-full');
-            desktopSidebar.classList.remove('translate-x-0');
-        } else if (window.innerWidth >= 768 && 
+        if (window.innerWidth <= 767) {
+            // Always hide desktop sidebar on mobile
+            desktopSidebar.classList.add('-translate-x-full', 'invisible');
+            desktopSidebar.classList.remove('visible', 'translate-x-0');
+            mainContent?.classList.remove('sidebar-visible');
+        } else if (window.innerWidth > 767 && 
                   experienceSection && 
                   experienceSection.getBoundingClientRect().top <= 0) {
-            desktopSidebar.classList.remove('-translate-x-full');
-            desktopSidebar.classList.add('translate-x-0');
+            // Show desktop sidebar on desktop if past hero section
+            animateSidebar(true);
         }
     });
     
