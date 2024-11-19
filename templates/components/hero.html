@@ -2,45 +2,6 @@
 <section class="min-h-[calc(100vh-var(--navbar-height)-6rem)] w-full relative overflow-hidden" 
          x-data="{ showParticles: false }"
          x-init="setTimeout(() => showParticles = true, 1000)">
-    
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <!-- Animated gradient background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#FF00FF]/5 to-[#00FFEA]/5 
-                    animate-pulse-slow mix-blend-overlay"></div>
-        
-        <!-- Enhanced geometric patterns -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="
-                background-image: 
-                    linear-gradient(30deg, rgba(0,255,234,0.05) 12%, transparent 12.5%, transparent 87%, rgba(0,255,234,0.05) 87.5%, rgba(0,255,234,0.05)),
-                    linear-gradient(150deg, rgba(255,0,255,0.05) 12%, transparent 12.5%, transparent 87%, rgba(255,0,255,0.05) 87.5%, rgba(255,0,255,0.05));
-                background-size: 40px 70px;
-                animation: move-bg 20s linear infinite;
-            "></div>
-        </div>
-
-        <!-- Animated particles -->
-        <div x-show="showParticles"
-             x-transition:enter="transition-opacity duration-1000"
-             x-transition:enter-start="opacity-0"
-             x-transition:enter-end="opacity-100"
-             class="absolute inset-0">
-            <template x-for="i in 30">
-                <div class="absolute rounded-full"
-                     :style="`
-                         width: ${Math.random() * 3}px;
-                         height: ${Math.random() * 3}px;
-                         left: ${Math.random() * 100}%;
-                         top: ${Math.random() * 100}%;
-                         background: ${Math.random() > 0.5 ? '#00FFEA' : '#FF00FF'};
-                         opacity: ${Math.random() * 0.3};
-                         animation: float ${5 + Math.random() * 10}s infinite linear;
-                         animation-delay: -${Math.random() * 10}s;
-                     `"></div>
-            </template>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="relative z-10 w-full h-full">
@@ -65,7 +26,7 @@
                         <div class="inline-block px-4 py-2">
                             <span class="text-[#00FFEA]/80" 
                                   data-text="Alexandros P. Liaskos"
-                                  id="name-typewriter">Alexandros P. Liaskos</span>
+                                  id="name-typewriter"></span>
                         </div>
                     </h1>
                     
@@ -166,6 +127,21 @@
 @keyframes move-bg {
     from { background-position: 0 0; }
     to { background-position: 40px 70px; }
+}
+
+@keyframes fadeOutSlow {
+    0% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 </style>
 {% endmacro %} 

@@ -1,73 +1,45 @@
 export function initTypewriter(element, options = {}) {
-    if (!element) {
-        console.error('No element provided to typewriter');
-        return;
-    }
-
-    console.log('Typewriter init started for:', element);
-    
-    const defaults = {
-        delay: 40,
-        cursorStyle: 'block',
+    const defaultOptions = {
+        delay: 50,
         cursorColor: '#00ffea',
-        startDelay: 500,
-        deleteDelay: 2000,
-        deleteSpeed: 30,
+        startDelay: 0,
         loop: false
     };
     
-    const config = { ...defaults, ...options };
-    const text = element.getAttribute('data-text') || element.textContent;
+    const settings = { ...defaultOptions, ...options };
+    const text = element.getAttribute('data-text');
     
     if (!text) {
-        console.error('No text content or data-text attribute found');
+        console.error('No text provided for typewriter');
         return;
     }
-    
-    console.log('Text to type:', text);
     
     // Clear any existing content
     element.textContent = '';
     
-    // Create cursor
+    // Create cursor element
     const cursor = document.createElement('span');
-    cursor.className = 'typing-cursor';
-    cursor.style.backgroundColor = config.cursorColor;
-    element.parentNode.insertBefore(cursor, element.nextSibling);
+    cursor.textContent = '|';
+    cursor.style.color = settings.cursorColor;
+    cursor.style.animation = 'blink 1s step-end infinite';
     
-    // Add styles only once
-    if (!document.getElementById('typewriter-styles')) {
-        const style = document.createElement('style');
-        style.id = 'typewriter-styles';
-        style.textContent = `
-            .typing-cursor {
-                display: inline-block;
-                width: 3px;
-                height: 1.2em;
-                background-color: ${config.cursorColor};
-                animation: cursor-blink 1s infinite;
-                margin-left: 4px;
-                vertical-align: baseline;
+    setTimeout(() => {
+        let i = 0;
+        
+        function type() {
+            if (i < text.length) {
+                // Remove cursor before adding next character
+                if (cursor.parentNode === element) {
+                    cursor.remove();
+                }
+                element.textContent += text.charAt(i);
+                element.appendChild(cursor);
+                i++;
+                setTimeout(type, settings.delay);
             }
-            
-            @keyframes cursor-blink {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
-    // Type the text
-    let index = 0;
-    function type() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            requestAnimationFrame(() => setTimeout(type, Math.random() * 20 + config.delay));
+            // No else block needed - cursor is already appended
         }
-    }
-    
-    // Start typing after delay
-    setTimeout(type, config.startDelay);
+        
+        type();
+    }, settings.startDelay);
 }

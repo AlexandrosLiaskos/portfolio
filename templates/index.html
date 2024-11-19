@@ -6,15 +6,29 @@
 {% block content %}
 <style>
     .status-upcoming {
-        background-color: rgb(255, 0, 255, 0.2);
+        background-color: rgba(255, 0, 255, 0.2);
         color: rgb(255, 255, 255);
     }
     .status-present {
-        background-color: rgba(94, 255, 0, 0.239);
+        background-color: rgba(0, 255, 162, 0.368);
         color: rgb(255, 255, 255);
     }
     .status-past {
         background-color: rgba(255, 0, 51, 0.253);
+        color: rgb(255, 255, 255);
+    }
+    
+    /* New tag styles */
+    .tag-research {
+        background-color: rgba(0, 204, 255, 0.1);
+        color: rgb(255, 255, 255);
+    }
+    .tag-technical {
+        background-color: rgb(0, 204, 255, 0.1);
+        color: rgb(255, 255, 255);
+    }
+    .tag-service {
+        background-color: rgb(0, 204, 255, 0.1);
         color: rgb(255, 255, 255);
     }
 </style>
@@ -70,7 +84,7 @@
                                 <!-- Card content -->
                                 <div class="p-2 w-full space-y-1">  <!-- Reduced padding and spacing -->
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-sm font-medium">CVI and Geoinformation</h3>
+                                        <h3 class="text-primary text-lg font-semibold">EO-PERSIST</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-upcoming">Upcoming</span>
                                     </div>
                 
@@ -79,19 +93,23 @@
                                         December 2024 - Present
                                     </div>
                                     
-                                    <!-- Similar formatting for other info -->
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
                                         <i class="fas fa-building text-primary text-[10px] w-3"></i>
                                         Lund University
                                     </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-user text-primary text-[10px] w-3"></i>
+                                        Prof George P. Petropoulos
+                                    </div>
                                     
                                     <div class="pt-1.5 border-t border-white/5 w-full">
                                         <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">
-                                                Marie Curie Actions
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">
+                                                CVI
                                             </span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">
-                                                Research
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">
+                                                EU
                                             </span>
                                         </div>
                                     </div>
@@ -110,7 +128,7 @@
                                 
                                 <div class="p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-sm font-medium">GIS and Coastal Analysis</h3>
+                                        <h3 class="text-primary text-lg font-semibold">Coastal Analysis</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -123,12 +141,16 @@
                                         <i class="fas fa-building text-primary text-[10px] w-3"></i>
                                         NKUA
                                     </div>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-user text-primary text-[10px] w-3"></i>
+                                        Prof Niki Evelpidou
+                                    </div>
                                     
                                     <div class="pt-1.5 border-t border-white/5 w-full">
                                         <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Research</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">GIS</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Coastal Analysis</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Coastal Analysis</span>
                                         </div>
                                     </div>
                                 </div>
@@ -158,7 +180,7 @@
                                 
                                 <div class="p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-sm font-medium">Geospatial Analyst</h3>
+                                        <h3 class="text-primary text-lg font-semibold">Geospatial Analyst</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -174,9 +196,10 @@
                                     
                                     <div class="pt-1.5 border-t border-white/5 w-full">
                                         <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">GIS</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Python</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Earth Observation</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Python</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Earth Observation</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">SENTINEL-2</span>
                                         </div>
                                     </div>
                                 </div>
@@ -194,7 +217,7 @@
                                 
                                 <div class="p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-sm font-medium">Web Developer</h3>
+                                        <h3 class="text-primary text-lg font-semibold">Web Developer</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -210,8 +233,8 @@
                                     
                                     <div class="pt-1.5 border-t border-white/5 w-full">
                                         <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Full Stack</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Static</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Full Stack</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Static</span>
                                         </div>
                                     </div>
                                 </div>
@@ -229,7 +252,7 @@
                                 
                                 <div class="p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-sm font-medium">Data Analyst</h3>
+                                        <h3 class="text-primary text-lg font-semibold">Data Analyst</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
                                     </div>
 
@@ -245,8 +268,8 @@
                                     
                                     <div class="pt-1.5 border-t border-white/5 w-full">
                                         <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Data Structure</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Documentation</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Data Structures</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Documentation</span>
                                         </div>
                                     </div>
                                 </div>
@@ -274,13 +297,13 @@
                                 
                                 <div class="p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-primary text-sm font-medium">Assistant Waiter</h3>
+                                        <h3 class="text-primary text-lg font-semibold">Assistant Waiter</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-past">Past</span>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
                                         <i class="fas fa-calendar text-primary text-[10px] w-3"></i>
-                                        2018 - 2022
+                                        2018 - 2024
                                     </div>
                                     
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
@@ -290,9 +313,8 @@
                                     
                                     <div class="pt-1.5 border-t border-white/5 w-full">
                                         <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Customer Service</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Team Work</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded bg-primary/10 text-primary">Communication</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-service">Savoir Vivre</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-service">Tourism</span>
                                         </div>
                                     </div>
                                 </div>

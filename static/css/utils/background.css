@@ -24,8 +24,8 @@ body::before {
     background: radial-gradient(
         circle at center,
         transparent 0%,
-        rgba(0, 0, 0, 0.2) 10%,
-        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.2) 5%,
+        rgba(0, 0, 0, 0.5) 65%,
         rgba(0, 0, 0, 0.7) 100%
     );
     pointer-events: none;

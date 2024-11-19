@@ -64,7 +64,8 @@
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 @keyframes gradientFlow {
@@ -174,5 +175,9 @@
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
 }
   
