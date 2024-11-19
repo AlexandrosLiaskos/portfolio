@@ -9,56 +9,44 @@ export function initAnimations() {
     let isAnimating = false;
     let animationFrame = null;
     
-    // Remove preload class after initial load
-    window.addEventListener('load', () => {
-        document.body.classList.remove('preload');
-    });
-    
-    // Intersection Observer for sections
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Update active sidebar link
-                const id = entry.target.getAttribute('id');
-                sidebarLinks.forEach(link => {
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '-5% 0px -5% 0px'
-    });
+    // Add progress bar to sidebar
+    const progressBar = document.createElement('div');
+    progressBar.className = 'absolute top-0 left-0 w-1 h-full bg-white/5';
+    const progressIndicator = document.createElement('div');
+    progressIndicator.className = 'w-full bg-primary transition-all duration-300';
+    progressBar.appendChild(progressIndicator);
+    sidebar?.insertBefore(progressBar, sidebar.firstChild);
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
+    // Update scroll progress
+    function updateProgress() {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (progressIndicator) {
+            progressIndicator.style.height = `${scrolled}%`;
+        }
+    }
 
+    // Enhanced resetSidebarItems with animation
     function resetSidebarItems() {
-        sidebarItems.forEach(item => {
+        sidebarItems.forEach((item, index) => {
             item.style.transform = 'translate3d(-20px, 0, 0)';
             item.style.opacity = '0';
+            item.style.transitionDelay = `${index * 50}ms`;
         });
     }
 
+    // Enhanced animateSidebarItems with staggered reveal
     async function animateSidebarItems(isMobile = false) {
         if (isAnimating) return;
         isAnimating = true;
 
-        // First, ensure sidebar is visible
         if (!isMobile) {
             sidebar.style.opacity = '1';
             sidebar.style.visibility = 'visible';
             sidebar.style.transform = 'translate3d(0, 0, 0)';
         }
 
-        // Staggered animation for items
         const stagger = isMobile ? 60 : 40;
         const initialDelay = isMobile ? 100 : 50;
 
@@ -68,17 +56,18 @@ export function initAnimations() {
                 setTimeout(() => {
                     item.style.opacity = '1';
                     item.style.transform = 'translate3d(0, 0, 0)';
+                    item.style.transitionDelay = `${i * stagger}ms`;
                     resolve();
                 }, initialDelay + (i * stagger));
             });
         }
 
-        // Cleanup
         setTimeout(() => {
             isAnimating = false;
         }, 300);
     }
 
+    // Enhanced handleScroll with progress update
     function handleScroll() {
         if (animationFrame) {
             cancelAnimationFrame(animationFrame);
@@ -89,6 +78,8 @@ export function initAnimations() {
             const heroHeight = document.querySelector('.hero').offsetHeight;
             const isMobile = window.innerWidth <= 768;
             
+            updateProgress();
+
             if (!isAnimating) {
                 if (currentScrollY > heroHeight * 0.8) {
                     if (!sidebar.classList.contains('visible')) {
@@ -106,6 +97,28 @@ export function initAnimations() {
                         resetSidebarItems();
                     }
                 }
+
+                // Update active section
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        const id = section.id;
+                        sidebarLinks.forEach(link => {
+                            const linkHref = link.getAttribute('href').substring(1);
+                            if (linkHref === id) {
+                                link.classList.add('active');
+                                link.style.transform = 'translate3d(8px, 0, 0)';
+                                link.style.backgroundColor = 'rgba(0, 255, 234, 0.1)';
+                                link.style.color = 'rgb(0, 255, 234)';
+                            } else {
+                                link.classList.remove('active');
+                                link.style.transform = '';
+                                link.style.backgroundColor = '';
+                                link.style.color = '';
+                            }
+                        });
+                    }
+                });
             }
             
             lastScrollY = currentScrollY;

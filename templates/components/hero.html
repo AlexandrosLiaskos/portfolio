@@ -1,0 +1,255 @@
+{% macro hero() %}
+<section class="min-h-[calc(100vh-var(--navbar-height)-6rem)] w-full relative overflow-hidden" 
+         x-data="{ showParticles: false }"
+         x-init="setTimeout(() => showParticles = true, 1000)">
+    <!-- Enhanced Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Dynamic gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#FF00FF]/10 to-[#00FFEA]/10 
+                    animate-pulse-slow mix-blend-overlay"></div>
+        
+        <!-- Particle effect overlay -->
+        <div x-show="showParticles"
+             x-transition:enter="transition-opacity duration-1000"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             class="absolute inset-0">
+            <template x-for="i in 50" :key="i">
+                <div class="absolute rounded-full"
+                     :style="`
+                         width: ${Math.random() * 4}px;
+                         height: ${Math.random() * 4}px;
+                         left: ${Math.random() * 100}%;
+                         top: ${Math.random() * 100}%;
+                         background: ${Math.random() > 0.5 ? '#00FFEA' : '#FF00FF'};
+                         opacity: ${Math.random() * 0.5};
+                         animation: float ${5 + Math.random() * 10}s infinite linear;
+                         animation-delay: -${Math.random() * 10}s;
+                     `"></div>
+            </template>
+        </div>
+
+        <!-- Enhanced geometric patterns with animation -->
+        <div class="absolute inset-0 opacity-20 animate-gradient-flow"
+             style="background-image: 
+                linear-gradient(30deg, rgba(0,255,234,0.1) 12%, transparent 12.5%, transparent 87%, rgba(0,255,234,0.1) 87.5%, rgba(0,255,234,0.1)),
+                linear-gradient(150deg, rgba(0,255,234,0.1) 12%, transparent 12.5%, transparent 87%, rgba(0,255,234,0.1) 87.5%, rgba(0,255,234,0.1)),
+                linear-gradient(30deg, rgba(0,255,234,0.1) 12%, transparent 12.5%, transparent 87%, rgba(0,255,234,0.1) 87.5%, rgba(0,255,234,0.1)),
+                linear-gradient(150deg, rgba(0,255,234,0.1) 12%, transparent 12.5%, transparent 87%, rgba(0,255,234,0.1) 87.5%, rgba(0,255,234,0.1)),
+                linear-gradient(60deg, rgba(255,0,255,0.1) 25%, transparent 25.5%, transparent 75%, rgba(255,0,255,0.1) 75%, rgba(255,0,255,0.1)),
+                linear-gradient(60deg, rgba(255,0,255,0.1) 25%, transparent 25.5%, transparent 75%, rgba(255,0,255,0.1) 75%, rgba(255,0,255,0.1));
+              background-size: 80px 140px;
+              background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;"></div>
+
+        <!-- Enhanced floating orbs with glow effect -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 animate-float-slow">
+            <div class="absolute inset-0 bg-[#FF00FF]/10 rounded-full blur-3xl 
+                        animate-pulse-slow mix-blend-screen"></div>
+            <div class="absolute inset-0 bg-[#FF00FF]/5 rounded-full blur-2xl 
+                        animate-pulse-slow animate-spin-slow"></div>
+        </div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 animate-float-slow-reverse">
+            <div class="absolute inset-0 bg-[#00FFEA]/10 rounded-full blur-3xl 
+                        animate-pulse-slow mix-blend-screen"></div>
+            <div class="absolute inset-0 bg-[#00FFEA]/5 rounded-full blur-2xl 
+                        animate-pulse-slow animate-spin-slow-reverse"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative flex items-center min-h-[calc(100vh-var(--navbar-height)-6rem)]">
+        <div class="w-full max-w-6xl mx-auto px-8 py-16 flex flex-col md:flex-row items-center gap-12">
+            <!-- Text Content with Enhanced Animations -->
+            <div class="flex-1 space-y-8"
+                 x-data="{ shown: false }"
+                 x-intersect="shown = true">
+                <!-- Badge with enhanced animation -->
+                <div class="inline-flex items-center gap-2 bg-[rgb(10,10,27,0.75)] text-primary px-4 py-2 
+                            rounded-full text-sm backdrop-blur-sm border border-primary/10
+                            transform hover:scale-105 transition-all duration-300
+                            hover:border-primary/20 hover:bg-[rgb(10,10,27,0.85)]"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 -translate-y-4"
+                     x-transition:enter-end="opacity-100 translate-y-0">
+                    <i class="fas fa-star text-[#FF00FF] animate-pulse"></i>
+                    <span class="relative overflow-hidden">
+                        <span class="animate-slide-up inline-block">Marie Curie Researcher</span>
+                    </span>
+                    <span class="text-white/50">•</span>
+                    <span class="relative overflow-hidden">
+                        <span class="animate-slide-up inline-block" style="animation-delay: 0.2s">
+                            Lund University
+                        </span>
+                    </span>
+                </div>
+
+                <!-- Name and Title with enhanced animations -->
+                <div class="relative">
+                    <!-- Animated line -->
+                    <div class="absolute -left-4 top-0 bottom-0 w-[2px]"
+                         x-show="shown"
+                         x-transition:enter="transition ease-out duration-1000"
+                         x-transition:enter-start="scale-y-0"
+                         x-transition:enter-end="scale-y-100">
+                        <div class="h-full w-full bg-gradient-to-b from-[#FF00FF]/0 via-[#00FFEA]/20 to-[#FF00FF]/0
+                                  animate-pulse-slow"></div>
+                    </div>
+
+                    <!-- Rest of the content remains the same but with enhanced transitions -->
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight pl-4
+                               bg-gradient-to-r from-[#FF00FF] via-[#00FFEA] to-[#FF00FF] 
+                               bg-clip-text text-transparent animate-gradient
+                               tracking-tight mb-6">
+                        Alexandros P. Liaskos
+                    </h1>
+
+                    <!-- Enhanced Job Titles -->
+                    <div class="pl-4 flex flex-col gap-3">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4 text-[clamp(1.2rem,3vw,1.8rem)]
+                                  animate-slide-up-delay">
+                            <div class="flex items-center gap-4">
+                                <span class="text-[#00FFEA] flex items-center gap-2 
+                                           hover:translate-x-2 transition-transform duration-300">
+                                    <i class="fas fa-code text-[0.8em]"></i>
+                                    Software Developer
+                                </span>
+                                <span class="hidden md:inline text-white/30">•</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-[#FF00FF] flex items-center gap-2
+                                           hover:translate-x-2 transition-transform duration-300">
+                                    <i class="fas fa-globe text-[0.8em]"></i>
+                                    Geospatial Analyst
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Brief Introduction -->
+                        <p class="text-white/70 text-lg mt-4 max-w-2xl animate-slide-up-delay" 
+                           style="animation-delay: 0.4s;">
+                            Specializing in coastal vulnerability assessment and geospatial analysis, 
+                            with expertise in Rust, Python, and GIS technologies. Currently working on 
+                            innovative solutions for environmental challenges.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Enhanced Action Buttons -->
+                <div class="flex flex-wrap gap-6 pl-4">
+                    <!-- Explore Work Button -->
+                    <a href="#experience" 
+                       class="group relative px-8 py-4 rounded-full 
+                              bg-[#00FFEA] 
+                              text-[#000000]
+                              font-black text-lg tracking-wide 
+                              transition-all duration-300
+                              hover:-translate-y-1
+                              shadow-[0_0_20px_#00FFEA],inset_0_0_20px_#00FFEA
+                              hover:shadow-[0_0_40px_#00FFEA],inset_0_0_40px_#00FFEA
+                              border-2 border-[#00FFEA]
+                              hover:bg-[#33FFEE]">
+                        <span class="relative flex items-center justify-center gap-2 drop-shadow-[0_0_8px_rgba(0,255,234,1)]">
+                            <i class="fas fa-briefcase group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span>View Portfolio</span>
+                        </span>
+                    </a>
+
+                    <!-- Download CV Button -->
+                    <a href="/static/CV_LIASKOS_24.pdf"
+                       target="_blank" 
+                       class="group relative px-8 py-4 rounded-full
+                              bg-[#FF00FF]
+                              text-white
+                              font-black text-lg tracking-wide 
+                              transition-all duration-300
+                              hover:-translate-y-1
+                              shadow-[0_0_20px_#FF00FF],inset_0_0_20px_#FF00FF
+                              hover:shadow-[0_0_40px_#FF00FF],inset_0_0_40px_#FF00FF
+                              border-2 border-[#FF00FF]
+                              hover:bg-[#FF33FF]">
+                        <span class="relative flex items-center justify-center gap-2 drop-shadow-[0_0_8px_rgba(255,0,255,1)]">
+                            <i class="fas fa-download group-hover:translate-y-1 transition-transform duration-300"></i>
+                            <span>Download CV</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Quick Stats with Counter Animation -->
+                <div class="pl-4 grid grid-cols-2 md:grid-cols-4 gap-6 pt-6"
+                     x-data="{ 
+                         years: 0, 
+                         projects: 0, 
+                         publications: 0,
+                         positions: 0,
+                         startCount: false 
+                     }"
+                     x-intersect="startCount = true"
+                     x-effect="if(startCount) {
+                         const duration = 2000;
+                         const steps = 50;
+                         const yearStep = 4 / steps;
+                         const projectStep = 15 / steps;
+                         const pubStep = 3 / steps;
+                         const posStep = 2 / steps;
+                         let current = 0;
+                         const interval = setInterval(() => {
+                             current++;
+                             years = Math.min(4, Math.ceil(yearStep * current));
+                             projects = Math.min(15, Math.ceil(projectStep * current));
+                             publications = Math.min(3, Math.ceil(pubStep * current));
+                             positions = Math.min(2, Math.ceil(posStep * current));
+                             if(current >= steps) clearInterval(interval);
+                         }, duration / steps);
+                     }">
+                    <!-- Stats with counter effect -->
+                    <template x-for="(stat, index) in [
+                        {value: years, label: 'Years Experience', color: 'primary'},
+                        {value: projects, label: 'Projects', color: 'FF00FF'},
+                        {value: publications, label: 'Publications', color: 'primary'},
+                        {value: positions, label: 'Research Positions', color: 'FF00FF'}
+                    ]">
+                        <div class="text-center transform transition-all duration-500"
+                             :style="`transition-delay: ${index * 100}ms`"
+                             x-show="shown"
+                             x-transition:enter="transition ease-out duration-500"
+                             x-transition:enter-start="opacity-0 scale-95"
+                             x-transition:enter-end="opacity-100 scale-100">
+                            <div class="text-2xl font-bold" :class="`text-[#${stat.color}]`">
+                                <span x-text="stat.value"></span>+
+                            </div>
+                            <div class="text-sm text-white/50" x-text="stat.label"></div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Right Column with Enhanced Code Animation -->
+            <div class="hidden md:block w-1/3 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-72 h-72 relative animate-float-slow">
+                        <div class="absolute inset-0 rounded-2xl bg-[rgb(10,10,27,0.75)] backdrop-blur-sm
+                                  border border-primary/10 overflow-hidden">
+                            <div class="p-6 font-mono text-sm">
+                                <!-- Rust code snippet -->
+                                <div class="animate-slide-up opacity-0" style="animation-delay: 1s;">
+                                    <span class="text-[#FF00FF]">use</span> 
+                                    <span class="text-primary">actix_web</span>::*;
+                                    <br/><br/>
+                                    <span class="text-[#FF00FF]">async</span> 
+                                    <span class="text-primary">fn</span> analyze_coastal_data() -> 
+                                    <span class="text-[#FF00FF]">Result</span>&lt;Json&lt;Data&gt;&gt; {
+                                    <br/>
+                                    &nbsp;&nbsp;<span class="text-white/60">// Coastal analysis logic</span>
+                                    <br/>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endmacro %} 

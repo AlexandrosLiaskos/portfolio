@@ -1,0 +1,49 @@
+/* Base styles */
+.preload * {
+    transition: none !important;
+}
+
+/* Core layout styles */
+.main-content {
+    min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+    padding-top: var(--navbar-height);
+    padding-bottom: var(--footer-height);
+    margin: 0 auto;
+    max-width: var(--content-max-width);
+    width: 100%;
+    transition: padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar adjustment for desktop */
+@media (min-width: 768px) {
+    .main-content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .main-content.sidebar-visible {
+        padding-left: calc(var(--sidebar-width) + 3rem);
+    }
+}
+
+/* Helper utilities */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.transform-gpu {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} 

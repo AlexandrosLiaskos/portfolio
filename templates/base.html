@@ -1,3 +1,7 @@
+{% import "components/navbar.html" as nav %}
+{% import "components/sidebar.html" as side %}
+{% import "components/footer.html" as foot %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,406 +15,136 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         
-        <!-- CSS -->
+        <!-- External CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Internal CSS -->
+        <link rel="stylesheet" href="/static/css/utils/variables.css">
+        <link rel="stylesheet" href="/static/css/utils/base.css">
+        <link rel="stylesheet" href="/static/css/components/animations.css">
+        <link rel="stylesheet" href="/static/css/components/sidebar.css">
+        
+        <script>
+            // Initialize navItems before Alpine loads
+            window.navItems = [
+                {
+                    href: '#experience',
+                    icon: 'fas fa-briefcase',
+                    title: 'Experience',
+                    subtitle: 'Professional Journey'
+                },
+                {
+                    href: '#education',
+                    icon: 'fas fa-graduation-cap',
+                    title: 'Education',
+                    subtitle: 'Academic Background'
+                },
+                {
+                    href: '#publications',
+                    icon: 'fas fa-book',
+                    title: 'Publications',
+                    subtitle: 'Research Work'
+                },
+                {
+                    href: '#skills',
+                    icon: 'fas fa-code',
+                    title: 'Skills',
+                    subtitle: 'Technical Expertise'
+                },
+                {
+                    href: '#international',
+                    icon: 'fas fa-globe',
+                    title: 'International',
+                    subtitle: 'Global Experience'
+                },
+                {
+                    href: '#volunteer',
+                    icon: 'fas fa-hands-helping',
+                    title: 'Volunteer',
+                    subtitle: 'Community Work'
+                }
+            ];
+        </script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script src="/static/js/main.js" type="module" defer></script>
         <script>
             tailwind.config = {
                 theme: {
                     extend: {
-                        colors: {
-                            'primary': 'rgb(0, 255, 234)',
-                            'secondary': 'rgb(0, 255, 204)',
-                            'background': 'rgb(0, 0, 0)',
-                            'dark-overlay': 'rgba(0, 0, 40, 0.6)',
-                            'card-bg': 'rgba(255, 255, 255, 0.05)'
-                        },
-                        fontFamily: {
-                            poppins: ['Poppins', 'sans-serif']
+                        animation: {
+                            'fade-in': 'fadeIn 0.5s ease-out forwards',
+                            'slide-in': 'slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                            'slide-up': 'slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                            'slide-in-sidebar': 'slideInSidebar 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
                         }
                     }
                 }
             }
         </script>
         <style>
-            /* Base styles */
-            .backdrop-blur {
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
-            
-            .preload * {
-                -webkit-transition: none !important;
-                -moz-transition: none !important;
-                -ms-transition: none !important;
-                -o-transition: none !important;
-                transition: none !important;
-            }
-            
-            .transition-reveal {
-                transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            visibility 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                will-change: transform, opacity, visibility;
-            }
-            
-            .transition-hover {
-                transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            background-color 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-                            color 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-                will-change: transform, background-color, color;
-            }
-            
-            .bg-overlay {
-                position: relative;
-            }
-            
-            .bg-overlay::before {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgb(0, 0, 40, 0.6);
-                z-index: -1;
+            /* Neon button styles */
+            .neon-button-cyan {
+                @apply bg-[#00FFEA] 
+                       text-[#000000]
+                       font-black 
+                       shadow-[0_0_20px_#00FFEA,inset_0_0_20px_#00FFEA]
+                       hover:shadow-[0_0_40px_#00FFEA,inset_0_0_40px_#00FFEA]
+                       border-2 
+                       border-[#00FFEA]
+                       hover:bg-[#33FFEE];
             }
 
-            .dark-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgb(0, 0, 0, 0.67);
-                backdrop-filter: blur(5px);
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 25;
-                will-change: opacity;
+            .neon-button-magenta {
+                @apply bg-[#FF00FF]
+                       text-white
+                       font-black
+                       shadow-[0_0_20px_#FF00FF,inset_0_0_20px_#FF00FF]
+                       hover:shadow-[0_0_40px_#FF00FF,inset_0_0_40px_#FF00FF]
+                       border-2
+                       border-[#FF00FF]
+                       hover:bg-[#FF33FF];
             }
 
-            .dark-overlay.active {
-                opacity: 0.3;
-                pointer-events: auto;
-            }
-
-            .navbar {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 65px;
-                background: rgba(10, 10, 27, 0.8);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                z-index: 40;
-                transform: translateZ(0);
-                will-change: transform;
-            }
-
-            .mobile-menu {
-                display: none;
-                z-index: 41;
-            }
-
-            .desktop-menu {
-                display: flex;
-            }
-
-            /* Sidebar base styles */
-            .sidebar {
-                position: fixed;
-                top: 65px;
-                height: calc(100vh - 65px);
-                z-index: 30;
-                overflow-y: auto;
-                will-change: transform, opacity;
-                transform: translateZ(0);
-            }
-
-            /* Desktop sidebar specific styles */
-            @media (min-width: 769px) {
-                .desktop-sidebar {
-                    left: 0;
-                    width: 250px;
-                    padding: 1rem 2rem;
-                    transform: translate3d(-20px, 0, 0);
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                                opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                                visibility 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-                }
-
-                .desktop-sidebar.visible {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translate3d(0, 0, 0);
-                }
-
-                .desktop-sidebar .sidebar-item {
-                    opacity: 0;
-                    transform: translate3d(-20px, 0, 0);
-                    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                                opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                    will-change: transform, opacity;
-                }
-
-                .desktop-sidebar.visible .sidebar-item {
-                    opacity: 1;
-                    transform: translate3d(0, 0, 0);
-                }
-
-                .nav-card {
-                    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                                background-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                                color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-                    background: rgba(255, 255, 255, 0.03);
-                    will-change: transform, background-color, color;
-                }
-
-                .nav-card:hover {
-                    transform: translate3d(8px, 0, 0) !important;
-                    background-color: rgba(0, 255, 234, 0.05);
-                    color: rgb(0, 255, 234);
-                }
-
-                .main-content {
-                    padding-left: 250px;
-                    transition: padding-left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                    will-change: padding-left;
-                }
-
-                .mobile-menu,
-                .mobile-sidebar {
-                    display: none !important;
-                }
-            }
-
-            /* Mobile sidebar specific styles */
-            @media (max-width: 768px) {
-                .mobile-menu {
-                    display: block !important;
-                }
-
-                .mobile-sidebar {
-                    right: 0;
-                    width: 300px;
-                    height: calc(100vh - 65px);
-                    padding: 1rem;
-                    transform: translate3d(100%, 0, 0);
-                    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                    will-change: transform;
-                    background: rgba(10, 10, 27, 0.88);
-                    backdrop-filter: blur(10px);
-                    -webkit-backdrop-filter: blur(10px);
-                }
-
-                .mobile-sidebar.visible {
-                    transform: translate3d(0, 0, 0);
-                }
-
-                .mobile-sidebar .sidebar-item {
-                    opacity: 0;
-                    transform: translate3d(20px, 0, 0);
-                    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-                                opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-                    will-change: transform, opacity;
-                }
-
-                .mobile-sidebar.visible .sidebar-item {
-                    opacity: 1;
-                    transform: translate3d(0, 0, 0);
-                }
-
-                .mobile-sidebar .nav-card {
-                    background: rgba(255, 255, 255, 0.03);
-                    border: 1px solid rgba(255, 255, 255, 0.05);
-                }
-
-                .mobile-sidebar .nav-card:hover {
-                    transform: translate3d(8px, 0, 0) !important;
-                    background-color: rgba(0, 255, 234, 0.05);
-                    color: rgb(0, 255, 234);
-                }
-
-                .main-content {
-                    padding-left: 0;
-                }
-
-                .desktop-menu,
-                .desktop-sidebar {
-                    display: none !important;
-                }
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                * {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                    scroll-behavior: auto !important;
-                }
+            .neon-text-glow {
+                text-shadow: 0 0 8px currentColor;
             }
         </style>
     </head>
-    <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased bg-overlay preload" style="background: url('/static/img_background.jpg') center/cover fixed">
+    <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased" 
+          style="background: linear-gradient(
+                    to bottom,
+                    rgba(10, 10, 27, 0.65),
+                    rgba(0, 20, 40, 0.75)
+                  ),
+                  url('/static/img_background.jpg') center/cover fixed">
+
         <!-- Dark overlay -->
-        <div class="dark-overlay" id="darkOverlay"></div>
+        <div id="darkOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40 opacity-0 invisible"></div>
 
-        <!-- Navigation Bar -->
-        <nav class="navbar">
-            <div class="container mx-auto px-4 sm:px-8 h-full flex items-center justify-between">
-                <div class="text-primary text-xl font-semibold tracking-wide flex items-center">
-                    <i class="fas fa-code text-lg mr-1"></i> liaskos.rs
-                </div>
- 
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu text-primary text-2xl" id="menuButton">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <!-- Desktop Menu -->
-                <div class="desktop-menu items-center gap-x-6">
-                    <a href="/" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-home text-primary mr-2"></i> Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="#experience" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-briefcase text-primary mr-2"></i> Experience
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="#education" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-graduation-cap text-primary mr-2"></i> Education
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="#publications" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-book text-primary mr-2"></i> Publications
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="#skills" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-tools text-primary mr-2"></i> Skills
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="#international" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-globe text-primary mr-2"></i> International
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="#volunteer" class="text-white hover:text-primary transition-hover font-medium text-sm flex items-center px-2 py-1 relative group">
-                        <i class="fas fa-hands-helping text-primary mr-2"></i> Volunteer
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-hover group-hover:w-full"></span>
-                    </a>
-                    <a href="/static/CV_LIASKOS_24.pdf" class="bg-primary/10 text-primary px-6 py-2 rounded-lg border border-primary transition-hover hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(0,255,234,0.2)] font-semibold" target="_blank">CV</a>
-                </div>
+        <!-- Main layout wrapper -->
+        <div class="flex min-h-screen flex-col">
+            {{ nav::navbar() }}
+            
+            <!-- Content wrapper with sidebar -->
+            <div class="flex flex-1 relative pt-16">
+                <!-- Desktop Sidebar -->
+                {{ side::sidebar() }}
+                
+                <!-- Main content area -->
+                <main class="flex-1 w-full transition-all duration-500 ease-out">
+                    <div class="container mx-auto px-4 py-8 max-w-5xl">
+                        <div class="space-y-32">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </main>
             </div>
-        </nav>
-
-        <!-- Desktop Sidebar -->
-        <aside class="sidebar desktop-sidebar" id="desktopSidebar">
-            <div class="w-[140px] h-[140px] mx-auto mb-0.5 rounded-full overflow-hidden bg-black/20 backdrop-blur sidebar-item sidebar-profile">
-                <img src="/static/profile.jpg" alt="Alexandros P. Liaskos" class="w-full h-full object-cover transition-hover hover:scale-110">
-            </div>
-            <div class="flex justify-center gap-6 mb-2 sidebar-item">
-                <a href="https://github.com/yourusername" class="text-primary text-2xl opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-hover" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" class="text-primary text-2xl opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-hover" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-            <nav class="flex flex-col gap-3">
-                <a href="#experience" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-briefcase text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Experience</span>
-                </a>
-                <a href="#education" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-graduation-cap text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Education</span>
-                </a>
-                <a href="#publications" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-book text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Publications</span>
-                </a>
-                <a href="#skills" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-tools text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Skills</span>
-                </a>
-                <a href="#international" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-globe text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">International</span>
-                </a>
-                <a href="#volunteer" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-hands-helping text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Volunteer</span>
-                </a>
-            </nav>
-        </aside>
-
-        <!-- Mobile Sidebar -->
-        <aside class="sidebar mobile-sidebar" id="mobileSidebar">
-            <div class="w-[140px] h-[140px] mx-auto mb-0.5 rounded-full overflow-hidden bg-black/20 backdrop-blur sidebar-item sidebar-profile">
-                <img src="/static/profile.jpg" alt="Alexandros P. Liaskos" class="w-full h-full object-cover transition-hover hover:scale-110">
-            </div>
-            <div class="flex justify-center gap-6 mb-4 sidebar-item">
-                <a href="https://github.com/yourusername" class="text-primary text-3xl opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-hover" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/yourusername" class="text-primary text-3xl opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-hover" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-            <nav class="flex flex-col gap-3">
-                <a href="#experience" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-briefcase text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Experience</span>
-                </a>
-                <a href="#education" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-graduation-cap text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Education</span>
-                </a>
-                <a href="#publications" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-book text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Publications</span>
-                </a>
-                <a href="#skills" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-tools text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Skills</span>
-                </a>
-                <a href="#international" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-globe text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">International</span>
-                </a>
-                <a href="#volunteer" class="backdrop-blur rounded-xl p-5 text-white no-underline flex items-center gap-3 border border-white/5 sidebar-item nav-card">
-                    <i class="fas fa-hands-helping text-primary text-lg w-6 text-center"></i>
-                    <span class="text-[0.95rem] font-medium">Volunteer</span>
-                </a>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            {% block content %}{% endblock %}
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-[rgb(10,10,27,0.8)] text-white h-[65px] backdrop-blur border-t border-white/5 mt-4 w-full relative">
-            <div class="container mx-auto px-8 h-full flex flex-row items-center justify-center gap-2">
-                <div class="flex gap-3 items-center ml-4">
-                    <a href="https://github.com/yourusername" class="text-primary text-xl opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-hover" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/yourusername" class="text-primary text-xl opacity-80 hover:opacity-100 hover:-translate-y-0.5 transition-hover" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-                <p class="text-sm opacity-80">&copy; 2024 Alexandros P. Liaskos</p>
-            </div>
-        </footer>
+            
+            {{ foot::footer() }}
+        </div>
 
         <script src="/static/js/main.js" type="module" defer></script>
     </body>

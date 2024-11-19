@@ -1,0 +1,10 @@
+:root {
+    --navbar-height: 64px;
+    --footer-height: 48px;
+    --content-max-width: 1280px;
+    --sidebar-width: 280px;
+    
+    /* Our exact theme colors */
+    --primary: rgb(0, 255, 234);      /* The bright teal from your UI */
+    --background: rgb(10, 10, 27);    /* The dark blue background */
+} 

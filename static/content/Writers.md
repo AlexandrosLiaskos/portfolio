@@ -1,9 +1,0 @@
-- Phillip K. Dick
-- Murakami Haruki
-- Suzanne Collins
-- Jules Verne
-- Stephen King
-- Isaac Asimov
-- Ursula K. Le Guin
-- H.G. Wells
-- William Gibson

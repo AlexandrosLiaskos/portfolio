@@ -1,7 +1,0 @@
-- Node.js
-- React
-- Vue.js
-- Astro
-- Hugo
-- Vitepress
-- Material for MkDocs

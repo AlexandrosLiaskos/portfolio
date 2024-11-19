@@ -1,4 +1,0 @@
-- Latin America in the Global Networks (CIVIS) – Madrid, Spain (3-9 July 2022)
-- Culture on My Camera (Erasmus+) – Denizli, Turkey (17-24 July 2022)
-- Facing Fire (Service-Learning Erasmus+) – Athens, Greece (19-25 September 2022)
-- Facing Fire (Internship) – Lugo, Spain (23 June – 20 July 2023)
