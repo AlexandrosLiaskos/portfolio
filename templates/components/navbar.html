@@ -1,42 +1,42 @@
 {% macro navbar() %}
 <nav class="fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-5xl mx-auto px-4">
-        <div class="bg-[rgb(10,10,27)]/90 backdrop-blur-xl 
-                    border border-white/10 rounded-b-2xl
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="bg-black/20 backdrop-blur-sm  
+                    border border-[#00FFEA]/10 rounded-b-2xl
                     shadow-lg transform-gpu
-                    h-16 my-2">
-            <div class="flex justify-between h-full px-6 items-center">
+                    h-14 my-2">
+            <div class="flex justify-between h-full px-6 items-center -ml-20">
                 <!-- Logo -->
-                <a href="/" class="flex items-center">
-                    <span class="text-primary font-bold text-lg">liaskos.rs</span>
+                <a href="/" class="flex items-center ml-24">
+                    <span class="text-[#00FFEA] font-bold text-base">liaskos.rs</span>
                 </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6">
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="#experience" 
-                       class="nav-link text-sm text-white/70 hover:text-primary 
+                       class="nav-link text-sm text-[#00FFEA]
                               transition-colors duration-300">Experience</a>
                     <a href="#education" 
-                       class="nav-link text-sm text-white/70 hover:text-primary 
+                       class="nav-link text-sm text-[#00FFEA]
                               transition-colors duration-300">Education</a>
                     <a href="#publications" 
-                       class="nav-link text-sm text-white/70 hover:text-primary 
+                       class="nav-link text-sm text-[#00FFEA]
                               transition-colors duration-300">Publications</a>
                     <a href="#skills" 
-                       class="nav-link text-sm text-white/70 hover:text-primary 
+                       class="nav-link text-sm text-[#00FFEA]
                               transition-colors duration-300">Skills</a>
                     <a href="/static/CV_LIASKOS_24.pdf" 
-                       class="bg-primary/10 text-primary px-4 py-1.5 rounded-lg border border-primary/20 
-                              hover:bg-primary/20 transition-all duration-300 ease-out
-                              flex items-center gap-2 text-sm">
-                        <i class="fas fa-download text-xs"></i>
+                       class="bg-black/20 text-[#00FFEA] px-3 py-1 rounded-lg border border-[#00FFEA]/20 
+                              hover:bg-[#00FFEA]/10 transition-all duration-300 ease-out
+                              flex items-center gap-1.5 text-xs">
+                        <i class="fas fa-download text-[10px]"></i>
                         <span>CV</span>
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <button id="menuButton" class="md:hidden p-2">
-                    <i class="fas fa-bars text-primary"></i>
+                    <i class="fas fa-bars text-[#00FFEA]"></i>
                 </button>
             </div>
         </div>

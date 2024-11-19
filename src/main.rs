@@ -3,8 +3,12 @@ mod handlers;
 mod services;
 mod config;
 
-use actix_files::Files;
-use actix_web::{middleware, web, App, HttpServer};
+use actix_web::{App, HttpServer, web};
+use actix_web::middleware::{Compress, Logger};
+use actix_files::{Files, NamedFile};
+use actix_web::http::header::{HeaderName, HeaderValue};
+use actix_web::dev::{ServiceRequest, ServiceResponse};
+use actix_web::Error;
 use std::sync::Arc;
 use handlers::index::{index, AppState};
 use services::markdown_service::load_page_data;
@@ -32,16 +36,37 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(state.clone())
-            .wrap(middleware::Compress::default())
-            .wrap(middleware::Logger::default())
+            .wrap(Compress::default())
+            .wrap(Logger::default())
+            .service(index)
             .service(
-                Files::new("/static", "static")
+                Files::new("/static", "./static")
                     .prefer_utf8(true)
                     .use_last_modified(true)
-                    .use_etag(true)
-                    .disable_content_disposition()
+                    .use_etag(false)
+                    .default_handler(|req: ServiceRequest| async move {
+                        let (http_req, _) = req.into_parts();
+                        let file = NamedFile::open_async(http_req.match_info().query("path"))
+                            .await
+                            .map_err(Error::from)?;
+                        
+                        let mut response = file.into_response(&http_req);
+                        response.headers_mut().insert(
+                            HeaderName::from_static("cache-control"),
+                            HeaderValue::from_static("no-cache, no-store, must-revalidate, private")
+                        );
+                        response.headers_mut().insert(
+                            HeaderName::from_static("pragma"),
+                            HeaderValue::from_static("no-cache")
+                        );
+                        response.headers_mut().insert(
+                            HeaderName::from_static("expires"),
+                            HeaderValue::from_static("0")
+                        );
+                        
+                        Ok(ServiceResponse::new(http_req, response))
+                    })
             )
-            .service(index)
     })
     .bind("127.0.0.1:8080")?
     .workers(num_cpus::get())

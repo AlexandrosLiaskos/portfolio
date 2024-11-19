@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(
+        165deg,
+        rgba(10, 10, 27, 0.55),
+        rgba(0, 20, 40, 0.60)
+    ),
+    url('/static/img_background.jpg?v=1');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Much stronger vignette effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 10%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Fallback background color in case image fails to load */
+@supports not (background-attachment: fixed) {
+    body {
+        background-color: #0a0a1b;
+    }
+} 

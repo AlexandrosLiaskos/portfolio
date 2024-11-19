@@ -1,4 +1,11 @@
 export function initTypewriter(element, options = {}) {
+    if (!element) {
+        console.error('No element provided to typewriter');
+        return;
+    }
+
+    console.log('Typewriter init started for:', element);
+    
     const defaults = {
         delay: 40,
         cursorStyle: 'block',
@@ -10,88 +17,57 @@ export function initTypewriter(element, options = {}) {
     };
     
     const config = { ...defaults, ...options };
-    const text = element.getAttribute('data-text');
-    element.textContent = '';
+    const text = element.getAttribute('data-text') || element.textContent;
     
-    // Create wrapper with proper styling
-    const wrapper = document.createElement('div');
-    wrapper.className = 'inline-flex items-center';
-    element.parentNode.insertBefore(wrapper, element);
-    wrapper.appendChild(element);
+    if (!text) {
+        console.error('No text content or data-text attribute found');
+        return;
+    }
+    
+    console.log('Text to type:', text);
+    
+    // Clear any existing content
+    element.textContent = '';
     
     // Create cursor
     const cursor = document.createElement('span');
-    cursor.className = `typing-cursor ${config.cursorStyle} ml-1`;
-    wrapper.appendChild(cursor);
+    cursor.className = 'typing-cursor';
+    cursor.style.backgroundColor = config.cursorColor;
+    element.parentNode.insertBefore(cursor, element.nextSibling);
     
-    // Add styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .typing-cursor {
-            display: inline-block;
-            width: 3px;
-            height: 1.2em;
-            background-color: ${config.cursorColor};
-            animation: cursor-blink 1s infinite;
-        }
-        
-        .typing-cursor.block {
-            width: 0.6em;
-        }
-        
-        @keyframes cursor-blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Typing function with promise
-    const typeText = () => {
-        return new Promise((resolve) => {
-            let index = 0;
+    // Add styles only once
+    if (!document.getElementById('typewriter-styles')) {
+        const style = document.createElement('style');
+        style.id = 'typewriter-styles';
+        style.textContent = `
+            .typing-cursor {
+                display: inline-block;
+                width: 3px;
+                height: 1.2em;
+                background-color: ${config.cursorColor};
+                animation: cursor-blink 1s infinite;
+                margin-left: 4px;
+                vertical-align: baseline;
+            }
             
-            const type = () => {
-                if (index < text.length) {
-                    element.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(type, Math.random() * 20 + config.delay);
-                } else {
-                    resolve();
-                }
-            };
-            
-            setTimeout(type, config.startDelay);
-        });
-    };
+            @keyframes cursor-blink {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
     
-    // Delete function with promise
-    const deleteText = () => {
-        return new Promise((resolve) => {
-            let text = element.textContent;
-            
-            const deleteChar = () => {
-                if (text.length > 0) {
-                    text = text.slice(0, -1);
-                    element.textContent = text;
-                    setTimeout(deleteChar, config.deleteSpeed);
-                } else {
-                    resolve();
-                }
-            };
-            
-            setTimeout(deleteChar, config.deleteDelay);
-        });
-    };
-    
-    // Start animation
-    const animate = async () => {
-        await typeText();
-        if (config.loop) {
-            await deleteText();
-            animate();
+    // Type the text
+    let index = 0;
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            requestAnimationFrame(() => setTimeout(type, Math.random() * 20 + config.delay));
         }
-    };
+    }
     
-    animate();
+    // Start typing after delay
+    setTimeout(type, config.startDelay);
 }

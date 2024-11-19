@@ -23,6 +23,7 @@
         <!-- Internal CSS -->
         <link rel="stylesheet" href="/static/css/utils/variables.css">
         <link rel="stylesheet" href="/static/css/utils/base.css">
+        <link rel="stylesheet" href="/static/css/utils/background.css">
         <link rel="stylesheet" href="/static/css/components/animations.css">
         <link rel="stylesheet" href="/static/css/components/sidebar.css">
         
@@ -68,8 +69,8 @@
             ];
         </script>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="/static/js/main.js" type="module" defer></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script type="module" src="/static/js/main.js"></script>
         <script>
             tailwind.config = {
                 theme: {
@@ -84,28 +85,20 @@
                 }
             }
         </script>
-        <style>
+        <style>                                                                                                                                                     
             /* Neon button styles */
             .neon-button-cyan {
-                @apply bg-[#00FFEA] 
-                       text-[#000000]
-                       font-black 
-                       shadow-[0_0_20px_#00FFEA,inset_0_0_20px_#00FFEA]
-                       hover:shadow-[0_0_40px_#00FFEA,inset_0_0_40px_#00FFEA]
-                       border-2 
-                       border-[#00FFEA]
-                       hover:bg-[#33FFEE];
+                background-color: #00ffeaba;
+                color: #000000;
+                font-weight: 900;
+                transition: all 0.3s ease;
             }
 
             .neon-button-magenta {
-                @apply bg-[#FF00FF]
-                       text-white
-                       font-black
-                       shadow-[0_0_20px_#FF00FF,inset_0_0_20px_#FF00FF]
-                       hover:shadow-[0_0_40px_#FF00FF,inset_0_0_40px_#FF00FF]
-                       border-2
-                       border-[#FF00FF]
-                       hover:bg-[#FF33FF];
+                background-color: #cc00ffc1;
+                color: #000000;
+                font-weight: 900;
+                transition: all 0.3s ease;
             }
 
             .neon-text-glow {
@@ -113,30 +106,23 @@
             }
         </style>
     </head>
-    <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased" 
-          style="background: linear-gradient(
-                    to bottom,
-                    rgba(10, 10, 27, 0.65),
-                    rgba(0, 20, 40, 0.75)
-                  ),
-                  url('/static/img_background.jpg') center/cover fixed">
-
+    <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased">
         <!-- Dark overlay -->
-        <div id="darkOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40 opacity-0 invisible"></div>
+        <div id="darkOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 z-40 opacity-0 invisible"></div>
 
         <!-- Main layout wrapper -->
         <div class="flex min-h-screen flex-col">
             {{ nav::navbar() }}
             
             <!-- Content wrapper with sidebar -->
-            <div class="flex flex-1 relative pt-16">
+            <div class="flex flex-1 relative pt-14">
                 <!-- Desktop Sidebar -->
                 {{ side::sidebar() }}
                 
                 <!-- Main content area -->
                 <main class="flex-1 w-full transition-all duration-500 ease-out">
-                    <div class="container mx-auto px-4 py-8 max-w-5xl">
-                        <div class="space-y-32">
+                    <div class="container mx-auto px-4 py-6 max-w-5xl">
+                        <div class="space-y-24">
                             {% block content %}{% endblock %}
                         </div>
                     </div>
@@ -145,7 +131,5 @@
             
             {{ foot::footer() }}
         </div>
-
-        <script src="/static/js/main.js" type="module" defer></script>
     </body>
 </html>
