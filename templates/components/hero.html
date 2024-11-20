@@ -1,50 +1,27 @@
 {% macro hero() %}
-<section class="min-h-[calc(100vh-var(--navbar-height)-6rem)] w-full relative overflow-hidden">
+<section class="min-h-[calc(100vh-var(--navbar-height)-6rem)] w-full relative overflow-hidden pt-32">
     <!-- Main Content -->
     <div class="relative z-10 w-full h-full">
-        <div class="flex flex-col h-full justify-center">
+        <div class="flex flex-col h-full justify-start">
             <!-- Content Column - Fixed to left -->
             <div class="w-full space-y-12 pl-32"> <!-- Increased spacing between sections -->
-                <!-- Name and Title Section -->
-                <div class="space-y-4">
-                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-none">
-                        <span class="text-[#00FFEA] relative"
-                              data-text="Alexandros P. Liaskos"
-                              id="name-typewriter">
-                        </span>
-                    </h1>
-                    
-                    <!-- Simple, clean job titles -->
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2">
-                            <div class="h-[1px] w-8 bg-[#00FFEA]/30"></div>
-                            <span class="text-[#00FFEA] text-lg">Software Developer</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="h-[1px] w-8 bg-[#00FFEA]/30"></div>
-                            <span class="text-[#00FFEA] text-lg">Geospatial Analyst</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Quick Stats - More minimal design -->
-                <div class="flex gap-8 max-w-2xl">
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-2xl font-bold text-[#00FFEA]">24+</span>
-                        <span class="text-xs text-white/50">Years</span>
+                <!-- Availability Banner -->
+                <div class="flex items-center gap-2 w-fit px-3 py-1.5 rounded-full 
+                            bg-black/20 backdrop-blur-sm
+                            transition-all duration-300
+                            relative overflow-hidden
+                            before:absolute before:inset-0
+                            before:bg-gradient-to-r before:from-transparent before:via-[#00FFEA]/10 before:to-transparent
+                            before:translate-x-[-200%] before:animate-[shine_3s_infinite]">
+                    <div class="flex items-center gap-1.5">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#27C93F] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#27C93F]"></span>
+                        </span>
+                        <span class="text-white/70 text-xs">Available for</span>
                     </div>
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-2xl font-bold text-[#00FFEA]">15+</span>
-                        <span class="text-xs text-white/50">Projects</span>
-                    </div>
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-2xl font-bold text-[#00FFEA]">3+</span>
-                        <span class="text-xs text-white/50">Publications</span>
-                    </div>
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-2xl font-bold text-[#00FFEA]">2+</span>
-                        <span class="text-xs text-white/50">Research</span>
-                    </div>
+                    <span class="text-[#00FFEA] text-xs font-medium">Projects (Online/Hybrid)</span>
                 </div>
 
                 <!-- Code Window -->
@@ -69,24 +46,19 @@
                         
                         <!-- Code Content -->
                         <div class="p-4 font-mono text-sm">
-                            <div class="space-y-2 animate-slide-up opacity-0" style="animation-delay: 1s;">
-                                <div>
-                                    <span class="text-[#FF00FF]">use</span> 
-                                    <span class="text-[#00FFEA]">actix_web</span>::*;
+                            <div class="space-y-1">
+                                <div class="flex">
+                                    <span class="text-gray-500 w-8 select-none">1</span>
+                                    <div class="typewriter-line-1"></div>
                                 </div>
-                                <div class="mt-4">
-                                    <span class="text-[#FF00FF]">async</span> 
-                                    <span class="text-[#00FFEA]">fn</span> 
-                                    <span class="text-white/90">analyze_data</span>() ->
+                                <div class="flex">
+                                    <span class="text-gray-500 w-8 select-none">2</span>
+                                    <div class="typewriter-line-2"></div>
                                 </div>
-                                <div class="ml-4">
-                                    <span class="text-[#FF00FF]">Result</span>
-                                    <span class="text-white/70">&lt;Json&lt;Data&gt;&gt;</span> {
+                                <div class="flex">
+                                    <span class="text-gray-500 w-8 select-none">3</span>
+                                    <div class="typewriter-line-3"></div>
                                 </div>
-                                <div class="text-white/50 ml-8">
-                                    // ...
-                                </div>
-                                <div class="ml-4">}</div>
                             </div>
                         </div>
 
@@ -107,6 +79,26 @@
                     </div>
                 </div>
 
+                <!-- Quick Stats - More minimal design -->
+                <div class="flex gap-8 max-w-2xl">
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold text-[#00FFEA]">24+</span>
+                        <span class="text-sm text-white/70">Years</span>
+                    </div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold text-[#00FFEA]">15+</span>
+                        <span class="text-sm text-white/70">Projects</span>
+                    </div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold text-[#00FFEA]">3+</span>
+                        <span class="text-sm text-white/70">Publications</span>
+                    </div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-3xl font-bold text-[#00FFEA]">2+</span>
+                        <span class="text-sm text-white/70">Research</span>
+                    </div>
+                </div>
+
                 <!-- Minimal CTA Buttons -->
                 <div class="flex gap-4">
                     <a href="#experience" 
@@ -120,7 +112,8 @@
                        target="_blank"
                        class="px-6 py-2.5 border border-[#00FFEA]/20 rounded-lg 
                               text-[#00FFEA] font-medium transition-all duration-300
-                              hover:border-[#00FFEA]/40 hover:bg-[#00FFEA]/5">
+                              hover:border-[#00FFEA]/40 hover:bg-[#00FFEA]/5
+                              bg-black/20 backdrop-blur-sm">
                         Download CV
                     </a>
                 </div>
@@ -134,5 +127,77 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+[class^="typewriter-line-"] {
+    display: inline-block;
+    white-space: pre;
+    margin: 0;
+    min-height: 1.5em;  /* Ensure consistent line height */
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const lines = [
+        {
+            element: '.typewriter-line-1',
+            text: '/// Portfolio - v.1.0.0'
+        },
+        {
+            element: '.typewriter-line-2',
+            text: '## Alexandros P. Liaskos ##',
+            className: 'text-lg'
+        },
+        {
+            element: '.typewriter-line-3',
+            text: 'A passionate Developer specializing in Geospatial Analysis'
+        }
+    ];
+
+    let currentLine = 0;
+    
+    function formatText(text, className = '') {
+        if (text.includes('///')) {
+            return `<span class="text-[#00FFEA] ${className}">${text}</span>`;
+        } else if (text.includes('##')) {
+            return `<span class="text-green-400 ${className}">${text}</span>`;
+        } else {
+            return `<span class="text-white/70 ${className}">${text}</span>`;
+        }
+    }
+    
+    function typeLine(lineIndex) {
+        if (lineIndex >= lines.length) return;
+        
+        const line = lines[lineIndex];
+        const element = document.querySelector(line.element);
+        let currentChar = 0;
+        element.innerHTML = '';
+        
+        function typeChar() {
+            if (currentChar < line.text.length) {
+                const currentText = line.text.substring(0, currentChar + 1);
+                element.innerHTML = formatText(currentText, line.className || '');
+                currentChar++;
+                setTimeout(typeChar, 50);
+            } else {
+                setTimeout(() => typeLine(lineIndex + 1), 200);
+            }
+        }
+        
+        typeChar();
+    }
+    
+    setTimeout(() => typeLine(0), 1000);
+});
+</script>
 {% endmacro %} 
