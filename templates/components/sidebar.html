@@ -1,21 +1,23 @@
 {% macro sidebar() %}
 <aside id="desktopSidebar" 
        class="fixed top-20 left-4 w-16 
-              bg-black/20 backdrop-blur-sm
-              border border-[#00FFEA]/10 rounded-2xl
+              bg-black/20 backdrop-blur-sm rounded-2xl
+              border border-[#00FFEA]/10 overflow-hidden
               transform -translate-x-full
               transition-all duration-500 ease-out z-40
-              shadow-lg
               invisible
               flex flex-col
-              overflow-hidden
               pointer-events-none
               group/sidebar
               hidden md:flex">
     
-    <!-- Enhanced Profile Section - More Compact -->
+    <!-- Window Header - Darker background -->
+    <div class="relative w-full bg-black/40 px-3 py-2 border-b border-[#00FFEA]/10">
+        <!-- Empty header, removed window controls -->
+    </div>
+
+    <!-- Profile Section -->
     <div class="relative p-3 border-b border-[#00FFEA]/10 
-                bg-black/20 backdrop-blur-sm
                 opacity-0 transition-all duration-500 delay-100
                 group-[.visible]/sidebar:opacity-100">
         
@@ -73,9 +75,9 @@
         </div>
     </nav>
 
-    <!-- Social Links - More Compact -->
+    <!-- Footer - Darker background -->
     <div class="p-2 border-t border-[#00FFEA]/10 
-                bg-black/20 backdrop-blur-sm
+                bg-black/40
                 transform translate-y-4 opacity-0 transition-all duration-500 delay-700
                 group-[.visible]/sidebar:translate-y-0 group-[.visible]/sidebar:opacity-100">
         <div class="flex justify-center">
@@ -95,22 +97,21 @@
     </div>
 </aside>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu - Updated with darker headers -->
 <div id="mobileMenu"
      class="fixed inset-y-0 right-0 w-72 
-            bg-[rgb(10,10,27)]/95 backdrop-blur-lg
-            border-l border-white/10
+            bg-black/20 backdrop-blur-sm
+            border-l border-[#00FFEA]/10
             transform translate-x-full
             transition-all duration-300 ease-out
             z-50 md:hidden
             flex flex-col">
     
-    <!-- Mobile Menu Header -->
-    <div class="p-6 border-b border-white/10">
-        <div class="flex items-center justify-between">
-            <h2 class="text-lg font-semibold text-white">Menu</h2>
+    <!-- Mobile Menu Header - Darker background -->
+    <div class="p-6 border-b border-[#00FFEA]/10 bg-black/40">
+        <div class="flex items-center justify-end">
             <button id="closeMobileMenu" 
-                    class="text-white/70 hover:text-white transition-colors">
+                    class="text-[#00FFEA]/70 hover:text-[#00FFEA] transition-colors">
                 <i class="fas fa-times"></i>
             </button>
         </div>
