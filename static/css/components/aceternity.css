@@ -1,3 +1,49 @@
+/* Metallic Text Styles - Added !important and increased specificity */
+span.metallic-text-rose,
+.metallic-text-rose {
+    background: linear-gradient(
+        45deg,
+        #FFD700,  /* Gold */
+        #FFA07A,  /* Light Salmon */
+        #CD7F32,  /* Bronze */
+        #DAA520   /* Goldenrod */
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+}
+
+span.metallic-text-teal,
+.metallic-text-teal {
+    background: linear-gradient(
+        45deg,
+        #00FFFF,  /* Cyan */
+        #00CED1,  /* Dark Turquoise */
+        #20B2AA,  /* Light Sea Green */
+        #00FFFF   /* Cyan */
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+}
+
+span.metallic-text-magenta,
+.metallic-text-magenta {
+    background: linear-gradient(
+        45deg,
+        #FF69B4,  /* Hot Pink */
+        #FF1493,  /* Deep Pink */
+        #C71585,  /* Medium Violet Red */
+        #FF69B4   /* Hot Pink */
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    filter: brightness(1.3) contrast(1.4) saturate(1.2);
+}
+
 /* Spotlight/Tracing Beam Effect */
 .spotlight {
     pointer-events: none;
@@ -424,4 +470,62 @@
 
 .mac-close { background-color: #FF5F56; }
 .mac-minimize { background-color: #FFBD2E; }
-.mac-expand { background-color: #27C93F; } 
+.mac-expand { background-color: #27C93F; }
+
+/* Remove all previous focus-card styles and replace with these */
+.focus-cards-container {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+}
+
+.focus-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.focus-card::before,
+.focus-card::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.focus-card::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(0, 255, 234, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.focus-card::after {
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(0, 255, 234, 0.4),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.focus-card > .card-content {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.focus-card:hover::before,
+.focus-card:hover::after {
+    opacity: 1;
+}
+ 
