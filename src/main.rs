@@ -1,5 +1,4 @@
 mod handlers;
-mod services;
 mod config;
 
 use actix_web::{App, HttpServer, web};
