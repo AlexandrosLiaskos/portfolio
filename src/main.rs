@@ -7,6 +7,7 @@ use actix_web::middleware::{Compress, Logger};
 use actix_files::Files;
 use std::sync::Arc;
 use std::fs;
+use std::path::Path;
 use handlers::index::{index, AppState};
 use config::templates::TEMPLATES;
 use env_logger::Env;
@@ -23,7 +24,16 @@ async fn main() -> std::io::Result<()> {
     if is_static {
         // Static file generation mode
         println!("Generating static files...");
-        fs::write("dist/index.html", rendered_html)?;
+        
+        // Create dist directory if it doesn't exist
+        let dist_path = Path::new("dist");
+        if !dist_path.exists() {
+            fs::create_dir_all(dist_path)?;
+        }
+        
+        // Write index.html
+        fs::write(dist_path.join("index.html"), rendered_html)?;
+        
         println!("Static files generated successfully!");
         return Ok(());
     }
