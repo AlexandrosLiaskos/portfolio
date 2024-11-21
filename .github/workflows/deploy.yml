@@ -63,15 +63,6 @@ jobs:
           # Copy all static assets
           cp -r static/* dist/static/
           
-          # Copy background image specifically
-          if [ -f "static/img_background.jpg" ]; then
-            echo "Copying background image..."
-            cp static/img_background.jpg dist/static/
-          else
-            echo "Warning: Background image not found!"
-            ls -la static/
-          fi
-          
           # Create .nojekyll file
           touch dist/.nojekyll
           
@@ -79,14 +70,8 @@ jobs:
           echo "=== Directory Structure ==="
           find dist -type f
           
-          echo "=== CSS Directory ==="
-          ls -la dist/static/css/utils/
-          
           echo "=== Static Directory ==="
           ls -la dist/static/
-          
-          echo "=== Background CSS Contents ==="
-          cat dist/static/css/utils/background.css
           
           echo "=== Image Files ==="
           find dist/static -type f -name "*.jpg" -o -name "*.png"
