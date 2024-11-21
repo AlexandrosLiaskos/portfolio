@@ -2,7 +2,7 @@ body {
     background: linear-gradient(
         165deg,
         rgba(10, 10, 27, 0.35),
-        rgba(0, 20, 40, 0.50)
+        rgba(0, 20, 40, 0.40)
     ),
     url('/static/img_background.jpg?v=1');
     background-position: center center;
@@ -33,7 +33,7 @@ body::before {
 
 /* Update component background colors */
 .bg-black\/20 {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 /* Navbar specific overlay */
@@ -43,22 +43,12 @@ nav.bg-black\/20 {
 
 /* Sidebar specific overlay */
 aside.bg-black\/20 {
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Footer specific overlay */
 footer .bg-black\/20 {
     background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Section specific overlay */
-section.bg-black\/20 {
-    background-color: rgba(0, 0, 0, 0.25) !important;
-}
-
-/* Card specific overlay */
-.group\/card.bg-black\/20 {
-    background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Fallback background color */

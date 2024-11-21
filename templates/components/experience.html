@@ -1,0 +1,55 @@
+<div class="grid grid-cols-1 gap-10 max-w-5xl mx-auto w-full">
+    <!-- Experience Card -->
+    <div class="rounded-lg relative bg-black/20 backdrop-blur-sm overflow-hidden transition-all duration-300 ease-out
+                {% if hovered is not none and hovered != loop.index0 %}blur-sm scale-[0.98]{% endif %}"
+         onmouseenter="setHovered({{ loop.index0 }})"
+         onmouseleave="setHovered(null)">
+        <div class="card-content">
+            <div class="flex items-start gap-4 p-6">
+                <div class="company-logo w-12 h-12 rounded-lg bg-black/20 backdrop-blur-sm 
+                            flex items-center justify-center border border-[#00FFEA]/10">
+                    <!-- Logo content -->
+                </div>
+                
+                <div class="flex-1 space-y-2">
+                    <!-- Title and date -->
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-semibold metallic-text-teal">{{ job.title }}</h3>
+                        <span class="text-sm text-white/50">{{ job.date }}</span>
+                    </div>
+                    
+                    <!-- Company name -->
+                    <div class="text-sm text-white/70">{{ job.company }}</div>
+                    
+                    <!-- Description -->
+                    <p class="text-sm text-white/50">{{ job.description }}</p>
+                    
+                    <!-- Technologies -->
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        {% for tech in job.technologies %}
+                        <span class="px-2 py-1 text-xs rounded-md bg-black/20 backdrop-blur-sm 
+                                    border border-[#00FFEA]/10 text-white/70">
+                            {{ tech }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let hovered = null;
+
+function setHovered(index) {
+    hovered = index;
+    document.querySelectorAll('.rounded-lg').forEach((card, idx) => {
+        if (hovered !== null && hovered !== idx) {
+            card.classList.add('blur-sm', 'scale-[0.98]');
+        } else {
+            card.classList.remove('blur-sm', 'scale-[0.98]');
+        }
+    });
+}
+</script> 

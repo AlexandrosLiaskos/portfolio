@@ -82,93 +82,23 @@
                     </div>
                 </div>
 
-                <!-- Quick Stats -->
-                <div class="flex gap-8 max-w-2xl">
-                    <!-- Years -->
-                    <div class="card-3d group/card bg-black/20 backdrop-blur-sm rounded-lg p-3 
-                                hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]
-                                relative overflow-hidden
-                                border border-[#00FFEA]/20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-7 h-7 rounded-lg bg-black/20 backdrop-blur-sm flex items-center justify-center">
-                                <i class="fas fa-clock text-[#00FFEA] text-sm"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-2xl font-bold metallic-text-teal leading-none">24+</span>
-                                <span class="text-[10px] text-white/50 uppercase tracking-wider">Years</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projects -->
-                    <div class="card-3d group/card bg-black/20 backdrop-blur-sm rounded-lg p-3 
-                                hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]
-                                relative overflow-hidden
-                                border border-[#00FFEA]/20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-7 h-7 rounded-lg bg-black/20 backdrop-blur-sm flex items-center justify-center">
-                                <i class="fas fa-project-diagram text-[#00FFEA] text-sm"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-2xl font-bold metallic-text-teal leading-none">15+</span>
-                                <span class="text-[10px] text-white/50 uppercase tracking-wider">Projects</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Publications -->
-                    <div class="card-3d group/card bg-black/20 backdrop-blur-sm rounded-lg p-3 
-                                hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]
-                                relative overflow-hidden
-                                border border-[#00FFEA]/20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-7 h-7 rounded-lg bg-black/20 backdrop-blur-sm flex items-center justify-center">
-                                <i class="fas fa-book text-[#00FFEA] text-sm"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-2xl font-bold metallic-text-teal leading-none">3+</span>
-                                <span class="text-[10px] text-white/50 uppercase tracking-wider">Publications</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Research -->
-                    <div class="card-3d group/card bg-black/20 backdrop-blur-sm rounded-lg p-3 
-                                hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]
-                                relative overflow-hidden
-                                border border-[#00FFEA]/20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-7 h-7 rounded-lg bg-black/20 backdrop-blur-sm flex items-center justify-center">
-                                <i class="fas fa-microscope text-[#00FFEA] text-sm"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-2xl font-bold metallic-text-teal leading-none">2+</span>
-                                <span class="text-[10px] text-white/50 uppercase tracking-wider">Research</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Minimal CTA Buttons -->
-                <div class="flex gap-4">
+                <div class="focus-cards-container flex gap-4">
                     <a href="#experience" 
-                       class="px-6 py-2.5 rounded-lg 
-                              font-medium transition-all duration-300
-                              hover:shadow-[0_0_20px_rgba(0,255,234,0.3)]
-                              bg-black/20 backdrop-blur-sm
+                       class="focus-card px-6 py-2.5 rounded-lg 
+                              font-medium bg-black/20 backdrop-blur-sm
                               border border-[#00FFEA]/20
                               metallic-text-teal">
-                        View Portfolio
+                        <div class="card-content">View Portfolio</div>
                     </a>
                     
                     <a href="/static/CV_LIASKOS_24.pdf" 
                        target="_blank"
-                       class="px-6 py-2.5 border border-[#00FFEA]/20 rounded-lg 
-                              font-medium transition-all duration-300
-                              hover:border-[#00FFEA]/40 hover:bg-[#00FFEA]/5
-                              bg-black/20 backdrop-blur-sm
+                       class="focus-card px-6 py-2.5 rounded-lg 
+                              font-medium bg-black/20 backdrop-blur-sm
+                              border border-[#00FFEA]/20
                               metallic-text-teal">
-                        Download CV
+                        <div class="card-content">Download CV</div>
                     </a>
                 </div>
             </div>
@@ -248,19 +178,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('stats-container');
-    const cards = container.getElementsByClassName('focus-card');
+    // Initialize focus cards effect for all focus-cards-container elements
+    const containers = document.querySelectorAll('.focus-cards-container');
     
-    container.onmousemove = e => {
-        for (const card of cards) {
-            const rect = card.getBoundingClientRect(),
-                  x = e.clientX - rect.left,
-                  y = e.clientY - rect.top;
+    containers.forEach(container => {
+        const cards = container.getElementsByClassName('focus-card');
+        
+        container.addEventListener("mousemove", e => {
+            for (const card of cards) {
+                const rect = card.getBoundingClientRect(),
+                      x = e.clientX - rect.left,
+                      y = e.clientY - rect.top;
 
-            card.style.setProperty("--mouse-x", `${x}px`);
-            card.style.setProperty("--mouse-y", `${y}px`);
-        }
-    };
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            }
+        });
+        
+        // Add hover effect
+        Array.from(cards).forEach((card, index) => {
+            card.addEventListener("mouseenter", () => {
+                Array.from(cards).forEach((otherCard, otherIndex) => {
+                    if (index !== otherIndex) {
+                        otherCard.style.opacity = "0.6";
+                        otherCard.style.transform = "scale(0.98)";
+                    }
+                });
+            });
+            
+            card.addEventListener("mouseleave", () => {
+                Array.from(cards).forEach(otherCard => {
+                    otherCard.style.opacity = "";
+                    otherCard.style.transform = "";
+                });
+            });
+        });
+    });
 });
 </script>
 {% endmacro %} 

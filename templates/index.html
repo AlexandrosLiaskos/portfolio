@@ -44,8 +44,8 @@
         <!-- Experience Section - Centered with Tailwind -->
         <section id="experience" 
                  class="section 
-                        bg-black/20 backdrop-blur-sm 
-                        rounded-lg overflow-hidden 
+                        bg-black/20 backdrop-blur-md
+                        rounded-lg overflow-hidden
                         mx-auto max-w-4xl w-full 
                         transform 
                         hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
@@ -66,7 +66,7 @@
             </div>
 
             <div class="p-6">
-                <div class="space-y-6">  <!-- Added spacing between elements -->
+                <div class="space-y-6"> 
                     <!-- Content sections -->
                     <div class="mt-4 mb-4">
                         <!-- Scientific Research Section -->
@@ -78,13 +78,13 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                                 <!-- CVI and Geoinformation Card -->
-                                <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                             flex flex-col items-start hover:-translate-y-1 
                                             hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                     <!-- Card image -->
                                     <div class="w-full image-focus">
                                         <img src="/static/Geoinfo_Geospa.png" alt="Geoinformation" 
-                                             class="w-full h-16 object-cover group-hover/card:scale-105 
+                                             class="w-full h-24 object-cover group-hover/card:scale-105 
                                                     transition-transform duration-300" />
                                     </div>
                                     
@@ -110,26 +110,35 @@
                                             Prof George P. Petropoulos
                                         </div>
                                         
-                                        <div class="pt-1.5 border-t border-white/5 w-full">
-                                            <div class="flex flex-wrap gap-1">
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">
-                                                    CVI
-                                                </span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">
-                                                    EU
-                                                </span>
+                                        <div class="border-t border-white/5 w-full">
+                                            <div class="flex items-center justify-between mt-1">  <!-- Changed to flex with justify-between -->
+                                                <div class="flex flex-wrap gap-1">
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">CVI</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-research">EU</span>
+                                                </div>
+                                                <a href="https://eo-persist.eu/" 
+                                                   target="_blank"
+                                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                          text-black text-xs font-medium 
+                                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                          transition-all duration-200 
+                                                          transform hover:-translate-y-0.5">
+                                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                    View
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- GIS and Coastal Analysis Card -->
-                                <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                             flex flex-col items-start hover:-translate-y-1 
                                             hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                     <div class="w-full image-focus">
                                         <img src="/static/Gis_Coastal.png" alt="GIS and Coastal" 
-                                             class="w-full h-16 object-cover group-hover/card:scale-105 
+                                             class="w-full h-24 object-cover group-hover/card:scale-105 
                                                     transition-transform duration-300" />
                                     </div>
                                     
@@ -154,10 +163,23 @@
                                             Prof Niki Evelpidou
                                         </div>
                                         
-                                        <div class="pt-1.5 border-t border-white/5 w-full">
-                                            <div class="flex flex-wrap gap-1">
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Coastal Analysis</span>
+                                        <div class="border-t border-white/5 w-full">
+                                            <div class="flex items-center justify-between mt-1">  <!-- Changed to flex with justify-between -->
+                                                <div class="flex flex-wrap gap-1">
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Coastal Analysis</span>
+                                                </div>
+                                                <a href="https://github.com/AlexandrosLiaskos" 
+                                                   target="_blank"
+                                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                          text-black text-xs font-medium 
+                                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                          transition-all duration-200 
+                                                          transform hover:-translate-y-0.5">
+                                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                    View
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -176,12 +198,12 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
 
                                 <!-- Geospatial Analyst Card -->
-                                <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                             flex flex-col items-start hover:-translate-y-1 
                                             hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                     <div class="w-full image-focus">
                                         <img src="/static/Geospa_Ana.jpg" alt="Geospatial Analysis" 
-                                             class="w-full h-16 object-cover group-hover/card:scale-105 
+                                             class="w-full h-24 object-cover group-hover/card:scale-105 
                                                     transition-transform duration-300" />
                                     </div>
                                     
@@ -201,24 +223,37 @@
                                             Freelancer
                                         </div>
                                         
-                                        <div class="pt-1.5 border-t border-white/5 w-full">
-                                            <div class="flex flex-wrap gap-1">
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Python</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Earth Observation</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">SENTINEL-2</span>
+                                        <div class="border-t border-white/5 w-full">
+                                            <div class="flex items-center justify-between mt-1">  <!-- Changed to flex with justify-between -->
+                                                <div class="flex flex-wrap gap-1">
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Python</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Earth Observation</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">SENTINEL-2</span>
+                                                </div>
+                                                <a href="https://github.com/AlexandrosLiaskos" 
+                                                   target="_blank"
+                                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                          text-black text-xs font-medium 
+                                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                          transition-all duration-200 
+                                                          transform hover:-translate-y-0.5">
+                                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                    View
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Web Developer Card -->
-                                <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                             flex flex-col items-start hover:-translate-y-1 
                                             hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                     <div class="w-full image-focus">
                                         <img src="/static/Web_Dev.png" alt="Web Development" 
-                                             class="w-full h-16 object-cover group-hover/card:scale-105 
+                                             class="w-full h-24 object-cover group-hover/card:scale-105 
                                                     transition-transform duration-300" />
                                     </div>
                                     
@@ -238,22 +273,35 @@
                                             Freelancer
                                         </div>
                                         
-                                        <div class="pt-1.5 border-t border-white/5 w-full">
-                                            <div class="flex flex-wrap gap-1">
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Full Stack</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Static</span>
+                                        <div class="border-t border-white/5 w-full">
+                                            <div class="flex items-center justify-between mt-1">  <!-- Changed to flex with justify-between -->
+                                                <div class="flex flex-wrap gap-1">
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Full Stack</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Static</span>
+                                                </div>
+                                                <a href="https://github.com/AlexandrosLiaskos" 
+                                                   target="_blank"
+                                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                          text-black text-xs font-medium 
+                                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                          transition-all duration-200 
+                                                          transform hover:-translate-y-0.5">
+                                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                    View
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Data Analyst Card -->
-                                <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                             flex flex-col items-start hover:-translate-y-1 
                                             hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                     <div class="w-full image-focus">
                                         <img src="/static/Info_Manag.png" alt="Information Systems" 
-                                             class="w-full h-16 object-cover group-hover/card:scale-105 
+                                             class="w-full h-24 object-cover group-hover/card:scale-105 
                                                     transition-transform duration-300" />
                                     </div>
                                     
@@ -273,10 +321,23 @@
                                             Freelancer
                                         </div>
                                         
-                                        <div class="pt-1.5 border-t border-white/5 w-full">
-                                            <div class="flex flex-wrap gap-1">
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Data Structures</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Documentation</span>
+                                        <div class="border-t border-white/5 w-full">
+                                            <div class="flex items-center justify-between mt-1">  <!-- Changed to flex with justify-between -->
+                                                <div class="flex flex-wrap gap-1">
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Data Structures</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Documentation</span>
+                                                </div>
+                                                <a href="https://github.com/AlexandrosLiaskos" 
+                                                   target="_blank"
+                                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                          text-black text-xs font-medium 
+                                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                          transition-all duration-200 
+                                                          transform hover:-translate-y-0.5">
+                                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                    View
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -293,12 +354,12 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                                 <!-- Assistant Waiter Card -->
-                                <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                             flex flex-col items-start hover:-translate-y-1 
                                             hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                     <div class="w-full image-focus">
                                         <img src="/static/psarras.png" alt="Psarras Restaurant" 
-                                             class="w-full h-16 object-cover group-hover/card:scale-105 
+                                             class="w-full h-24 object-cover group-hover/card:scale-105 
                                                     transition-transform duration-300" />
                                     </div>
                                     
@@ -318,10 +379,23 @@
                                             Psarras Restaurant
                                         </div>
                                         
-                                        <div class="pt-1.5 border-t border-white/5 w-full">
-                                            <div class="flex flex-wrap gap-1">
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-service">Savoir Vivre</span>
-                                                <span class="text-[10px] px-1 py-0.5 rounded tag-service">Tourism</span>
+                                        <div class="border-t border-white/5 w-full">
+                                            <div class="flex items-center justify-between mt-1">  <!-- Changed to flex with justify-between -->
+                                                <div class="flex flex-wrap gap-1">
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-service">Savoir Vivre</span>
+                                                    <span class="text-[10px] px-1 py-0.5 rounded tag-service">Tourism</span>
+                                                </div>
+                                                <a href="https://psaras-taverna.gr/" 
+                                                   target="_blank"
+                                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                          text-black text-xs font-medium 
+                                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                          transition-all duration-200 
+                                                          transform hover:-translate-y-0.5">
+                                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                    View
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -336,7 +410,7 @@
         <!-- Education Section -->
         <section id="education" 
                  class="section 
-                        bg-black/20 backdrop-blur-sm 
+                        bg-black/20 backdrop-blur-md 
                         rounded-lg overflow-visible 
                         mx-auto max-w-4xl w-full 
                         mt-24
@@ -369,7 +443,7 @@
 
                         <div class="grid grid-cols-1 gap-3">
                             <!-- BSc Card -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-visible z-10">
                                 <!-- Card image -->
@@ -380,39 +454,50 @@
                                 </div>
                                 
                                 <!-- Card content -->
-                                <div class="card-body p-4 w-full space-y-3">
+                                <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
                                         <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">BSc in Geology and Geo-environment</h3>
                                         <span class="text-[10px] px-1 py-0.5 rounded status-present">GPA: 7.8/10</span>
                                     </div>
 
-                                    <div class="flex items-center gap-1.5 text-white/90 text-sm">
-                                        <i class="fas fa-calendar text-[#00FFEA] text-sm w-4"></i>
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         2018 - 2024
                                     </div>
                                         
-                                    <div class="flex items-center gap-1.5 text-white/90 text-sm">
-                                        <i class="fas fa-university text-[#00FFEA] text-sm w-4"></i>
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-university text-[#00FFEA] text-[10px] w-3"></i>
                                         National and Kapodistrian University of Athens
                                     </div>
-
-                                    <div class="space-y-2 text-white/80 text-sm">
-                                        <div class="flex items-start gap-2">
-                                            <i class="fas fa-check text-[#00FFEA] mt-1"></i>
-                                            Member of Prof. Niki Evelpidou's Research Team
-                                        </div>
-                                        <div class="flex items-start gap-2">
-                                            <i class="fas fa-check text-[#00FFEA] mt-1"></i>
-                                            Thesis: Computational Framework in Coastal Vulnerability Assessment (CompCVA)
-                                        </div>
+                                    
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-user text-[#00FFEA] text-[10px] w-3"></i>
+                                        Prof. Niki Evelpidou
                                     </div>
-                                        
-                                    <div class="pt-3 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Geology</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Research</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Coastal Analysis</span>
+
+                                    <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                        <i class="fas fa-book text-[#00FFEA] text-[10px] w-3"></i>
+                                        Computational Framework in Coastal Vulnerability Assessment
+                                    </div>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Geology</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Research</span>
+                                            </div>
+                                            <a href="https://www.geol.uoa.gr" 
+                                            target="_blank"
+                                               class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                      text-black text-xs font-medium 
+                                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                      transition-all duration-200 
+                                                      transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -428,14 +513,13 @@
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <!-- Data Science Course -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <!-- Data Science: R Basics -->
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
-                                <!-- Card image -->
                                 <div class="w-full image-focus">
                                     <img src="/static/R.png" alt="R Programming" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -458,23 +542,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         December 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Data Science</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Programming</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Data Science</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Programming</span>
+                                            </div>
+                                            <a href="https://courses.edx.org/certificates/c696c477fb6e47f8bc5dbfb0fc6abd10" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Astrophysics Course -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <!-- Greatest Unsolved Mysteries of the Universe -->
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/astro1.png" alt="Astrophysics" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -497,23 +594,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         December 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Astrophysics</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Cosmology</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Astrophysics</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Cosmology</span>
+                                            </div>
+                                            <a href="https://courses.edx.org/certificates/c9f9bb15bd5b425fb109111c4306bba3" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Astrophysics: Exploring Exoplanets -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
-                                        flex flex-col items-start hover:-translate-y-1 
-                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                            <!-- Exploring Exoplanets -->
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
-                                    <img src="/static/astro2.png" alt="Astrophysics: Exploring Exoplanets" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                    <img src="/static/astro2.png" alt="Exploring Exoplanets" 
+                                         class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -536,23 +646,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         January 2022
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Astrophysics</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Exoplanets</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Astrophysics</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Exoplanets</span>
+                                            </div>
+                                            <a href="https://courses.edx.org/certificates/158e69c98b6549f9acd5d5a3d9926dbd" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Climate Change Course -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <!-- Climate Change: The Science and Global Impact -->
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
-                                    <img src="/static/clim.jpeg" alt="Climate Change: The Science and Global Impact" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                    <img src="/static/clim.jpeg" alt="Climate Change" 
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -575,24 +698,37 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         December 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate Science</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Environmental</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate Science</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Environmental</span>
+                                            </div>
+                                            <a href="https://courses.edx.org/certificates/907b975531c3467d90eced244d289b84" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Differential Equations Course -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
-                                        flex flex-col items-start hover:-translate-y-1 
-                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
-                                    <img src="/static/maths.jpeg" alt="Differential Equations 1" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
-                                                transition-transform duration-300" />
+                                    <img src="/static/maths.jpeg" alt="Differential Equations" 
+                                         class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
                                 </div>
                                 
                                 <div class="card-body p-2 w-full space-y-1">
@@ -614,23 +750,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         June 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Mathematics</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Analysis</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Mathematics</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Analysis</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/6ad3c9cfbc834d0bbc4ebb78101a7eb1?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Justice Today Course -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/MMM.jpeg" alt="Justice Today" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -653,23 +802,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         December 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Ethics</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Economics</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Ethics</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Economics</span>
+                                            </div>
+                                            <a href="https://courses.edx.org/certificates/a81b1ef3acc541b69fb0261aebdfaebe" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- World History 1 -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/world1.png" alt="World History 1" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -692,22 +854,35 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         May 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/247a88e43159402caf633fe8ae992483?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- World History 2 -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/world2.png" alt="World History 2" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
                                                 transition-transform duration-300" />
                                 </div>
                                 
@@ -730,23 +905,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         September 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/3abc090c8a6c4b4c9149f5866b56e73a?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- World History 3 -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
-                                    <img src="/static/world3.png" alt="World History 3" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
-                                                transition-transform duration-300" />
+                                    <img src="/static/world3.png" alt="Man Facing Himself" 
+                                         class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
                                 </div>
                                 
                                 <div class="card-body p-2 w-full space-y-1">
@@ -768,23 +956,36 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         November 2021
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/80cb295493ec46de8060dbd05a1023c6?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                            bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                            text-black text-xs font-medium 
+                                            hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                            transition-all duration-200 
+                                            transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- World History 4 -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
-                                        flex flex-col items-start hover:-translate-y-1 
-                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/world4.png" alt="World History 4" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
-                                                transition-transform duration-300" />
+                                         class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
                                 </div>
                                 
                                 <div class="card-body p-2 w-full space-y-1">
@@ -806,25 +1007,38 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         February 2022
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                    
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">World History</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/80cb295493ec46de8060dbd05a1023c6?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <!-- Science and 4th Industrial Revolution -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                         flex flex-col items-start hover:-translate-y-1 
                                         hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/rev.png" alt="Science and 4th Industrial Revolution" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
-                                                transition-transform duration-300" />
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
+                                            transition-transform duration-300" />
                                 </div>
-                                
+                            
                                 <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
                                         <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Science and 4th Industrial Revolution</h3>
@@ -834,7 +1048,7 @@
                                         <i class="fas fa-code-branch text-[#00FFEA] text-[10px] w-3"></i>
                                         SC1.1
                                     </div>
-                                        
+                                    
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
                                         <i class="fas fa-university text-[#00FFEA] text-[10px] w-3"></i>
                                         Mathesis
@@ -844,36 +1058,49 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         March 2022
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Technology</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Society</span>
+                                
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Technology</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Society</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/516d95cf6bb44f79ac7a9c441f60ab25?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                    bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                    text-black text-xs font-medium 
+                                                    hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                    transition-all duration-200 
+                                                    transform hover:-translate-y-0.5">
+                                                <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                   View
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Plato -->
-                            <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
-                                        flex flex-col items-start hover:-translate-y-1 
-                                        hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                            <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                    flex flex-col items-start hover:-translate-y-1 
+                                    hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                                 <div class="w-full image-focus">
                                     <img src="/static/plato.png" alt="Plato" 
-                                         class="w-full h-16 object-cover group-hover/card:scale-105 
-                                                transition-transform duration-300" />
-                                </div>
+                                        class="w-full h-24 object-cover group-hover/card:scale-105 
+                                            transition-transform duration-300" />
+                                   </div>
                                 
                                 <div class="card-body p-2 w-full space-y-1">
                                     <div class="flex justify-between items-center">
-                                        <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Plato</h3>
+                                          <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Plato</h3>
                                     </div>
 
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
                                         <i class="fas fa-code-branch text-[#00FFEA] text-[10px] w-3"></i>
                                         PHL3
                                     </div>
-                                        
+                                    
                                     <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
                                         <i class="fas fa-university text-[#00FFEA] text-[10px] w-3"></i>
                                         Mathesis
@@ -883,12 +1110,24 @@
                                         <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
                                         April 2022
                                     </div>
-                                        
-                                    <div class="pt-1.5 border-t border-white/5 w-full">
-                                        <div class="flex flex-wrap gap-1">
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Philosophy</span>
-                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Ancient Greece</span>
-                                        </div>
+                                
+                                    <div class="border-t border-white/5 w-full">
+                                        <div class="flex items-center justify-between mt-1">
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Philosophy</span>
+                                                <span class="text-[10px] px-1 py-0.5 rounded tag-research">Ancient Greece</span>
+                                            </div>
+                                            <a href="https://mathesis.cup.gr/certificates/ebc2d0ea141d459e9164f5f67681464f?lang=en" 
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                text-black text-xs font-medium 
+                                                hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                transition-all duration-200 
+                                                transform hover:-translate-y-0.5">
+                                            <i class="fas fa-external-link-alt text-[10px]"></i>
+                                            View
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -901,7 +1140,7 @@
         <!-- Publications Section -->
         <section id="publications" 
                  class="section 
-                        bg-black/20 backdrop-blur-sm 
+                        bg-black/20 backdrop-blur-md 
                         rounded-lg overflow-hidden 
                         mx-auto max-w-4xl w-full 
                         mt-24
@@ -928,16 +1167,16 @@
                     <!-- Content sections -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Thesis Publication -->
-                        <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                        <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                     flex flex-col items-start hover:-translate-y-1 
                                     hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                             <div class="w-full image-focus">
                                 <img src="/static/compcva.png" alt="Thesis" 
-                                     class="w-full h-16 object-cover group-hover/card:scale-105 
+                                     class="w-full h-24 object-cover group-hover/card:scale-105 
                                             transition-transform duration-300" />
                             </div>
                             
-                            <div class="card-body p-4 w-full space-y-2">
+                            <div class="card-body p-2 w-full space-y-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">
                                         Computational Framework in Coastal Vulnerability Assessment
@@ -955,27 +1194,29 @@
                                     Liaskos, A.
                                 </div>
 
-                                <div class="pt-2 border-t border-white/5 w-full">
-                                    <div class="flex flex-wrap gap-1">
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Thesis</span>
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Coastal</span>
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                <div class="border-t border-white/5 w-full">
+                                    <div class="flex items-center justify-between mt-1">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">CVI</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Python</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Coastal Erosion Publication -->
-                        <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                        <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                     flex flex-col items-start hover:-translate-y-1 
                                     hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                             <div class="w-full image-focus">
                                 <img src="/static/coastal.png" alt="Coastal Erosion" 
-                                     class="w-full h-16 object-cover group-hover/card:scale-105 
+                                     class="w-full h-24 object-cover group-hover/card:scale-105 
                                             transition-transform duration-300" />
                             </div>
                             
-                            <div class="card-body p-4 w-full space-y-2">
+                            <div class="card-body p-2 w-full space-y-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">
                                         Coastal erosion: The future of sandy beaches
@@ -995,29 +1236,42 @@
 
                                 <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
                                     <i class="fas fa-book text-[#00FFEA] text-[10px] w-3"></i>
-                                    Proceedings of the European Academy of Sciences and Arts (PEASA)
+                                    Proceedings of the European Academy of Sciences and Arts
                                 </div>
 
-                                <div class="pt-2 border-t border-white/5 w-full">
-                                    <div class="flex flex-wrap gap-1">
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Published</span>
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Coastal</span>
+                                <div class="border-t border-white/5 w-full">
+                                    <div class="flex items-center justify-between mt-1">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Erosion</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Coastal</span>
+                                        </div>
+                                        <a href="https://www.peasa.eu/site/article/view/12" 
+                                           target="_blank"
+                                           class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                                  bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                                  text-black text-xs font-medium 
+                                                  hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                                  transition-all duration-200 
+                                                  transform hover:-translate-y-0.5">
+                                            <i class="fas fa-external-link-alt text-[10px]"></i>
+                                            View
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Climate Variability Publication -->
-                        <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                        <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                     flex flex-col items-start hover:-translate-y-1 
                                     hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                             <div class="w-full image-focus">
                                 <img src="/static/climvar.png" alt="Climate Variability" 
-                                     class="w-full h-16 object-cover group-hover/card:scale-105 
+                                    class="w-full h-24 object-cover group-hover/card:scale-105 
                                             transition-transform duration-300" />
                             </div>
                             
-                            <div class="card-body p-4 w-full space-y-2">
+                            <div class="card-body p-2 w-full space-y-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">
                                         Climate Variability & Climate Change
@@ -1035,26 +1289,28 @@
                                     Liaskos, A.
                                 </div>
 
-                                <div class="pt-2 border-t border-white/5 w-full">
-                                    <div class="flex flex-wrap gap-1">
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Unpublished</span>
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate</span>
+                                <div class="border-t border-white/5 w-full">
+                                    <div class="flex items-center justify-between mt-1">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate Change</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">Climate</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- SPI Publication -->
-                        <div class="card-3d group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                        <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
                                     flex flex-col items-start hover:-translate-y-1 
                                     hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
                             <div class="w-full image-focus">
                                 <img src="/static/SPI.png" alt="SPI Analysis" 
-                                     class="w-full h-16 object-cover group-hover/card:scale-105 
+                                    class="w-full h-24 object-cover group-hover/card:scale-105 
                                             transition-transform duration-300" />
                             </div>
                             
-                            <div class="card-body p-4 w-full space-y-2">
+                            <div class="card-body p-2 w-full space-y-1">
                                 <div class="flex justify-between items-center">
                                     <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">
                                         Standardized Precipitation Index (SPI) in Greece
@@ -1072,10 +1328,12 @@
                                     Liaskos, A.
                                 </div>
 
-                                <div class="pt-2 border-t border-white/5 w-full">
-                                    <div class="flex flex-wrap gap-1">
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Unpublished</span>
-                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Analysis</span>
+                                <div class="border-t border-white/5 w-full">
+                                    <div class="flex items-center justify-between mt-1">
+                                        <div class="flex flex-wrap gap-1">
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-research">SPI</span>
+                                            <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Climate</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1085,80 +1343,1091 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
-            <div class="ml-12">
-                <h2 class="magic text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
-                    <i class="fas fa-code text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
-                    <span class="text-xl font-bold">Technical Expertise</span>
-                </h2>
+        <!-- Projects Section -->
+        <section id="projects" 
+                 class="section 
+                        bg-black/20 backdrop-blur-md 
+                        rounded-lg overflow-hidden 
+                        mx-auto max-w-4xl w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="bg-black/40 border-b border-[#00FFEA]/10 p-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    
+                    <h2 class="magic text-[#00FFEA] flex items-center gap-2">
+                        <i class="fas fa-code-branch text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                        <span class="text-base font-bold">Projects</span>
+                    </h2>
+                </div>
+            </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
-                    <!-- Languages -->
-                    <div class="card-3d bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
-                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
-                            <i class="fas fa-language text-primary"></i>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- CompCVA -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/compcva.png" alt="CompCVA" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
                         </div>
-
-                        <h3 class="text-gradient text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
-                            Languages
-                        </h3>
-
-                        <div class="space-y-3 w-full">
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all w-full text-left">
-                                <span class="fi fi-gr"></span> Greek (Native)
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">CompCVA</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-upcoming">In Development</span>
                             </div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all w-full text-left">
-                                <span class="fi fi-gb"></span> English (C2)
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-info-circle text-[#00FFEA] text-[10px] w-3"></i>
+                                 A web platform providing automated tools for complex geospatial analysis in the coastal zone.
                             </div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all w-full text-left">
-                                <span class="fi fi-es"></span> Spanish (B2)
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">GIS</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Analysis</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Web Platform</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Javascript</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Next.js</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Business</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Programming Languages -->
-                    <div class="card-3d bg-black/20 rounded-xl p-6 transition-all backdrop-blur flex flex-col items-start hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
-                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover/card:bg-primary/20 transition-all">
-                            <i class="fas fa-code text-primary"></i>
+                    <!-- Project Management System -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/pms.jpg" alt="Project Management System" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
                         </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Project Management System</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Active</span>
+                            </div>
 
-                        <h3 class="text-gradient text-primary mb-4 flex items-center gap-2 w-full text-left group-hover/card:translate-x-1 transition-all">
-                            Programming Languages
-                        </h3>
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-info-circle text-[#00FFEA] text-[10px] w-3"></i>
+                                A management system built entirely in Rust, that automatically handles Git synchronization and project organization.
+                            </div>
 
-                        <div class="space-y-2 w-full">
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all">Rust</div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all">Go</div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all">Python</div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all">Javascript</div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all">CSS</div>
-                            <div class="flex items-center gap-3 py-2 hover:translate-x-2 transition-all">Bash</div>
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Projects</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Git</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Backup</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Rust</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">CLI tool</span>
+                                    </div>
+                                    <a href="https://github.com/AlexandrosLiaskos/pms" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                              bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                              text-black text-xs font-medium 
+                                              hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                              transition-all duration-200 
+                                              transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TauNest -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/tau_prev.png" alt="TauNest" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">TauNest</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Active</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-info-circle text-[#00FFEA] text-[10px] w-3"></i>
+                                Automation of creating native cross-platform apps of your desired websites with the Tauri framework.
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Website Native Apps</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Tauri</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Bash</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">CLI tool</span>
+                                    </div>
+                                    <a href="https://github.com/AlexandrosLiaskos/TauNest" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                              bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                              text-black text-xs font-medium 
+                                              hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                              transition-all duration-200 
+                                              transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HGS -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/hgs.png" alt="HGS" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">HGS</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Active</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-info-circle text-[#00FFEA] text-[10px] w-3"></i>
+                                The official Hellenic Geographical Society (HGS) Website
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Vitepress</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Website</span>
+                                    </div>
+                                    <a href="https://hgs-web.github.io/HGS/" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                              bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                              text-black text-xs font-medium 
+                                              hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                              transition-all duration-200 
+                                              transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CopF -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/copf_prev.png" alt="CopF" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">CopF</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Active</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-info-circle text-[#00FFEA] text-[10px] w-3"></i>
+                                Terminal File Path Copy Tool
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Bash</span>
+                                    </div>
+                                    <a href="https://github.com/AlexandrosLiaskos/CopF" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                              bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                              text-black text-xs font-medium 
+                                              hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                              transition-all duration-200 
+                                              transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/port_prev.jpg" alt="Portfolio" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Portfolio</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Active</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-info-circle text-[#00FFEA] text-[10px] w-3"></i>
+                                Personal Portfolio Website
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Website</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-technical">Portfolio</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- International Section -->
-        <section id="international" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
-            <div class="ml-12">
-                <h2 class="magic text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
-                    <i class="fas fa-globe text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
-                    <span class="text-xl font-bold">International Experience</span>
-                </h2>
-                {{ data.international_exp | safe }}
+        <!-- International Experience Section -->
+        <section id="international" 
+                 class="section 
+                        bg-black/20 backdrop-blur-md 
+                        rounded-lg overflow-hidden 
+                        mx-auto max-w-4xl w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="bg-black/40 border-b border-[#00FFEA]/10 p-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    
+                    <h2 class="magic text-[#00FFEA] flex items-center gap-2">
+                        <i class="fas fa-globe text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                        <span class="text-base font-bold">International Programs</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- EO-PERSIST -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/Geoinfo_Geospa.png" alt="Geoinformation" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">EO-PERSIST</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-upcoming">Upcoming</span>
+                            </div>
+            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                December 2024 - Present
+                            </div>
+                            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-building text-[#00FFEA] text-[10px] w-3"></i>
+                                Lund University
+                            </div>
+            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-user text-[#00FFEA] text-[10px] w-3"></i>
+                                Prof George P. Petropoulos
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">CVI</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">EU</span>
+                                    </div>
+                                    <a href="https://eo-persist.eu/" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                              bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                              text-black text-xs font-medium 
+                                              hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                              transition-all duration-200 
+                                              transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+
+                    <!-- CIVIS Madrid -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/latin.png" alt="CIVIS Madrid" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Latin America in the Global Networks</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Completed</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                3-9 July 2022
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-map-marker-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Madrid, Spain
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-university text-[#00FFEA] text-[10px] w-3"></i>
+                                CIVIS Program
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">International</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">CIVIS</span>
+                                    </div>
+                                    <a href="https://certificate.bcdiploma.com/check/59AEFE437D512EA5A3D64FADC33FDDD78FE6ECDB0080A28E1B904654A19ED6E9UThGZGxGaWZNWFo0dituNHczN3ZRUWN4TlVPQWZkYURCbHJEalRJVWtiMkNaNHRj" 
+                                   target="_blank"
+                                   class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                          bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                          text-black text-xs font-medium 
+                                          hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                          transition-all duration-200 
+                                          transform hover:-translate-y-0.5">
+                                    <i class="fas fa-external-link-alt text-[10px]"></i>
+                                    View
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Culture on My Camera -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/CAM.png" alt="Culture on My Camera" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Culture on My Camera</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Completed</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                17-24 July 2022
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-map-marker-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Denizli, Turkey
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-exchange-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Erasmus+ Program
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">  <!-- Added justify-between and mt-1 -->
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">International</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Erasmus+</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Cultural</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facing Fire Athens -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/FF1.png" alt="Facing Fire Athens" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Facing Fire</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Completed</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                19-25 September 2022
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-map-marker-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Athens, Greece
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-hands-helping text-[#00FFEA] text-[10px] w-3"></i>
+                                Service-Learning Erasmus+
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">  <!-- Added justify-between and mt-1 -->
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Service-Learning</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Erasmus+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facing Fire Lugo -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/FF2.png" alt="Facing Fire Lugo" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                        transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Facing Fire Internship</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Completed</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                23 June – 20 July 2023
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-map-marker-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Lugo, Spain
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-briefcase text-[#00FFEA] text-[10px] w-3"></i>
+                                Internship
+                            </div>
+
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">  <!-- Added justify-between and mt-1 -->
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">International</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Internship</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Volunteer Section -->
-        <section id="volunteer" class="section bg-black/20 backdrop-blur-sm rounded-xl p-4 pb-8 mb-8 transition-all w-full max-w-5xl -ml-8 transform hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] group">
-            <div class="ml-12">
-                <h2 class="magic text-[#00FFEA] mb-8 pb-2 border-b-2 border-[#00FFEA]/20 flex items-center gap-3">
-                    <i class="fas fa-hands-helping text-4xl opacity-80 group-hover:opacity-100 transition-all"></i>
-                    <span class="text-xl font-bold">Volunteer Work</span>
-                </h2>
-                {{ data.volunteer_work | safe }}
+        <!-- Volunteering Section -->
+        <section id="volunteering" 
+                 class="section 
+                        bg-black/20 backdrop-blur-md 
+                        rounded-lg overflow-hidden 
+                        mx-auto max-w-4xl w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="bg-black/40 border-b border-[#00FFEA]/10 p-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    
+                    <h2 class="magic text-[#00FFEA] flex items-center gap-2">
+                        <i class="fas fa-hands-helping text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                        <span class="text-base font-bold">Volunteering</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- Volunteer FireFighter Card -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/fire.png" alt="Fire Fighter" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Volunteer FireFighter</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                February 2023 - Present
+                            </div>
+                            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-building text-[#00FFEA] text-[10px] w-3"></i>
+                                12th Fire Station of Athens
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-service">Fire Service</span>
+                                    </div>
+                                    <a href="/static/fire.pdf" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                      text-black text-xs font-medium 
+                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                      transition-all duration-200 
+                                      transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Group Coordinator Card -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/anthropos.png" alt="Mission Anthropos" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Improving the life of Seniors</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-present">Present</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                October 2022 - Present
+                            </div>
+                            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-building text-[#00FFEA] text-[10px] w-3"></i>
+                                Mission Anthropos
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-service">NGO</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-service">Companionship</span>
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-service">Coordinator</span>
+                                    </div>
+                                    <a href="https://www.missionanthropos.com/en/" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                      text-black text-xs font-medium 
+                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                      transition-all duration-200 
+                                      transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra Section (Military Service) -->
+        <section id="extra" 
+                 class="section 
+                        bg-black/20 backdrop-blur-md 
+                        rounded-lg overflow-hidden 
+                        mx-auto max-w-4xl w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="bg-black/40 border-b border-[#00FFEA]/10 p-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    
+                    <h2 class="magic text-[#00FFEA] flex items-center gap-2">
+                        <i class="fas fa-star text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                        <span class="text-base font-bold">Military</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- Military Training Card -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/army1.png" alt="Military Training" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Military Training</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-past">Completed</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                November 2023
+                            </div>
+                            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-map-marker-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Kalamata, Greece
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-service">Military</span>
+                                    </div>
+                                    <a href="/static/army1.pdf" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                      text-black text-xs font-medium 
+                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                      transition-all duration-200 
+                                      transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Military Service Card -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/army2.png" alt="Military Service" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Military Service</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-past">Completed</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-calendar text-[#00FFEA] text-[10px] w-3"></i>
+                                December 2023 - August 2024
+                            </div>
+                            
+                            <div class="flex items-center gap-1.5 text-white/90 text-[10px]">
+                                <i class="fas fa-map-marker-alt text-[#00FFEA] text-[10px] w-3"></i>
+                                Kalymnos, Greece
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-service">Military</span>
+                                    </div>
+                                    <a href="/static/army2.pdf" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                      text-black text-xs font-medium 
+                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                      transition-all duration-200 
+                                      transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conferences Section -->
+        <section id="conferences" 
+                 class="section 
+                        bg-black/20 backdrop-blur-md 
+                        rounded-lg overflow-hidden 
+                        mx-auto max-w-4xl w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="bg-black/40 border-b border-[#00FFEA]/10 p-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    
+                    <h2 class="magic text-[#00FFEA] flex items-center gap-2">
+                        <i class="fas fa-chalkboard-teacher text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                        <span class="text-base font-bold">Conferences</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- GSG 2019 Card -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/GSG.png" alt="GSG 2019" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Geological Society of Greece</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-past">2019</span>
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Conference</span>
+                                    </div>
+                                    <a href="/static/GSG19.pdf" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                      text-black text-xs font-medium 
+                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                      transition-all duration-200 
+                                      transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GSG 2022 Card -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)] overflow-hidden">
+                        <div class="w-full image-focus">
+                            <img src="/static/GSG.png" alt="GSG 2022" 
+                                 class="w-full h-24 object-cover group-hover/card:scale-105 
+                                transition-transform duration-300" />
+                        </div>
+                        
+                        <div class="card-body p-2 w-full space-y-1">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Geological Society of Greece</h3>
+                                <span class="text-[10px] px-1 py-0.5 rounded status-past">2022</span>
+                            </div>
+                            
+                            <div class="border-t border-white/5 w-full">
+                                <div class="flex items-center justify-between mt-1">
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="text-[10px] px-1 py-0.5 rounded tag-research">Conference</span>
+                                    </div>
+                                    <a href="/static/GSG24.pdf" 
+                                       target="_blank"
+                                       class="inline-flex items-center gap-1 px-3 py-0.5 rounded-md 
+                                      bg-gradient-to-r from-[#00FFEA]/80 to-[#00FFEA] 
+                                      text-black text-xs font-medium 
+                                      hover:from-[#00FFEA] hover:to-[#00FFEA]/90 
+                                      transition-all duration-200 
+                                      transform hover:-translate-y-0.5">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" 
+                 class="section 
+                        bg-black/20 backdrop-blur-md 
+                        rounded-lg overflow-hidden 
+                        mx-auto max-w-4xl w-full 
+                        mt-24
+                        transform 
+                        hover:shadow-[0_8px_30px_rgba(0,255,234,0.1)] 
+                        group">
+            <div class="bg-black/40 border-b border-[#00FFEA]/10 p-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                        <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    
+                    <h2 class="magic text-[#00FFEA] flex items-center gap-2">
+                        <i class="fas fa-code text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+                        <span class="text-base font-bold">Technical Skills</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Languages -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                        <div class="p-4 w-full">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#00FFEA]/10 flex items-center justify-center">
+                                    <i class="fas fa-code text-[#00FFEA]"></i>
+                                </div>
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Languages</h3>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-rust text-[#00FFEA] w-5"></i>
+                                    Rust
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-python text-[#00FFEA] w-5"></i>
+                                    Python
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-js text-[#00FFEA] w-5"></i>
+                                    JavaScript
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-html5 text-[#00FFEA] w-5"></i>
+                                    HTML
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-css3-alt text-[#00FFEA] w-5"></i>
+                                    CSS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Frameworks -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                        <div class="p-4 w-full">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#00FFEA]/10 flex items-center justify-center">
+                                    <i class="fas fa-window-maximize text-[#00FFEA]"></i>
+                                </div>
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Web Frameworks</h3>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-react text-[#00FFEA] w-5"></i>
+                                    Next.js
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-vuejs text-[#00FFEA] w-5"></i>
+                                    Vue.js
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-react text-[#00FFEA] w-5"></i>
+                                    React
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-cogs text-[#00FFEA] w-5"></i>
+                                    Actix-web
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-css3 text-[#00FFEA] w-5"></i>
+                                    Tailwind CSS
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-paint-brush text-[#00FFEA] w-5"></i>
+                                    Aceternity UI
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-book text-[#00FFEA] w-5"></i>
+                                    Vitepress
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-cube text-[#00FFEA] w-5"></i>
+                                    Hugo
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Technologies -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                        <div class="p-4 w-full">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#00FFEA]/10 flex items-center justify-center">
+                                    <i class="fas fa-tools text-[#00FFEA]"></i>
+                                </div>
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Tools & Technologies</h3>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-map text-[#00FFEA] w-5"></i>
+                                    ArcGIS Pro
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-linux text-[#00FFEA] w-5"></i>
+                                    Arch Linux
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-brain text-[#00FFEA] w-5"></i>
+                                    Obsidian
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-code text-[#00FFEA] w-5"></i>
+                                    VS Code
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-file-word text-[#00FFEA] w-5"></i>
+                                    Office
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fab fa-git-alt text-[#00FFEA] w-5"></i>
+                                    Git
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-book-reader text-[#00FFEA] w-5"></i>
+                                    Jupyter
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-book text-[#00FFEA] w-5"></i>
+                                    Mendeley
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <i class="fas fa-satellite text-[#00FFEA] w-5"></i>
+                                    Copernicus
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Natural Languages -->
+                    <div class="card group/card bg-black/20 rounded-lg transition-all backdrop-blur 
+                                flex flex-col items-start hover:-translate-y-1 
+                                hover:shadow-[0_4px_15px_rgba(0,255,234,0.1)]">
+                        <div class="p-4 w-full">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-8 h-8 rounded-lg bg-[#00FFEA]/10 flex items-center justify-center">
+                                    <i class="fas fa-language text-[#00FFEA]"></i>
+                                </div>
+                                <h3 class="text-gradient text-[#00FFEA] text-lg font-semibold">Languages</h3>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <span class="fi fi-gr"></span>
+                                    Greek [ Native ]
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <span class="fi fi-gb"></span>
+                                    English [ C2 + IELTS ]
+                                </div>
+                                <div class="flex items-center gap-2 text-white/70 text-sm">
+                                    <span class="fi fi-es"></span>
+                                    Spanish [ B2 ]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
