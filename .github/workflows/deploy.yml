@@ -52,7 +52,7 @@ jobs:
           # Copy static assets
           cp -r static dist/
           # Generate the HTML file directly in dist
-          cargo run --release
+          cargo run --release -- --static
           mv templates/index.html dist/
           touch dist/.nojekyll
 
