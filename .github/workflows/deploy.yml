@@ -58,6 +58,15 @@ jobs:
           
           # Copy the entire static directory structure
           cp -r static dist/
+
+          # Make sure background image is in place
+          if [ -f "static/img_background.jpg" ]; then
+            echo "Copying background image..."
+            cp static/img_background.jpg dist/static/
+          else
+            echo "Warning: Background image not found!"
+            ls -la static/
+          fi
           
           # Ensure index.html is in the root of dist
           if [ -f "dist/index.html" ]; then
