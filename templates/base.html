@@ -129,6 +129,23 @@
                 color: transparent;
                 filter: brightness(1.3) contrast(1.4) saturate(1.2);
             }
+
+            /* Add this after your metallic text styles */
+            /* Fallback background if CSS file fails */
+            body {
+                background-color: #0e202d !important;
+            }
+            
+            @media (min-width: 768px) {
+                body {
+                    background: linear-gradient(
+                        165deg,
+                        rgba(10, 10, 27, 0.35),
+                        rgba(0, 20, 40, 0.40)
+                    ),
+                    url('{{ base_path }}/static/img_background.jpg') center center/cover fixed no-repeat !important;
+                }
+            }
         </style>
         <script src="https://unpkg.com/@floating-ui/core@1.5.0"></script>
         <script src="https://unpkg.com/@floating-ui/dom@1.5.0"></script>
