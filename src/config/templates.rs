@@ -3,8 +3,15 @@ use tera::Tera;
 
 lazy_static! {
     pub static ref TEMPLATES: Tera = {
-        let mut tera = Tera::new("templates/**/*").unwrap();
-        tera.autoescape_on(vec!["html"]);
-        tera
+        match Tera::new("templates/**/*") {
+            Ok(mut t) => {
+                t.autoescape_on(vec!["html"]);
+                t
+            },
+            Err(e) => {
+                println!("Parsing error(s): {}", e);
+                ::std::process::exit(1);
+            }
+        }
     };
-} 
+}
