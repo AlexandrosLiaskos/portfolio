@@ -24,4 +24,7 @@ A modern, responsive portfolio website and CV built with Rust (Actix-web) and st
   - JavaScript
   - Font Awesome Icons
 ![Portfolio Preview](https://github.com/user-attachments/assets/56254b0e-a8bf-4969-9e12-0e817bea056f)
+
+![image](https://github.com/user-attachments/assets/1fe25e45-e2bd-42a1-8029-8daffef38efd)
+
 ![image](https://github.com/user-attachments/assets/d23676df-4d1b-446e-8ee2-52e5d6ee0da8)
