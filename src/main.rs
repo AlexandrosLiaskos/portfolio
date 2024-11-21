@@ -14,7 +14,8 @@ use env_logger::Env;
 async fn main() -> std::io::Result<()> {
     env_logger::init_from_env(Env::default().default_filter_or("info"));
     
-    let mut ctx = tera::Context::new();
+    // Just create an empty context since we don't need dynamic data
+    let ctx = tera::Context::new();
     let rendered_html = Arc::new(TEMPLATES.render("index.html", &ctx).unwrap());
     
     let state = web::Data::new(AppState {
