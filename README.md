@@ -28,4 +28,6 @@ A modern, responsive portfolio website and CV built with Rust (Actix-web) and st
 
 ![image](https://github.com/user-attachments/assets/1fe25e45-e2bd-42a1-8029-8daffef38efd)
 
+![image](https://github.com/user-attachments/assets/57d2f4a8-4129-4ce3-a86d-24e564d7e28b)
+
 ![image](https://github.com/user-attachments/assets/d23676df-4d1b-446e-8ee2-52e5d6ee0da8)
