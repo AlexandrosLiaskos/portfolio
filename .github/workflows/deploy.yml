@@ -52,14 +52,18 @@ jobs:
           
           # Create dist directory and its structure
           mkdir -p dist/static
+          mkdir -p dist/static/css/utils
+          mkdir -p dist/static/css/components
+          mkdir -p dist/static/js/components
+          mkdir -p dist/static/js/modules
           
-          # Generate the HTML file
+          # Generate the HTML and CSS files
           cargo run --release -- --static
           
-          # Copy the entire static directory structure
-          cp -r static dist/
-
-          # Make sure background image is in place
+          # Copy all static assets
+          cp -r static/* dist/static/
+          
+          # Copy background image specifically
           if [ -f "static/img_background.jpg" ]; then
             echo "Copying background image..."
             cp static/img_background.jpg dist/static/
@@ -68,19 +72,24 @@ jobs:
             ls -la static/
           fi
           
-          # Ensure index.html is in the root of dist
-          if [ -f "dist/index.html" ]; then
-            echo "index.html already in place"
-          else
-            mv templates/index.html dist/ || true
-          fi
-          
           # Create .nojekyll file
           touch dist/.nojekyll
           
           # Debug output
           echo "=== Directory Structure ==="
-          tree dist/ || ls -R dist/
+          find dist -type f
+          
+          echo "=== CSS Directory ==="
+          ls -la dist/static/css/utils/
+          
+          echo "=== Static Directory ==="
+          ls -la dist/static/
+          
+          echo "=== Background CSS Contents ==="
+          cat dist/static/css/utils/background.css
+          
+          echo "=== Image Files ==="
+          find dist/static -type f -name "*.jpg" -o -name "*.png"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
