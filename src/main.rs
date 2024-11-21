@@ -18,8 +18,23 @@ async fn main() -> std::io::Result<()> {
     let args: Vec<String> = std::env::args().collect();
     let is_static = args.get(1).map_or(false, |arg| arg == "--static");
 
-    let ctx = tera::Context::new();
-    let rendered_html = TEMPLATES.render("index.html", &ctx).unwrap();
+    // Create context with base path
+    let mut ctx = tera::Context::new();
+    
+    // Add base path for GitHub Pages when in static mode
+    if is_static {
+        ctx.insert("base_path", "/portfolio");
+    } else {
+        ctx.insert("base_path", ""); // Empty string for local development
+    }
+
+    let rendered_html = match TEMPLATES.render("index.html", &ctx) {
+        Ok(html) => html,
+        Err(e) => {
+            eprintln!("Template rendering error: {}", e);
+            std::process::exit(1);
+        }
+    };
 
     if is_static {
         // Static file generation mode
