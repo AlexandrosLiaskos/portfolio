@@ -47,6 +47,10 @@ async fn main() -> std::io::Result<()> {
         // Write index.html
         fs::write(dist_path.join("index.html"), rendered_html)?;
         
+        // Copy static files
+        fs::create_dir_all(dist_path.join("static"))?;
+        copy_dir_all("static", dist_path.join("static"))?;
+        
         println!("Static files generated successfully!");
         return Ok(());
     }
@@ -69,4 +73,19 @@ async fn main() -> std::io::Result<()> {
     .bind("127.0.0.1:8080")?
     .run()
     .await
+}
+
+// Add this helper function
+fn copy_dir_all(src: impl AsRef<Path>, dst: impl AsRef<Path>) -> std::io::Result<()> {
+    fs::create_dir_all(&dst)?;
+    for entry in fs::read_dir(src)? {
+        let entry = entry?;
+        let ty = entry.file_type()?;
+        if ty.is_dir() {
+            copy_dir_all(entry.path(), dst.as_ref().join(entry.file_name()))?;
+        } else {
+            fs::copy(entry.path(), dst.as_ref().join(entry.file_name()))?;
+        }
+    }
+    Ok(())
 }
