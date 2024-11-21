@@ -28,6 +28,16 @@ async fn main() -> std::io::Result<()> {
         ctx.insert("base_path", ""); // Empty string for local development
     }
 
+    // First render the CSS with the base path
+    let css_template = match TEMPLATES.render("static/css/utils/background.css", &ctx) {
+        Ok(css) => css,
+        Err(e) => {
+            eprintln!("CSS template rendering error: {}", e);
+            std::process::exit(1);
+        }
+    };
+
+    // Then render the HTML
     let rendered_html = match TEMPLATES.render("index.html", &ctx) {
         Ok(html) => html,
         Err(e) => {
@@ -40,14 +50,15 @@ async fn main() -> std::io::Result<()> {
         // Static file generation mode
         println!("Generating static files...");
         
-        // Create dist directory if it doesn't exist
+        // Create dist directory and required subdirectories
         let dist_path = Path::new("dist");
-        if !dist_path.exists() {
-            fs::create_dir_all(dist_path)?;
-        }
+        fs::create_dir_all(dist_path.join("static/css/utils"))?;
         
         // Write index.html
         fs::write(dist_path.join("index.html"), rendered_html)?;
+        
+        // Write background.css with rendered template
+        fs::write(dist_path.join("static/css/utils/background.css"), css_template)?;
         
         println!("Static files generated successfully!");
         return Ok(());
