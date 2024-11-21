@@ -47,9 +47,6 @@ async fn main() -> std::io::Result<()> {
         // Write index.html
         fs::write(dist_path.join("index.html"), rendered_html)?;
         
-        // Write background.css with rendered template
-        fs::write(dist_path.join("static/css/utils/background.css"), css_template)?;
-        
         println!("Static files generated successfully!");
         return Ok(());
     }
