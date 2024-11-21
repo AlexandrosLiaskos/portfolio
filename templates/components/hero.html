@@ -1,0 +1,224 @@
+{% macro hero() %}
+<section class="min-h-[calc(100vh-var(--navbar-height)-6rem)] w-full relative overflow-hidden pt-32">
+    <div class="w-full space-y-12 px-4 lg:pl-32 lg:pr-8">
+
+        <!-- Availability Banner -->
+        <div class="flex items-center gap-2 w-fit px-3 py-1.5 rounded-full 
+                    bg-black/20 backdrop-blur-sm
+                    transition-all duration-300
+                    relative overflow-hidden
+                    mx-auto lg:mx-0
+                    before:absolute before:inset-0
+                    before:bg-gradient-to-r before:from-transparent before:via-[#00FFEA]/10 before:to-transparent
+                    before:translate-x-[-200%] before:animate-[shine_3s_infinite]">
+            <div class="flex items-center gap-1.5">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#27C93F] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#27C93F]"></span>
+                </span>
+                <span class="metallic-text-teal text-xs">Available for</span>
+            </div>
+            <span class="metallic-text-teal text-xs font-medium">Projects (Online/Hybrid)</span>
+        </div>
+
+        <!-- Code Window Container -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+            <!-- Code window - Add mobile centering -->
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                <div class="code-window w-full max-w-[500px] lg:max-w-none">
+                    <div class="bg-black/20 backdrop-blur-sm rounded-2xl 
+                                border border-[#00FFEA]/10 overflow-hidden
+                                animate-float-slow">
+                        <!-- Window Header - Darker with blur -->
+                        <div class="flex items-center gap-2 p-3 border-b border-[#00FFEA]/10 
+                                    bg-black/60 backdrop-blur-md">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                            </div>
+                            <div class="flex items-center ml-4 gap-2">
+                                <div class="flex items-center px-2 py-1 rounded-md bg-black/20">
+                                    <i class="fas fa-code text-[10px] text-[#00FFEA]/70 mr-2"></i>
+                                    <span class="text-xs text-white/50 font-mono">main.rs</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Code Content -->
+                        <div class="p-4 font-mono text-sm">
+                            <div class="space-y-1">
+                                <div class="flex">
+                                    <span class="text-gray-500 w-8 select-none">1</span>
+                                    <div class="typewriter-line-1"></div>
+                                </div>
+                                <div class="flex">
+                                    <span class="text-gray-500 w-8 select-none">2</span>
+                                    <div class="typewriter-line-2"></div>
+                                </div>
+                                <div class="flex">
+                                    <span class="text-gray-500 w-8 select-none">3</span>
+                                    <div class="typewriter-line-3"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Status Bar - Darker with blur -->
+                        <div class="flex items-center justify-between px-4 py-2 
+                                    bg-black/60 backdrop-blur-md 
+                                    border-t border-[#00FFEA]/10">
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+                                    <span class="text-xs text-white/50">Ready</span>
+                                </div>
+                                <div class="text-xs text-white/30">Rust 1.75.0</div>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-white/50">
+                                <i class="fas fa-circle text-[8px] text-[#00FFEA]"></i>
+                                <span>Running</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text content -->
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <!-- Text content here -->
+            </div>
+        </div>
+
+        <!-- Minimal CTA Buttons -->
+        <div class="focus-cards-container flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mx-auto lg:mx-0">
+            <a href="#experience" 
+               class="focus-card px-6 py-2.5 rounded-lg 
+                      font-medium bg-black/20 backdrop-blur-sm
+                      border border-[#00FFEA]/20
+                      metallic-text-teal">
+                <div class="card-content">View Portfolio</div>
+            </a>
+            
+            <a href="https://github.com/AlexandrosLiaskos/portfolio/blob/main/cv.html" 
+               target="_blank"
+               class="focus-card px-6 py-2.5 rounded-lg 
+                      font-medium bg-black/20 backdrop-blur-sm
+                      border border-[#00FFEA]/20
+                      metallic-text-teal">
+                <div class="card-content">Download CV</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+[class^="typewriter-line-"] {
+    display: inline-block;
+    white-space: pre;
+    margin: 0;
+    min-height: 1.5em;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const lines = [
+        {
+            element: '.typewriter-line-1',
+            text: '/// Portfolio - v.1.0.0',
+            className: 'metallic-text-teal'
+        },
+        {
+            element: '.typewriter-line-2',
+            text: 'Alexandros P. Liaskos',
+            className: 'text-3xl font-bold metallic-text-teal'
+        },
+        {
+            element: '.typewriter-line-3',
+            text: 'A Passionate <span class="metallic-text-teal">Developer</span> specializing in <span class="metallic-text-teal">Geospatial Analysis</span>'
+        }
+    ];
+
+    let currentLine = 0;
+    
+    function formatText(text, className = '') {
+        if (text.includes('///')) {
+            return `<span class="metallic-text-teal ${className}">${text}</span>`;
+        } else {
+            return `<span class="${className}">${text}</span>`;
+        }
+    }
+    
+    function typeLine(lineIndex) {
+        if (lineIndex >= lines.length) return;
+        
+        const line = lines[lineIndex];
+        const element = document.querySelector(line.element);
+        let currentChar = 0;
+        element.innerHTML = '';
+        
+        if (line.text.includes('<span')) {
+            element.innerHTML = line.text;
+        } else {
+            function typeChar() {
+                if (currentChar < line.text.length) {
+                    const currentText = line.text.substring(0, currentChar + 1);
+                    element.innerHTML = formatText(currentText, line.className || '');
+                    currentChar++;
+                    setTimeout(typeChar, 50);
+                } else {
+                    setTimeout(() => typeLine(lineIndex + 1), 200);
+                }
+            }
+            typeChar();
+        }
+    }
+    
+    setTimeout(() => typeLine(0), 1000);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize focus cards effect for all focus-cards-container elements
+    const containers = document.querySelectorAll('.focus-cards-container');
+    
+    containers.forEach(container => {
+        const cards = container.getElementsByClassName('focus-card');
+        
+        container.addEventListener("mousemove", e => {
+            for (const card of cards) {
+                const rect = card.getBoundingClientRect(),
+                      x = e.clientX - rect.left,
+                      y = e.clientY - rect.top;
+
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            }
+        });
+        
+        // Add hover effect
+        Array.from(cards).forEach((card, index) => {
+            card.addEventListener("mouseenter", () => {
+                Array.from(cards).forEach((otherCard, otherIndex) => {
+                    if (index !== otherIndex) {
+                        otherCard.style.opacity = "0.6";
+                        otherCard.style.transform = "scale(0.98)";
+                    }
+                });
+            });
+            
+            card.addEventListener("mouseleave", () => {
+                Array.from(cards).forEach(otherCard => {
+                    otherCard.style.opacity = "";
+                    otherCard.style.transform = "";
+                });
+            });
+        });
+    });
+});
+</script>
+{% endmacro %} 
