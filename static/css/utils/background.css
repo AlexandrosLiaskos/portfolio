@@ -4,13 +4,13 @@ body {
         rgba(10, 10, 27, 0.35),
         rgba(0, 20, 40, 0.40)
     ),
-    url('../../img_background.jpg'),
-    url('../img_background.jpg'),
+    url('{{ base_path }}/static/img_background.jpg'),
     url('/static/img_background.jpg'),
-    url('static/img_background.jpg'),
-    url('/img_background.jpg'),
+    url('../static/img_background.jpg'),
+    url('../../static/img_background.jpg'),
     url('../../../static/img_background.jpg'),
-    url('../../../img_background.jpg');
+    url('./img_background.jpg'),
+    url('/img_background.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -37,43 +37,39 @@ body::before {
     z-index: 1;
 }
 
-/* Update component background colors */
+/* Component background colors */
 .bg-black\/20 {
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Navbar specific overlay */
 nav.bg-black\/20 {
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Sidebar specific overlay */
 aside.bg-black\/20 {
     background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Footer specific overlay */
 footer .bg-black\/20 {
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Fallback background color */
+/* Fallbacks */
 @supports not (background-attachment: fixed) {
     body {
         background-color: #0e202d;
     }
 }
 
-/* Add a more specific media query for mobile devices */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
     }
 }
 
-/* Add this temporary debug style */
+/* Debug message - remove after fixing */
 body::after {
-    content: 'Background CSS loaded';
+    content: 'Background CSS loaded - v2';
     position: fixed;
     top: 0;
     left: 0;
