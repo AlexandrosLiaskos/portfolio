@@ -151,21 +151,21 @@
         <script src="https://unpkg.com/@floating-ui/dom@1.5.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
     </head>
-    <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased">
+    <body class="font-poppins leading-relaxed text-white min-h-screen relative antialiased overflow-x-hidden">
         <!-- Dark overlay -->
         <div id="darkOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 z-40 opacity-0 invisible"></div>
 
         <!-- Main layout wrapper -->
-        <div class="flex min-h-screen flex-col">
+        <div class="flex min-h-screen flex-col overflow-x-hidden">
             {{ nav::navbar() }}
             
             <!-- Content wrapper with sidebar -->
-            <div class="flex flex-1 relative pt-14">
+            <div class="flex flex-1 relative pt-14 overflow-x-hidden">
                 <!-- Desktop Sidebar -->
                 {{ side::sidebar() }}
                 
                 <!-- Main content area -->
-                <main class="flex-1 w-full transition-all duration-500 ease-out">
+                <main class="flex-1 w-full transition-all duration-500 ease-out overflow-x-hidden">
                     <div class="w-full">
                         <div class="space-y-24">
                             {% block content %}{% endblock %}
