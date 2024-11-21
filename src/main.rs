@@ -27,15 +27,6 @@ async fn main() -> std::io::Result<()> {
         ctx.insert("base_path", ""); // Empty string for local development
     }
 
-    // First render the CSS with the base path
-    let css_template = match TEMPLATES.render("static/css/utils/background.css", &ctx) {
-        Ok(css) => css,
-        Err(e) => {
-            eprintln!("CSS template rendering error: {}", e);
-            std::process::exit(1);
-        }
-    };
-
     // Then render the HTML
     let rendered_html = match TEMPLATES.render("index.html", &ctx) {
         Ok(html) => html,
