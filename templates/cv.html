@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+
+{% block title %}Alexandros P. Liaskos - CV{% endblock %}
+
+{% block content %}
+<div class="space-y-8 max-w-4xl mx-auto px-4 py-8">
+    <!-- Header Section -->
+    <header class="bg-black/20 backdrop-blur-md rounded-lg p-6 space-y-4">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-[#00FFEA]">Alexandros P. Liaskos</h1>
+            <p class="text-white/70">Geologist | Software Developer | Data Analyst</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/70">
+            <div class="space-y-2">
+                <p class="flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-[#00FFEA] w-5"></i>
+                    Athens, Greece
+                </p>
+                <p class="flex items-center gap-2">
+                    <i class="fas fa-birthday-cake text-[#00FFEA] w-5"></i>
+                    15/06/2000
+                </p>
+                <p class="flex items-center gap-2">
+                    <i class="fas fa-envelope text-[#00FFEA] w-5"></i>
+                    alexliaskosga@gmail.com
+                </p>
+            </div>
+            <div class="space-y-2">
+                <a href="https://github.com/AlexandrosLiaskos" class="flex items-center gap-2 hover:text-[#00FFEA]">
+                    <i class="fab fa-github text-[#00FFEA] w-5"></i>
+                    @AlexandrosLiaskos
+                </a>
+                <a href="https://www.linkedin.com/in/alexandros-liaskos-a92a46254/" class="flex items-center gap-2 hover:text-[#00FFEA]">
+                    <i class="fab fa-linkedin text-[#00FFEA] w-5"></i>
+                    Alexandros Liaskos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Education Section -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-graduation-cap"></i>
+            Education
+        </h2>
+        <div class="space-y-4">
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">BSc in Geology and Geo-environment</h3>
+                <p class="text-white/70 text-sm">National and Kapodistrian University of Athens</p>
+                <p class="text-white/70 text-sm">2018 - 2024 | GPA: 7.8/10</p>
+                <p class="text-white/70 text-sm italic">Thesis: Computational Framework in Coastal Vulnerability Assessment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-briefcase"></i>
+            Professional Experience
+        </h2>
+        <div class="space-y-6">
+            <!-- Research -->
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Research Assistant - EO-PERSIST</h3>
+                <p class="text-white/70 text-sm">Lund University</p>
+                <p class="text-white/70 text-sm">December 2024 - Present</p>
+                <p class="text-white/70 text-sm">Supervisor: Prof George P. Petropoulos</p>
+            </div>
+
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Geospatial Analyst</h3>
+                <p class="text-white/70 text-sm">Freelancer</p>
+                <p class="text-white/70 text-sm">2022 - Present</p>
+                <ul class="list-disc text-white/70 text-sm ml-4 mt-2">
+                    <li>GIS Analysis</li>
+                    <li>Python Development</li>
+                    <li>Earth Observation</li>
+                    <li>SENTINEL-2 Data Processing</li>
+                </ul>
+            </div>
+
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Web Developer</h3>
+                <p class="text-white/70 text-sm">Freelancer</p>
+                <p class="text-white/70 text-sm">2024 - Present</p>
+                <ul class="list-disc text-white/70 text-sm ml-4 mt-2">
+                    <li>Full Stack Development</li>
+                    <li>Static Site Generation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-book"></i>
+            Publications
+        </h2>
+        <div class="space-y-4">
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Coastal erosion: The future of sandy beaches</h3>
+                <p class="text-white/70 text-sm">Evelpidou, N., Tzouxanioti, M., & Liaskos, A.</p>
+                <p class="text-white/70 text-sm">Proceedings of the European Academy of Sciences and Arts, 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-code"></i>
+            Technical Skills
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+                <h3 class="text-white font-semibold mb-2">Programming Languages</h3>
+                <ul class="list-disc text-white/70 text-sm ml-4">
+                    <li>Rust</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-semibold mb-2">Web Technologies</h3>
+                <ul class="list-disc text-white/70 text-sm ml-4">
+                    <li>Node.js</li>
+                    <li>Next.js</li>
+                    <li>Vue.js</li>
+                    <li>React</li>
+                    <li>Tailwind CSS</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-semibold mb-2">Tools & Software</h3>
+                <ul class="list-disc text-white/70 text-sm ml-4">
+                    <li>ArcGIS Pro</li>
+                    <li>Git</li>
+                    <li>Linux</li>
+                    <li>VS Code</li>
+                    <li>Jupyter</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-language"></i>
+            Languages
+        </h2>
+        <div class="space-y-2">
+            <p class="text-white/70"><span class="font-semibold">Greek:</span> Native</p>
+            <p class="text-white/70"><span class="font-semibold">English:</span> B2, C2, IELTS</p>
+            <p class="text-white/70"><span class="font-semibold">Spanish:</span> B2</p>
+        </div>
+    </section>
+
+    <!-- Certifications & Training -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-certificate"></i>
+            Certifications & Training
+        </h2>
+        <div class="space-y-4">
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Data Science: R Basics</h3>
+                <p class="text-white/70 text-sm">HarvardX | December 2021</p>
+            </div>
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Climate Change: The Science and Global Impact</h3>
+                <p class="text-white/70 text-sm">SDGAcademyX | December 2021</p>
+            </div>
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Differential Equations</h3>
+                <p class="text-white/70 text-sm">Mathesis | June 2021</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Work -->
+    <section class="bg-black/20 backdrop-blur-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-[#00FFEA] mb-4 flex items-center gap-2">
+            <i class="fas fa-hands-helping"></i>
+            Volunteer Work
+        </h2>
+        <div class="space-y-4">
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Volunteer FireFighter</h3>
+                <p class="text-white/70 text-sm">12th Fire Station of Athens</p>
+                <p class="text-white/70 text-sm">February 2023 - Present</p>
+            </div>
+            <div class="border-l-2 border-[#00FFEA]/20 pl-4">
+                <h3 class="text-white font-semibold">Student Group Coordinator</h3>
+                <p class="text-white/70 text-sm">Mission Anthropos</p>
+                <p class="text-white/70 text-sm">October 2022 - Present</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 
