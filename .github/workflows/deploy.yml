@@ -15,6 +15,10 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  # Add this for proper base path
+  BASE_PATH: '/${{ github.event.repository.name }}'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,6 +37,11 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        # Add id to reference the output
+        id: pages
+        with:
+          # Enable this if you want to force enable Pages
+          enablement: true
 
       - name: Install Dependencies
         run: |
@@ -42,13 +51,12 @@ jobs:
       - name: Build Site
         run: |
           cargo build --release
-          # Create output directory
           mkdir -p dist
-          # Copy static files
           cp -r static dist/
           cp -r templates dist/
-          # Create .nojekyll file
           touch dist/.nojekyll
+          # Optional: Add a basic index.html if needed
+          echo "<meta http-equiv='refresh' content='0;url=$BASE_PATH/index.html'>" > dist/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
