@@ -47,14 +47,31 @@ jobs:
 
       - name: Build Site
         run: |
+          # First build the Rust project
           cargo build --release
+          
+          # Create dist directory
           mkdir -p dist
-          # Copy static assets
-          cp -r static dist/
-          # Generate the HTML file directly in dist
+          
+          # Generate the HTML file
           cargo run --release -- --static
-          mv templates/index.html dist/
+          
+          # Copy all static assets AFTER generating HTML
+          cp -r static/* dist/
+          cp -r templates dist/
+          
+          # Ensure index.html is in the right place
+          if [ ! -f "dist/index.html" ]; then
+            echo "Moving index.html to dist/"
+            mv templates/index.html dist/ || true
+          fi
+          
+          # Create .nojekyll file
           touch dist/.nojekyll
+          
+          # Debug: List contents
+          echo "Final dist/ contents:"
+          ls -la dist/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
