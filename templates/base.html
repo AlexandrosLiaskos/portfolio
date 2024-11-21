@@ -21,12 +21,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         
         <!-- Internal CSS -->
-        <link rel="stylesheet" href="/static/css/utils/variables.css">
-        <link rel="stylesheet" href="/static/css/utils/base.css">
-        <link rel="stylesheet" href="/static/css/utils/background.css">
-        <link rel="stylesheet" href="/static/css/components/animations.css">
-        <link rel="stylesheet" href="/static/css/components/sidebar.css">
-        <link rel="stylesheet" href="/static/css/components/aceternity.css">
+        <link rel="stylesheet" href="{{ base_path }}/static/css/utils/variables.css">
+        <link rel="stylesheet" href="{{ base_path }}/static/css/utils/base.css">
+        <link rel="stylesheet" href="{{ base_path }}/static/css/utils/background.css">
+        <link rel="stylesheet" href="{{ base_path }}/static/css/components/animations.css">
+        <link rel="stylesheet" href="{{ base_path }}/static/css/components/sidebar.css">
+        <link rel="stylesheet" href="{{ base_path }}/static/css/components/aceternity.css">
         
         <script>
             // Initialize navItems before Alpine loads
@@ -71,7 +71,7 @@
         </script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script type="module" src="/static/js/main.js"></script>
+        <script type="module" src="{{ base_path }}/static/js/main.js"></script>
         <script>
             tailwind.config = {
                 theme: {

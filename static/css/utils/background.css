@@ -4,7 +4,13 @@ body {
         rgba(10, 10, 27, 0.35),
         rgba(0, 20, 40, 0.40)
     ),
-    url('../../img_background.jpg');
+    url('../../img_background.jpg'),
+    url('../img_background.jpg'),
+    url('/static/img_background.jpg'),
+    url('static/img_background.jpg'),
+    url('/img_background.jpg'),
+    url('../../../static/img_background.jpg'),
+    url('../../../img_background.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -63,4 +69,16 @@ footer .bg-black\/20 {
     body {
         background-attachment: scroll;
     }
+}
+
+/* Add this temporary debug style */
+body::after {
+    content: 'Background CSS loaded';
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: red;
+    color: white;
+    padding: 5px;
+    z-index: 9999;
 } 
