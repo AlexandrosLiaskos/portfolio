@@ -50,41 +50,28 @@ jobs:
           # First build the Rust project
           cargo build --release
           
-          # Create dist directory
-          mkdir -p dist
+          # Create dist directory and its structure
+          mkdir -p dist/static
           
           # Generate the HTML file
           cargo run --release -- --static
           
-          # Create static directory structure in dist
-          mkdir -p dist/static/js/components
-          mkdir -p dist/static/js/modules
-          mkdir -p dist/static/css/components
-          mkdir -p dist/static/css/utils
-          mkdir -p dist/static/img
+          # Copy the entire static directory structure
+          cp -r static dist/
           
-          # Copy all static assets with proper directory structure
-          cp -r static/js/components/* dist/static/js/components/
-          cp -r static/js/modules/* dist/static/js/modules/
-          cp -r static/js/main.js dist/static/js/
-          cp -r static/css/components/* dist/static/css/components/
-          cp -r static/css/utils/* dist/static/css/utils/
-          cp -r static/*.jpg dist/static/
-          cp -r static/*.png dist/static/
-          cp -r static/*.pdf dist/static/
+          # Ensure index.html is in the root of dist
+          if [ -f "dist/index.html" ]; then
+            echo "index.html already in place"
+          else
+            mv templates/index.html dist/ || true
+          fi
           
           # Create .nojekyll file
           touch dist/.nojekyll
           
-          # Debug: List contents
-          echo "Final dist/ contents:"
-          ls -la dist/
-          echo "Static directory contents:"
-          ls -la dist/static/
-          echo "JS directory contents:"
-          ls -la dist/static/js/
-          echo "CSS directory contents:"
-          ls -la dist/static/css/
+          # Debug output
+          echo "=== Directory Structure ==="
+          tree dist/ || ls -R dist/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
