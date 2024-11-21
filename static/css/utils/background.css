@@ -60,16 +60,4 @@ footer .bg-black\/20 {
     body {
         background-attachment: scroll;
     }
-}
-
-/* Debug message - remove after fixing */
-body::after {
-    content: 'Background CSS loaded - v2';
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: red;
-    color: white;
-    padding: 5px;
-    z-index: 9999;
 } 
