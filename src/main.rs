@@ -29,7 +29,7 @@ async fn main() -> std::io::Result<()> {
     }
 
     // First render the CSS with the base path
-    let css_template = match TEMPLATES.render("static/css/utils/background.css", &ctx) {
+    let css_template = match TEMPLATES.render("css/background.css", &ctx) {
         Ok(css) => css,
         Err(e) => {
             eprintln!("CSS template rendering error: {}", e);
