@@ -1391,7 +1391,9 @@ body {
     }
 
     .home-name {
+        font-family: 'Dancing Script', cursive;
         font-size: 26px;
+        font-weight: 600;
     }
 
     .home-title {
@@ -1508,7 +1510,9 @@ body {
     }
 
     .home-name {
+        font-family: 'Dancing Script', cursive;
         font-size: 20px;
+        font-weight: 600;
     }
 
     .home-title {
