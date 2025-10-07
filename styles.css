@@ -1400,7 +1400,12 @@ body {
     }
 
     .home-services {
-        gap: 12px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .hs-label {
+        font-size: 11px;
     }
 
     .home-social {
@@ -1512,9 +1517,13 @@ body {
     }
 
     .home-services {
-        flex-direction: column;
         gap: 6px;
         margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+
+    .hs-label {
+        font-size: 9px;
     }
 
     .home-cta {
