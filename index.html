@@ -60,28 +60,28 @@
                 <div id="about" class="tab-pane active">
                     <div class="home-center">
                         <img src="https://avatars.githubusercontent.com/u/128935863?v=4" alt="Alexandros Liaskos" class="home-avatar">
-                        <h1 class="home-name">Alexandros Liaskos</h1>
-                        <p class="home-title">Software Engineer</p>
+                        <h1 class="home-name" id="homeName">Alexandros Liaskos</h1>
+                        <p class="home-title" id="homeTitle">Software Engineer</p>
 
                         <div class="home-services">
                             <div class="home-service" onclick="switchTab('services')">
-                                <span class="hs-label">Websites</span>
+                                <span class="hs-label" id="homeService1">Websites</span>
                             </div>
                             <div class="home-service" onclick="switchTab('special')">
-                                <span class="hs-label">Web Apps</span>
+                                <span class="hs-label" id="homeService2">Web Apps</span>
                             </div>
                             <div class="home-service" onclick="switchTab('special')">
-                                <span class="hs-label">DevOps</span>
+                                <span class="hs-label" id="homeService3">DevOps</span>
                             </div>
                             <div class="home-service" onclick="switchTab('special')">
-                                <span class="hs-label">AI</span>
+                                <span class="hs-label" id="homeService4">AI</span>
                             </div>
                             <div class="home-service" onclick="switchTab('services')">
-                                <span class="hs-label">Consulting</span>
+                                <span class="hs-label" id="homeService5">Consulting</span>
                             </div>
                         </div>
 
-                        <button class="home-cta" onclick="switchTab('request')">Request a Service</button>
+                        <button class="home-cta" id="homeCTA" onclick="switchTab('request')">Request a Service</button>
 
                         <div class="home-social">
                             <a href="https://github.com/AlexandrosLiaskos" target="_blank" title="GitHub">
@@ -272,31 +272,31 @@
                     <div class="request-workflow">
                         <div class="workflow-stage">
                             <span class="workflow-number">01</span>
-                            <span class="workflow-text">Submit Request</span>
+                            <span class="workflow-text" id="workflowStep1">Submit Request</span>
                         </div>
                         <div class="workflow-stage">
                             <span class="workflow-number">02</span>
-                            <span class="workflow-text">Discovery Call</span>
+                            <span class="workflow-text" id="workflowStep2">Discovery Call</span>
                         </div>
                         <div class="workflow-stage">
                             <span class="workflow-number">03</span>
-                            <span class="workflow-text">Quote & Timeline</span>
+                            <span class="workflow-text" id="workflowStep3">Quote & Timeline</span>
                         </div>
                         <div class="workflow-stage">
                             <span class="workflow-number">04</span>
-                            <span class="workflow-text">Contract Agreement</span>
+                            <span class="workflow-text" id="workflowStep4">Contract Agreement</span>
                         </div>
                         <div class="workflow-stage">
                             <span class="workflow-number">05</span>
-                            <span class="workflow-text">Development</span>
+                            <span class="workflow-text" id="workflowStep5">Development</span>
                         </div>
                         <div class="workflow-stage">
                             <span class="workflow-number">06</span>
-                            <span class="workflow-text">Delivery & Handover</span>
+                            <span class="workflow-text" id="workflowStep6">Delivery & Handover</span>
                         </div>
                     </div>
 
-                    <button class="request-form-btn" onclick="openRequestForm()">Start Request</button>
+                    <button class="request-form-btn" id="requestStartBtn" onclick="openRequestForm()">Start Request</button>
                 </div>
             </div>
 
@@ -338,42 +338,42 @@
         <div class="service-modal-content">
             <button class="service-modal-close" onclick="closeRequestForm()">&times;</button>
             <div class="request-form">
-                <h2 class="service-modal-title">Service Request</h2>
-                <p class="service-modal-subtitle">Fill in the details below</p>
+                <h2 class="service-modal-title" id="formTitle">Service Request</h2>
+                <p class="service-modal-subtitle" id="formSubtitle">Fill in the details below</p>
 
                 <form id="requestForm" onsubmit="return false;">
                     <div class="form-group">
-                        <label for="requestName">Name</label>
+                        <label for="requestName" id="formLabelName">Name</label>
                         <input type="text" id="requestName" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="requestOrg">Organization <span class="optional">(optional)</span></label>
+                        <label for="requestOrg"><span id="formLabelOrg">Organization</span> <span class="optional" id="formOptionalText">(optional)</span></label>
                         <input type="text" id="requestOrg">
                     </div>
 
                     <div class="form-group">
-                        <label for="requestEmail">Email</label>
+                        <label for="requestEmail" id="formLabelEmail">Email</label>
                         <input type="email" id="requestEmail" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="requestService">Service</label>
+                        <label for="requestService" id="formLabelService">Service</label>
                         <select id="requestService" required>
-                            <option value="">Select a service...</option>
-                            <option value="WEB">WEB - Websites</option>
-                            <option value="FIX">FIX - Bug Fixes & Optimization</option>
-                            <option value="QA">QA - Code Review & QA</option>
-                            <option value="CONS">CONS - Consulting & Strategy</option>
-                            <option value="APP">APP - Web Applications</option>
-                            <option value="OPS">OPS - Cloud & DevOps</option>
-                            <option value="AI">AI - AI Automations</option>
-                            <option value="I2P">I2P - Idea to Project</option>
+                            <option value="" id="formServicePlaceholder">Select a service...</option>
+                            <option value="WEB" id="serviceOptWeb">WEB - Websites</option>
+                            <option value="FIX" id="serviceOptFix">FIX - Bug Fixes & Optimization</option>
+                            <option value="QA" id="serviceOptQA">QA - Code Review & QA</option>
+                            <option value="CONS" id="serviceOptCons">CONS - Consulting & Strategy</option>
+                            <option value="APP" id="serviceOptApp">APP - Web Applications</option>
+                            <option value="OPS" id="serviceOptOps">OPS - Cloud & DevOps</option>
+                            <option value="AI" id="serviceOptAI">AI - AI Automations</option>
+                            <option value="I2P" id="serviceOptI2P">I2P - Idea to Project</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="requestDesc">Description</label>
+                        <label for="requestDesc" id="formLabelDesc">Description</label>
                         <textarea id="requestDesc" rows="5" required></textarea>
                     </div>
 
@@ -383,9 +383,9 @@
                                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                             </svg>
-                            Copy
+                            <span id="formCopyBtn">Copy</span>
                         </button>
-                        <button type="button" class="btn-primary" onclick="openEmailSelector()">Send Email</button>
+                        <button type="button" class="btn-primary" id="formSendBtn" onclick="openEmailSelector()">Send Email</button>
                     </div>
                 </form>
             </div>
@@ -397,20 +397,20 @@
         <div class="service-modal-overlay" onclick="closeEmailSelector()"></div>
         <div class="service-modal-content email-selector-content">
             <button class="service-modal-close" onclick="closeEmailSelector()">&times;</button>
-            <h2 class="service-modal-title">Choose Email App</h2>
+            <h2 class="service-modal-title" id="emailSelectorTitle">Choose Email App</h2>
             <div class="email-options">
                 <button class="email-option" onclick="sendViaEmail('default')">
-                    <span>Default Email App</span>
+                    <span id="emailDefaultText">Default Email App</span>
                 </button>
                 <button class="email-option" onclick="sendViaEmail('gmail')">
-                    <span>Gmail</span>
+                    <span id="emailGmailText">Gmail</span>
                 </button>
                 <button class="email-option" onclick="copyEmailContent()">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
-                    <span>Copy Content</span>
+                    <span id="copyEmailText">Copy Content</span>
                 </button>
             </div>
         </div>

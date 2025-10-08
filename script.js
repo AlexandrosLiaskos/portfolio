@@ -401,21 +401,26 @@ function updatePageLanguage() {
 }
 
 function updateHomePage() {
-    const nameEl = document.querySelector('.home-name');
-    const titleEl = document.querySelector('.home-title');
-    const servicesEls = document.querySelectorAll('.home-services .service-tag');
-    const consultingEl = document.querySelector('.home-services .service-tag:last-child');
-    const ctaBtn = document.querySelector('.home-cta');
+    const nameEl = document.getElementById('homeName');
+    const titleEl = document.getElementById('homeTitle');
+    const ctaBtn = document.getElementById('homeCTA');
 
     if (nameEl) nameEl.textContent = t('name');
     if (titleEl) titleEl.textContent = t('title');
-    if (servicesEls.length >= 4) {
-        t('services').forEach((service, i) => {
-            if (servicesEls[i]) servicesEls[i].textContent = service;
-        });
-    }
-    if (consultingEl) consultingEl.textContent = t('consulting');
     if (ctaBtn) ctaBtn.textContent = t('ctaButton');
+
+    // Update service labels
+    const services = t('services');
+    for (let i = 1; i <= 5; i++) {
+        const serviceEl = document.getElementById(`homeService${i}`);
+        if (serviceEl && services[i-1]) {
+            serviceEl.textContent = services[i-1];
+        }
+    }
+
+    // Update consulting separately
+    const consultingEl = document.getElementById('homeService5');
+    if (consultingEl) consultingEl.textContent = t('consulting');
 }
 
 function updateServicesPage() {
@@ -478,23 +483,76 @@ function updateContactPage() {
 }
 
 function updateRequestPage() {
-    const steps = document.querySelectorAll('.workflow-stage');
-    const stepData = [
-        { title: 'step1Title', desc: 'step1Desc' },
-        { title: 'step2Title', desc: 'step2Desc' },
-        { title: 'step3Title', desc: 'step3Desc' }
+    // Update workflow steps
+    for (let i = 1; i <= 6; i++) {
+        const stepEl = document.getElementById(`workflowStep${i}`);
+        if (stepEl) stepEl.textContent = t(`workflowStep${i}`);
+    }
+
+    // Update start button
+    const startBtn = document.getElementById('requestStartBtn');
+    if (startBtn) startBtn.textContent = t('startButton');
+
+    // Update form elements
+    updateFormTranslations();
+}
+
+function updateFormTranslations() {
+    // Form title and subtitle
+    const formTitle = document.getElementById('formTitle');
+    const formSubtitle = document.getElementById('formSubtitle');
+    if (formTitle) formTitle.textContent = t('formTitle');
+    if (formSubtitle) formSubtitle.textContent = t('formSubtitle');
+
+    // Form labels
+    const labelName = document.getElementById('formLabelName');
+    const labelOrg = document.getElementById('formLabelOrg');
+    const labelEmail = document.getElementById('formLabelEmail');
+    const labelService = document.getElementById('formLabelService');
+    const labelDesc = document.getElementById('formLabelDesc');
+    const optionalText = document.getElementById('formOptionalText');
+
+    if (labelName) labelName.textContent = t('formName');
+    if (labelOrg) labelOrg.textContent = t('formOrg');
+    if (labelEmail) labelEmail.textContent = t('formEmail');
+    if (labelService) labelService.textContent = t('formService');
+    if (labelDesc) labelDesc.textContent = t('formDescription');
+    if (optionalText) optionalText.textContent = t('formOptional');
+
+    // Service select options
+    const servicePlaceholder = document.getElementById('formServicePlaceholder');
+    if (servicePlaceholder) servicePlaceholder.textContent = t('formServicePlaceholder');
+
+    const serviceOptions = [
+        'serviceOptWeb', 'serviceOptFix', 'serviceOptQA', 'serviceOptCons',
+        'serviceOptApp', 'serviceOptOps', 'serviceOptAI', 'serviceOptI2P'
+    ];
+    const serviceKeys = [
+        'serviceOptionWeb', 'serviceOptionFix', 'serviceOptionQA', 'serviceOptionCons',
+        'serviceOptionApp', 'serviceOptionOps', 'serviceOptionAI', 'serviceOptionI2P'
     ];
 
-    steps.forEach((step, index) => {
-        const titleEl = step.querySelector('.workflow-title');
-        const textEl = step.querySelector('.workflow-text');
-
-        if (titleEl) titleEl.textContent = t(stepData[index].title);
-        if (textEl) textEl.textContent = t(stepData[index].desc);
+    serviceOptions.forEach((optId, index) => {
+        const optEl = document.getElementById(optId);
+        if (optEl) optEl.textContent = t(serviceKeys[index]);
     });
 
-    const startBtn = document.querySelector('.request-form-btn');
-    if (startBtn) startBtn.textContent = t('startButton');
+    // Form buttons
+    const copyBtn = document.getElementById('formCopyBtn');
+    const sendBtn = document.getElementById('formSendBtn');
+    if (copyBtn) copyBtn.textContent = t('formCopy');
+    if (sendBtn) sendBtn.textContent = t('formSend');
+
+    // Email selector
+    const emailTitle = document.getElementById('emailSelectorTitle');
+    const emailDefault = document.getElementById('emailDefaultText');
+    const emailGmail = document.getElementById('emailGmailText');
+    const emailCopy = document.getElementById('copyEmailText');
+
+    if (emailTitle) emailTitle.textContent = t('emailTitle');
+    if (emailDefault) emailDefault.textContent = t('emailDefault');
+    if (emailGmail) emailGmail.textContent = t('emailGmail');
+    if (emailCopy) emailCopy.textContent = t('emailCopy');
 }
 
 // Initialize
