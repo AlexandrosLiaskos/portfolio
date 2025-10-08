@@ -1402,7 +1402,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: calc(100vh - 114px);
+        height: calc(100vh - 144px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -1504,7 +1504,7 @@ body {
 
     .tab-content {
         padding: 16px;
-        height: calc(100vh - 122px);
+        height: calc(100vh - 144px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -1626,7 +1626,7 @@ body {
     .home-center {
         padding: 20px 16px;
         overflow-y: auto;
-        height: calc(100vh - 110px);
+        height: calc(100vh - 140px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1741,7 +1741,7 @@ body {
     /* Content area - full height with proper spacing */
     .tab-content {
         padding: 16px;
-        height: calc(100vh - 118px);
+        height: calc(100vh - 140px);
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
