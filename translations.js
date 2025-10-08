@@ -63,8 +63,8 @@ const translations = {
         },
         serviceI2P: {
             code: "I2P",
-            name: "Idea to Project",
-            desc: "Transform your raw idea into a complete project"
+            name: "Other Projects",
+            desc: "Custom solutions for unique needs"
         },
         
         // Portfolio
@@ -120,7 +120,7 @@ const translations = {
         serviceOptionApp: "APP - Web Applications",
         serviceOptionOps: "OPS - Cloud & DevOps",
         serviceOptionAI: "AI - AI Automations",
-        serviceOptionI2P: "I2P - Idea to Project",
+        serviceOptionI2P: "I2P - Other Projects",
         
         // Email Selector
         emailTitle: "Choose Email App",
@@ -170,9 +170,9 @@ const translations = {
                 description: "Leverage AI to automate tasks and enhance your applications."
             },
             I2P: {
-                title: "Idea to Project",
+                title: "Other Projects",
                 features: ["Full Development", "From Concept to Launch", "End-to-End Solution", "Ongoing Support"],
-                description: "Complete project development from initial idea to production deployment."
+                description: "Custom solutions tailored to your unique needs and requirements."
             }
         }
     },
@@ -239,8 +239,8 @@ const translations = {
         },
         serviceI2P: {
             code: "I2P",
-            name: "Από Ιδέα σε Έργο",
-            desc: "Μετατρέψτε την ιδέα σας σε ολοκληρωμένο έργο"
+            name: "Άλλα Έργα",
+            desc: "Προσαρμοσμένες λύσεις για μοναδικές ανάγκες"
         },
         
         // Portfolio
@@ -296,7 +296,7 @@ const translations = {
         serviceOptionApp: "APP - Διαδικτυακές Εφαρμογές",
         serviceOptionOps: "OPS - Cloud & DevOps",
         serviceOptionAI: "AI - Αυτοματισμοί AI",
-        serviceOptionI2P: "I2P - Από Ιδέα σε Έργο",
+        serviceOptionI2P: "I2P - Άλλα Έργα",
         
         // Email Selector
         emailTitle: "Επιλέξτε Εφαρμογή Email",
@@ -346,9 +346,9 @@ const translations = {
                 description: "Αξιοποιήστε την τεχνητή νοημοσύνη για αυτοματισμό εργασιών και βελτίωση των εφαρμογών σας."
             },
             I2P: {
-                title: "Από Ιδέα σε Έργο",
+                title: "Άλλα Έργα",
                 features: ["Πλήρης Ανάπτυξη", "Από την Ιδέα στην Κυκλοφορία", "Ολοκληρωμένη Λύση", "Συνεχής Υποστήριξη"],
-                description: "Πλήρης ανάπτυξη έργου από την αρχική ιδέα έως την παραγωγική ανάπτυξη."
+                description: "Προσαρμοσμένες λύσεις για τις μοναδικές σας ανάγκες και απαιτήσεις."
             }
         }
     }

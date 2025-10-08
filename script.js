@@ -722,9 +722,9 @@ const serviceDetailsEN = {
         ]
     },
     I2P: {
-        title: 'Idea to Project',
-        subtitle: 'Full-service transformation from concept to reality',
-        price: '€50+',
+        title: 'Other Projects',
+        subtitle: 'Custom solutions tailored to your unique needs',
+        price: '',
         sections: [
             {
                 heading: 'What This Includes',
@@ -854,9 +854,9 @@ const serviceDetailsGR = {
         ]
     },
     I2P: {
-        title: 'Από Ιδέα σε Έργο',
-        subtitle: 'Πλήρης μετατροπή από την ιδέα στην πραγματικότητα',
-        price: '€50+',
+        title: 'Άλλα Έργα',
+        subtitle: 'Προσαρμοσμένες λύσεις για τις μοναδικές σας ανάγκες',
+        price: '',
         sections: [
             {
                 heading: 'Τι Περιλαμβάνει',
@@ -887,7 +887,7 @@ function openServiceModal(serviceId) {
     let html = `
         <div class="service-modal-header">
             <h2 class="service-modal-title">${service.title}</h2>
-            <div class="service-modal-price">${service.price}</div>
+            ${service.price ? `<div class="service-modal-price">${service.price}</div>` : ''}
         </div>
         <p class="service-modal-subtitle">${service.subtitle}</p>
     `;
