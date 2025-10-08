@@ -79,52 +79,19 @@ body {
 
 
 
-/* Tabs Wrapper */
-.tabs-wrapper {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    flex-shrink: 0;
-    position: relative;
-}
-
 /* Tabs - Desktop only */
 .tabs {
     display: flex;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     overflow-x: auto;
     scrollbar-width: none;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .tabs::-webkit-scrollbar {
     display: none;
-}
-
-/* Navigation Language Toggle */
-.nav-lang-toggle {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: var(--bg-modal);
-    border: none;
-    border-left: 1px solid var(--border-color);
-    color: var(--accent-teal);
-    padding: 0 20px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: 'Courier New', monospace;
-    z-index: 10;
-}
-
-.nav-lang-toggle:hover {
-    background: rgba(100, 255, 218, 0.1);
-}
-
-.nav-lang-toggle:active {
-    transform: scale(0.95);
 }
 
 /* Mobile Tab Dropdown - Hidden by default on desktop */
@@ -242,6 +209,23 @@ body {
 .tab.active {
     color: var(--accent-teal);
     border-bottom-color: var(--accent-teal);
+}
+
+/* Language Tab - Special styling */
+.tab-lang {
+    color: var(--accent-teal);
+    font-weight: 600;
+    border-left: 1px solid var(--border-color);
+    margin-left: auto;
+}
+
+.tab-lang:hover {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent-teal);
+}
+
+.tab-lang.active {
+    border-bottom-color: transparent;
 }
 
 /* Hide all scrollbars globally */
@@ -1564,8 +1548,8 @@ body {
         overflow: hidden;
     }
 
-    /* Hide regular tabs and nav toggle, show dropdown */
-    .tabs-wrapper {
+    /* Hide regular tabs, show dropdown */
+    .tabs {
         display: none !important;
     }
 
@@ -1755,8 +1739,8 @@ body {
         overflow: hidden;
     }
 
-    /* Hide regular tabs and nav toggle, show dropdown */
-    .tabs-wrapper {
+    /* Hide regular tabs, show dropdown */
+    .tabs {
         display: none !important;
     }
 
