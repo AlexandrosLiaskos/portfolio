@@ -609,8 +609,8 @@ statusLeft.addEventListener('mouseenter', () => {
     statusLeft.title = 'Press Cmd/Ctrl+K to open command palette';
 });
 
-// Service Modal Data
-const serviceDetails = {
+// Service Modal Data - English
+const serviceDetailsEN = {
     WEB: {
         title: 'Websites',
         subtitle: 'Fast, scalable, low-cost websites on modern infrastructure',
@@ -741,50 +741,167 @@ const serviceDetails = {
     }
 };
 
+// Service Modal Data - Greek
+const serviceDetailsGR = {
+    WEB: {
+        title: 'Ιστοσελίδες',
+        subtitle: 'Γρήγορες, επεκτάσιμες, οικονομικές ιστοσελίδες σε σύγχρονη υποδομή',
+        price: '€20+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'Ιστοσελίδες Marketing & Ενημέρωσης',
+                    'Portfolios',
+                    'Blogs',
+                    'Ιστοσελίδες Τεκμηρίωσης'
+                ]
+            }
+        ]
+    },
+    APP: {
+        title: 'Διαδικτυακές Εφαρμογές',
+        subtitle: 'Διαδραστικές πλατφόρμες με προσαρμοσμένη λειτουργικότητα',
+        price: '€100+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'E-commerce & Online Καταστήματα',
+                    'Πύλες Πελατών & Ιστοσελίδες Μελών',
+                    'Συστήματα Κρατήσεων',
+                    'SaaS Πρωτότυπα (MVPs)'
+                ]
+            }
+        ]
+    },
+    FIX: {
+        title: 'Διορθώσεις & Βελτιστοποίηση',
+        subtitle: 'Διόρθωση και βελτίωση υπαρχόντων έργων',
+        price: '€15+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'Διόρθωση Σφαλμάτων & Αντιμετώπιση Προβλημάτων',
+                    'Βελτιστοποίηση Απόδοσης'
+                ]
+            }
+        ]
+    },
+    CONS: {
+        title: 'Συμβουλευτική & Στρατηγική',
+        subtitle: 'Μετατροπή ιδεών σε εκτελέσιμα σχέδια',
+        price: '€10+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'Συνεδρίες Από-Ιδέα-σε-Σχέδιο',
+                    'Συστάσεις Τεχνολογικού Stack'
+                ]
+            }
+        ]
+    },
+    QA: {
+        title: 'Έλεγχος Κώδικα & Διασφάλιση Ποιότητας',
+        subtitle: 'Αξιολόγηση ποιότητας και ασφάλειας κώδικα',
+        price: '€15+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'Αξιολόγηση Προ-Κυκλοφορίας',
+                    'Ανάλυση Επεκτασιμότητας & Μελλοντικής Προστασίας',
+                    'Ανεξάρτητος Έλεγχος Κώδικα',
+                    'Ανίχνευση Περιεχομένου που Δημιουργήθηκε από AI'
+                ]
+            }
+        ]
+    },
+    OPS: {
+        title: 'Cloud & DevOps',
+        subtitle: 'Αυτοματοποίηση αναπτύξεων και διαχείριση υποδομής',
+        price: '€60+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'Εγκατάσταση CI/CD Pipeline',
+                    'Infrastructure as Code (IaC)',
+                    'Ανάπτυξη',
+                    'Διαχείριση Βάσης Δεδομένων',
+                    'Ανάπτυξη API'
+                ]
+            }
+        ]
+    },
+    AI: {
+        title: 'Αυτοματισμοί AI',
+        subtitle: 'Έξυπνες λύσεις αυτοματισμού με τεχνητή νοημοσύνη',
+        price: '€50+',
+        sections: [
+            {
+                heading: 'Παραδείγματα',
+                items: [
+                    'Προσαρμοσμένες Ροές Εργασίας & Ενσωματώσεις AI',
+                    'Chatbots & Εικονικοί Βοηθοί',
+                    'Δημιουργία & Επεξεργασία Περιεχομένου',
+                    'Ανάλυση Δεδομένων & Insights',
+                    'Αυτοματισμός Διαδικασιών με AI'
+                ]
+            }
+        ]
+    },
+    I2P: {
+        title: 'Από Ιδέα σε Έργο',
+        subtitle: 'Πλήρης μετατροπή από την ιδέα στην πραγματικότητα',
+        price: '€50+',
+        sections: [
+            {
+                heading: 'Τι Περιλαμβάνει',
+                items: [
+                    'Εις βάθος συνεδρίες για κατανόηση του οράματός σας',
+                    'Έρευνα αγοράς και ανάλυση σκοπιμότητας',
+                    'Πλήρης τεχνικός σχεδιασμός και αρχιτεκτονική',
+                    'Σχεδιασμός, ανάπτυξη και εγκατάσταση',
+                    'Διαχείριση έργου από άκρη σε άκρη',
+                    'Υποστήριξη κυκλοφορίας και παράδοση'
+                ]
+            }
+        ]
+    }
+};
+
 // Open Service Modal
 function openServiceModal(serviceId) {
     const modal = document.getElementById('serviceModal');
     const modalBody = document.getElementById('serviceModalBody');
 
-    // Get service details from translations
-    const serviceData = t(`serviceDetails.${serviceId}`);
+    // Get service details based on current language
+    const serviceDetails = currentLang === 'gr' ? serviceDetailsGR : serviceDetailsEN;
     const service = serviceDetails[serviceId];
 
-    if (!service || !serviceData) return;
+    if (!service) return;
 
     let html = `
         <div class="service-modal-header">
-            <h2 class="service-modal-title">${serviceData.title}</h2>
+            <h2 class="service-modal-title">${service.title}</h2>
             <div class="service-modal-price">${service.price}</div>
         </div>
-        <p class="service-modal-subtitle">${serviceData.description}</p>
+        <p class="service-modal-subtitle">${service.subtitle}</p>
     `;
 
-    // Add features section
-    if (serviceData.features && serviceData.features.length > 0) {
+    service.sections.forEach(section => {
         html += `
             <div class="service-modal-section">
-                <h4>${t('featuresTitle') || 'Features'}</h4>
+                <h4>${section.heading}</h4>
                 <ul class="service-modal-list">
-                    ${serviceData.features.map(item => `<li>${item}</li>`).join('')}
+                    ${section.items.map(item => `<li>${item}</li>`).join('')}
                 </ul>
             </div>
         `;
-    }
-
-    // Add original sections if they exist
-    if (service.sections) {
-        service.sections.forEach(section => {
-            html += `
-                <div class="service-modal-section">
-                    <h4>${section.heading}</h4>
-                    <ul class="service-modal-list">
-                        ${section.items.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-        });
-    }
+    });
 
     modalBody.innerHTML = html;
     modal.classList.add('active');
