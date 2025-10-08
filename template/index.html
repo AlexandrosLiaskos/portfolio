@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Component Library - Demo</title>
+    <link rel="stylesheet" href="css/theme.css">
+    
+    <!-- Load all component styles -->
+    <style>
+        /* Import styles from modal.html */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .modal {
+            background: var(--bg-modal);
+            backdrop-filter: blur(20px);
+            border: none;
+            border-top: 1px solid var(--accent-teal);
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: modalFadeIn 0.5s ease-out;
+        }
+
+        .modal-header {
+            flex-shrink: 0;
+        }
+
+        .modal-body {
+            padding: 24px;
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+                min-height: 100dvh;
+                height: 100dvh;
+                overflow: hidden;
+            }
+
+            .modal {
+                max-height: calc(100dvh - 24px);
+                height: calc(100dvh - 24px);
+                width: calc(100vw - 24px);
+                max-width: calc(100vw - 24px);
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                border-top: 2px solid var(--accent-teal);
+            }
+
+            .modal-body {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <div class="modal">
+            
+            <!-- MODAL HEADER with TABS -->
+            <div class="modal-header">
+                <!-- Desktop Tabs (from components/tabs.html) -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="components">Components</button>
+                    <button class="tab" data-tab="services">Services</button>
+                    <button class="tab" data-tab="portfolio">Portfolio</button>
+                    <button class="tab" data-tab="demo">Demo</button>
+                </div>
+
+                <!-- Mobile Dropdown (from components/tabs.html) -->
+                <div class="mobile-tab-selector">
+                    <button class="mobile-tab-button" id="mobileTabButton">
+                        <span id="currentTabName">Components</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-tab-dropdown" id="mobileTabDropdown">
+                        <button class="mobile-tab-option active" data-tab="components">Components</button>
+                        <button class="mobile-tab-option" data-tab="services">Services</button>
+                        <button class="mobile-tab-option" data-tab="portfolio">Portfolio</button>
+                        <button class="mobile-tab-option" data-tab="demo">Demo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL BODY with TAB CONTENT -->
+            <div class="modal-body">
+                
+                <!-- TAB 1: Components Overview -->
+                <div id="components" class="tab-pane active">
+                    <h2>UI Component Library</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                        A modular component library. Each component is in its own file in the <code>components/</code> folder.
+                    </p>
+
+                    <h3 style="color: var(--accent-teal); margin-top: 30px;">Available Components:</h3>
+                    <ul style="color: var(--text-secondary); line-height: 2;">
+                        <li>✅ <strong>Modal</strong> - Central responsive container</li>
+                        <li>✅ <strong>Tabs</strong> - Desktop + mobile navigation</li>
+                        <li>✅ <strong>Status Bar</strong> - Bottom fixed bar</li>
+                        <li>✅ <strong>Service Cards</strong> - Minimal service display</li>
+                        <li>✅ <strong>Service Modal</strong> - Detail popup</li>
+                        <li>✅ <strong>Portfolio Cards</strong> - Project showcase</li>
+                        <li>✅ <strong>Command Palette</strong> - Quick nav (Cmd+K)</li>
+                        <li>✅ <strong>Buttons</strong> - Various styles</li>
+                    </ul>
+
+                    <h3 style="color: var(--accent-teal); margin-top: 30px;">How to Use:</h3>
+                    <ol style="color: var(--text-secondary); line-height: 2;">
+                        <li>Open <code>components/[component-name].html</code></li>
+                        <li>Copy the HTML structure</li>
+                        <li>Include <code>css/theme.css</code> in your page</li>
+                        <li>Include the JS file if the component needs it</li>
+                    </ol>
+
+                    <button class="cta-button" style="margin-top: 30px;" onclick="alert('Press Cmd+K or Ctrl+K to open command palette!')">
+                        Try Command Palette (Cmd+K)
+                    </button>
+                </div>
+
+                <!-- TAB 2: Service Cards Demo -->
+                <div id="services" class="tab-pane">
+                    <h2>Service Cards</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        From <code>components/service-card.html</code>
+                    </p>
+
+                    <!-- Service Cards (from components/service-card.html) -->
+                    <div class="services-minimal">
+                        <div class="service-item" onclick="openServiceModal()">
+                            <div class="service-code">WEB</div>
+                            <div class="service-content">
+                                <h3 class="service-name">Web Development</h3>
+                                <p class="service-desc">Custom websites and web applications built with modern technologies</p>
+                            </div>
+                            <div class="service-price">€500+</div>
+                        </div>
+                        
+                        <div class="service-item" onclick="openServiceModal()">
+                            <div class="service-code">APP</div>
+                            <div class="service-content">
+                                <h3 class="service-name">Mobile Apps</h3>
+                                <p class="service-desc">Cross-platform mobile applications for iOS and Android</p>
+                            </div>
+                            <div class="service-price">€1000+</div>
+                        </div>
+
+                        <div class="service-item" onclick="openServiceModal()">
+                            <div class="service-code">API</div>
+                            <div class="service-content">
+                                <h3 class="service-name">API Development</h3>
+                                <p class="service-desc">RESTful APIs and backend services</p>
+                            </div>
+                            <div class="service-price">€750+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Portfolio Cards Demo -->
+                <div id="portfolio" class="tab-pane">
+                    <h2>Portfolio Cards</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        From <code>components/portfolio-card.html</code>
+                    </p>
+
+                    <!-- Filter Buttons (from components/buttons.html) -->
+                    <div class="portfolio-filter">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Web</button>
+                        <button class="filter-btn">Mobile</button>
+                        <button class="filter-btn">API</button>
+                    </div>
+
+                    <!-- Portfolio Grid (from components/portfolio-card.html) -->
+                    <div class="portfolio-grid">
+                        <div class="portfolio-card">
+                            <img src="https://via.placeholder.com/600x400/1a1f3a/64ffda?text=Project+Alpha" alt="Project" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <h3>Project Alpha</h3>
+                                    <span class="portfolio-meta">⭐ 42</span>
+                                </div>
+                                <p class="portfolio-tech">React • TypeScript • Node.js</p>
+                                <p class="portfolio-desc">A modern web application with real-time features and responsive design.</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Demo</a>
+                                    <a href="#" class="portfolio-link">Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <img src="https://via.placeholder.com/600x400/1a1f3a/64ffda?text=Dashboard+Pro" alt="Project" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <h3>Dashboard Pro</h3>
+                                    <span class="portfolio-meta">⭐ 28</span>
+                                </div>
+                                <p class="portfolio-tech">Vue.js • TailwindCSS</p>
+                                <p class="portfolio-desc">Professional admin dashboard with analytics and data visualization.</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">Demo</a>
+                                    <a href="#" class="portfolio-link">Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: Buttons Demo -->
+                <div id="demo" class="tab-pane">
+                    <h2>Buttons & More</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                        From <code>components/buttons.html</code>
+                    </p>
+
+                    <h3 style="color: var(--accent-teal); margin-top: 20px;">CTA Button:</h3>
+                    <button class="cta-button">Call to Action</button>
+
+                    <h3 style="color: var(--accent-teal); margin-top: 30px;">Primary/Secondary:</h3>
+                    <div class="form-actions">
+                        <button class="btn-primary">Primary Action</button>
+                        <button class="btn-secondary">Secondary Action</button>
+                    </div>
+
+                    <h3 style="color: var(--accent-teal); margin-top: 30px;">Filter Buttons:</h3>
+                    <div class="portfolio-filter">
+                        <button class="filter-btn active">Active</button>
+                        <button class="filter-btn">Inactive</button>
+                        <button class="filter-btn">Another</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- STATUS BAR (from components/status-bar.html) -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span class="status-item">UI Component Library</span>
+            </div>
+            <div class="status-right">
+                <button class="lang-toggle" title="Language toggle">EN</button>
+                <a href="https://github.com/yourusername" class="status-item status-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE MODAL (from components/service-modal.html) -->
+    <div id="serviceModal" class="service-modal">
+        <div class="service-modal-content">
+            <button class="service-modal-close" onclick="closeServiceModal()">&times;</button>
+            <div id="serviceModalBody">
+                <div class="service-modal-header">
+                    <h2 class="service-modal-title">Service Details</h2>
+                    <div class="service-modal-price">€500+</div>
+                </div>
+                <p class="service-modal-subtitle">This is an example service modal</p>
+                
+                <div class="service-modal-section">
+                    <h4>What's Included</h4>
+                    <ul class="service-modal-list">
+                        <li>Feature one with detailed description</li>
+                        <li>Feature two with more details</li>
+                        <li>Feature three and additional benefits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMMAND PALETTE (from components/command-palette.html) -->
+    <div id="commandPalette" class="command-palette hidden">
+        <div class="command-palette-content">
+            <input type="text" id="commandInput" placeholder="Type a command... (Cmd/Ctrl + K)" autocomplete="off">
+            <div id="commandResults" class="command-results">
+                <div class="command-item" onclick="switchTab('components')">
+                    <div class="command-title">Components</div>
+                    <div class="command-desc">View all components</div>
+                </div>
+                <div class="command-item" onclick="switchTab('services')">
+                    <div class="command-title">Services</div>
+                    <div class="command-desc">View service cards</div>
+                </div>
+                <div class="command-item" onclick="switchTab('portfolio')">
+                    <div class="command-title">Portfolio</div>
+                    <div class="command-desc">View portfolio cards</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load component styles -->
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Load JavaScript -->
+    <script src="js/tabs.js"></script>
+    <script src="js/service-modal.js"></script>
+    <script src="js/command-palette.js"></script>
+</body>
+</html>
+
