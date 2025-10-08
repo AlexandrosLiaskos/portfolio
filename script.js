@@ -745,28 +745,46 @@ const serviceDetails = {
 function openServiceModal(serviceId) {
     const modal = document.getElementById('serviceModal');
     const modalBody = document.getElementById('serviceModalBody');
+
+    // Get service details from translations
+    const serviceData = t(`serviceDetails.${serviceId}`);
     const service = serviceDetails[serviceId];
 
-    if (!service) return;
+    if (!service || !serviceData) return;
 
     let html = `
         <div class="service-modal-header">
-            <h2 class="service-modal-title">${service.title}</h2>
+            <h2 class="service-modal-title">${serviceData.title}</h2>
             <div class="service-modal-price">${service.price}</div>
         </div>
-        <p class="service-modal-subtitle">${service.subtitle}</p>
+        <p class="service-modal-subtitle">${serviceData.description}</p>
     `;
 
-    service.sections.forEach(section => {
+    // Add features section
+    if (serviceData.features && serviceData.features.length > 0) {
         html += `
             <div class="service-modal-section">
-                <h4>${section.heading}</h4>
+                <h4>${t('featuresTitle') || 'Features'}</h4>
                 <ul class="service-modal-list">
-                    ${section.items.map(item => `<li>${item}</li>`).join('')}
+                    ${serviceData.features.map(item => `<li>${item}</li>`).join('')}
                 </ul>
             </div>
         `;
-    });
+    }
+
+    // Add original sections if they exist
+    if (service.sections) {
+        service.sections.forEach(section => {
+            html += `
+                <div class="service-modal-section">
+                    <h4>${section.heading}</h4>
+                    <ul class="service-modal-list">
+                        ${section.items.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        });
+    }
 
     modalBody.innerHTML = html;
     modal.classList.add('active');

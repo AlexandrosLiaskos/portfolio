@@ -128,7 +128,10 @@ const translations = {
         emailGmail: "Gmail",
         emailCopy: "Copy Content",
         emailCopied: "✓ Copied!",
-        
+
+        // Service Modal
+        featuresTitle: "Features",
+
         // Service Modal Details
         serviceDetails: {
             WEB: {
@@ -301,7 +304,10 @@ const translations = {
         emailGmail: "Gmail",
         emailCopy: "Αντιγραφή Περιεχομένου",
         emailCopied: "✓ Αντιγράφηκε!",
-        
+
+        // Service Modal
+        featuresTitle: "Χαρακτηριστικά",
+
         // Service Modal Details
         serviceDetails: {
             WEB: {
