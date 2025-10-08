@@ -351,8 +351,12 @@ function setLanguage(lang) {
 }
 
 function updatePageLanguage() {
-    // Update language toggle button
-    document.getElementById('langText').textContent = currentLang === 'en' ? 'EN' : 'ΕΛ';
+    // Update language toggle buttons
+    const langText = currentLang === 'en' ? 'EN' : 'ΕΛ';
+    const langToggle = document.getElementById('langText');
+    const navLangToggle = document.getElementById('navLangText');
+    if (langToggle) langToggle.textContent = langText;
+    if (navLangToggle) navLangToggle.textContent = langText;
 
     // Update status bar
     document.getElementById('statusName').textContent = t('statusName');
