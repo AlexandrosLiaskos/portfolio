@@ -326,19 +326,19 @@ function setupMobileTabDropdown() {
 // Language Management (removed URL-based detection to prevent 404s)
 
 function toggleLanguage() {
-    const newLang = currentLang === 'en' ? 'gr' : 'en';
+    const newLang = langState.current === 'en' ? 'gr' : 'en';
     setLanguage(newLang);
 }
 
 function setLanguage(lang) {
-    currentLang = lang;
+    setCurrentLang(lang); // Use the setter from translations.js
     localStorage.setItem('preferredLanguage', lang);
     updatePageLanguage();
 }
 
 function updatePageLanguage() {
     // Update language toggle buttons
-    const langText = currentLang === 'en' ? 'EN' : 'ΕΛ';
+    const langText = langState.current === 'en' ? 'EN' : 'ΕΛ';
     const langToggle = document.getElementById('langText');
     const navLangToggle = document.getElementById('navLangText');
     const mobileLangToggle = document.getElementById('mobileLangText');
@@ -358,10 +358,12 @@ function updatePageLanguage() {
         }
     });
 
-    // Update mobile dropdown
-    const mobileOptions = document.querySelectorAll('.mobile-tab-option');
+    // Update mobile dropdown (exclude language toggle)
+    const mobileOptions = document.querySelectorAll('.mobile-tab-option:not(.mobile-lang-option)');
     mobileOptions.forEach((option, index) => {
-        option.textContent = t(tabKeys[index]);
+        if (index < tabKeys.length) {
+            option.textContent = t(tabKeys[index]);
+        }
     });
 
     // Update current tab name in mobile dropdown button
@@ -558,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialLang = savedLang || 'en';
 
     if (initialLang !== 'en') {
-        currentLang = initialLang;
+        setCurrentLang(initialLang); // Use the setter from translations.js
     }
 
     renderPortfolio();

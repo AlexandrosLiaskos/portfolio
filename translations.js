@@ -390,18 +390,29 @@ const translations = {
     }
 };
 
-// Current language (default: English)
+// Language state object (using object so it's shared by reference)
+const langState = {
+    current: 'en'
+};
+
+// Backward compatibility
 let currentLang = 'en';
 
 // Get translation
 function t(key) {
     const keys = key.split('.');
-    let value = translations[currentLang];
-    
+    let value = translations[langState.current];
+
     for (const k of keys) {
         value = value?.[k];
     }
-    
+
     return value || key;
+}
+
+// Set language (updates both langState and currentLang for compatibility)
+function setCurrentLang(lang) {
+    langState.current = lang;
+    currentLang = lang;
 }
 
