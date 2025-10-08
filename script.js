@@ -361,11 +361,13 @@ function updatePageLanguage() {
     // Update status bar
     document.getElementById('statusName').textContent = t('statusName');
 
-    // Update tabs
-    const tabs = document.querySelectorAll('.tab');
+    // Update tabs (exclude language tab)
+    const tabs = document.querySelectorAll('.tab:not(.tab-lang)');
     const tabKeys = ['tabAbout', 'tabServices', 'tabSpecial', 'tabPortfolio', 'tabStack', 'tabRequest', 'tabContact'];
     tabs.forEach((tab, index) => {
-        tab.textContent = t(tabKeys[index]);
+        if (index < tabKeys.length) {
+            tab.textContent = t(tabKeys[index]);
+        }
     });
 
     // Update mobile dropdown
@@ -376,10 +378,12 @@ function updatePageLanguage() {
 
     // Update current tab name in mobile dropdown button
     const currentTabName = document.getElementById('currentTabName');
-    const activeTab = document.querySelector('.tab.active');
+    const activeTab = document.querySelector('.tab.active:not(.tab-lang)');
     if (activeTab && currentTabName) {
         const activeIndex = Array.from(tabs).indexOf(activeTab);
-        currentTabName.textContent = t(tabKeys[activeIndex]);
+        if (activeIndex >= 0 && activeIndex < tabKeys.length) {
+            currentTabName.textContent = t(tabKeys[activeIndex]);
+        }
     }
 
     // Update home page
