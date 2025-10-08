@@ -61,12 +61,27 @@ const translations = {
             name: "AI Automations",
             desc: "Intelligent automation solutions powered by AI"
         },
+        serviceIdea: {
+            code: "IDEA",
+            name: "Idea to Project",
+            desc: "Transform your concept into a working project"
+        },
+        serviceBoost: {
+            code: "BOOST",
+            name: "Business Boosting",
+            desc: "Accelerate your business growth with strategic solutions"
+        },
+        serviceProd: {
+            code: "PROD",
+            name: "Idea to Product",
+            desc: "Full-scale product development from concept to launch"
+        },
         serviceI2P: {
             code: "I2P",
             name: "Other Projects",
             desc: "Custom solutions for unique needs"
         },
-        
+
         // Portfolio
         portfolioTitle: "Portfolio",
         filterAll: "All Projects",
@@ -237,12 +252,27 @@ const translations = {
             name: "Αυτοματισμοί AI",
             desc: "Έξυπνες λύσεις αυτοματισμού με τεχνητή νοημοσύνη"
         },
+        serviceIdea: {
+            code: "IDEA",
+            name: "Από Ιδέα σε Έργο",
+            desc: "Μετατρέψτε την ιδέα σας σε λειτουργικό έργο"
+        },
+        serviceBoost: {
+            code: "BOOST",
+            name: "Ενίσχυση Επιχείρησης",
+            desc: "Επιταχύνετε την ανάπτυξη της επιχείρησής σας"
+        },
+        serviceProd: {
+            code: "PROD",
+            name: "Από Ιδέα σε Προϊόν",
+            desc: "Πλήρης ανάπτυξη προϊόντος από την ιδέα έως την κυκλοφορία"
+        },
         serviceI2P: {
             code: "I2P",
             name: "Άλλα Έργα",
             desc: "Προσαρμοσμένες λύσεις για μοναδικές ανάγκες"
         },
-        
+
         // Portfolio
         portfolioTitle: "Χαρτοφυλάκιο",
         filterAll: "Όλα τα Έργα",

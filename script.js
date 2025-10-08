@@ -433,7 +433,7 @@ function updateHomePage() {
 
 function updateServicesPage() {
     const serviceItems = document.querySelectorAll('#services .service-item');
-    const serviceKeys = ['serviceWeb', 'serviceFix', 'serviceQA', 'serviceCons'];
+    const serviceKeys = ['serviceWeb', 'serviceFix', 'serviceQA', 'serviceCons', 'serviceIdea'];
 
     serviceItems.forEach((item, index) => {
         const codeEl = item.querySelector('.service-code');
@@ -449,7 +449,7 @@ function updateServicesPage() {
 
 function updateSpecialServicesPage() {
     const serviceItems = document.querySelectorAll('#special .service-item');
-    const serviceKeys = ['serviceApp', 'serviceOps', 'serviceAI', 'serviceI2P'];
+    const serviceKeys = ['serviceApp', 'serviceOps', 'serviceAI', 'serviceBoost', 'serviceProd', 'serviceI2P'];
 
     serviceItems.forEach((item, index) => {
         const codeEl = item.querySelector('.service-code');
@@ -721,6 +721,58 @@ const serviceDetailsEN = {
             }
         ]
     },
+    IDEA: {
+        title: 'Idea to Project',
+        subtitle: 'Transform your concept into a working project',
+        price: '€20+',
+        sections: [
+            {
+                heading: 'What You Get',
+                items: [
+                    'Initial consultation and idea validation',
+                    'Basic project structure and planning',
+                    'Technology recommendations',
+                    'Development roadmap',
+                    'Simple prototype or MVP'
+                ]
+            }
+        ]
+    },
+    BOOST: {
+        title: 'Business Boosting',
+        subtitle: 'Accelerate your business growth with strategic solutions',
+        price: '€50+',
+        sections: [
+            {
+                heading: 'Services Included',
+                items: [
+                    'Business process optimization',
+                    'Digital transformation strategy',
+                    'Marketing automation setup',
+                    'Performance analytics and insights',
+                    'Growth strategy consultation'
+                ]
+            }
+        ]
+    },
+    PROD: {
+        title: 'Idea to Product',
+        subtitle: 'Full-scale product development from concept to launch',
+        price: '€150+',
+        sections: [
+            {
+                heading: 'Complete Package',
+                items: [
+                    'Comprehensive market research',
+                    'Product design and UX/UI',
+                    'Full-stack development',
+                    'Quality assurance and testing',
+                    'Production deployment',
+                    'Post-launch support and maintenance'
+                ]
+            }
+        ]
+    },
     I2P: {
         title: 'Other Projects',
         subtitle: 'Custom solutions tailored to your unique needs',
@@ -849,6 +901,58 @@ const serviceDetailsGR = {
                     'Δημιουργία & Επεξεργασία Περιεχομένου',
                     'Ανάλυση Δεδομένων & Insights',
                     'Αυτοματισμός Διαδικασιών με AI'
+                ]
+            }
+        ]
+    },
+    IDEA: {
+        title: 'Από Ιδέα σε Έργο',
+        subtitle: 'Μετατρέψτε την ιδέα σας σε λειτουργικό έργο',
+        price: '€20+',
+        sections: [
+            {
+                heading: 'Τι Περιλαμβάνεται',
+                items: [
+                    'Αρχική συμβουλευτική και επικύρωση ιδέας',
+                    'Βασική δομή και σχεδιασμός έργου',
+                    'Συστάσεις τεχνολογιών',
+                    'Χάρτης ανάπτυξης',
+                    'Απλό πρωτότυπο ή MVP'
+                ]
+            }
+        ]
+    },
+    BOOST: {
+        title: 'Ενίσχυση Επιχείρησης',
+        subtitle: 'Επιταχύνετε την ανάπτυξη της επιχείρησής σας με στρατηγικές λύσεις',
+        price: '€50+',
+        sections: [
+            {
+                heading: 'Υπηρεσίες που Περιλαμβάνονται',
+                items: [
+                    'Βελτιστοποίηση επιχειρηματικών διαδικασιών',
+                    'Στρατηγική ψηφιακού μετασχηματισμού',
+                    'Εγκατάσταση αυτοματισμού μάρκετινγκ',
+                    'Αναλυτικά απόδοσης και insights',
+                    'Συμβουλευτική στρατηγικής ανάπτυξης'
+                ]
+            }
+        ]
+    },
+    PROD: {
+        title: 'Από Ιδέα σε Προϊόν',
+        subtitle: 'Πλήρης ανάπτυξη προϊόντος από την ιδέα έως την κυκλοφορία',
+        price: '€150+',
+        sections: [
+            {
+                heading: 'Πλήρες Πακέτο',
+                items: [
+                    'Ολοκληρωμένη έρευνα αγοράς',
+                    'Σχεδιασμός προϊόντος και UX/UI',
+                    'Full-stack ανάπτυξη',
+                    'Διασφάλιση ποιότητας και δοκιμές',
+                    'Ανάπτυξη παραγωγής',
+                    'Υποστήριξη και συντήρηση μετά την κυκλοφορία'
                 ]
             }
         ]
