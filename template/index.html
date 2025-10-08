@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Business Name</title> <!-- REPLACE: Your business/app name -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="modal">
+            <div class="modal-header">
+                <!-- Desktop Tabs -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="about">About</button> <!-- REPLACE: Tab names -->
+                    <button class="tab" data-tab="services">Services</button>
+                    <button class="tab" data-tab="portfolio">Portfolio</button>
+                    <button class="tab" data-tab="contact">Contact</button>
+                    <button class="tab tab-lang" onclick="toggleLanguage(); event.stopPropagation();" title="Change language">
+                        <span id="navLangText">EN</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Dropdown -->
+                <div class="mobile-tab-selector">
+                    <button class="mobile-tab-button" id="mobileTabButton">
+                        <span id="currentTabName">About</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-tab-dropdown" id="mobileTabDropdown">
+                        <button class="mobile-tab-option active" data-tab="about">About</button>
+                        <button class="mobile-tab-option" data-tab="services">Services</button>
+                        <button class="mobile-tab-option" data-tab="portfolio">Portfolio</button>
+                        <button class="mobile-tab-option" data-tab="contact">Contact</button>
+                        <button class="mobile-tab-option mobile-lang-option" onclick="toggleLanguage(); event.stopPropagation();">
+                            <span id="mobileLangText">EN / ΕΛ</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <!-- About Tab -->
+                <div id="about" class="tab-pane active">
+                    <div class="home-content">
+                        <h1 class="home-name" id="homeName">Your Name</h1> <!-- REPLACE: Your name -->
+                        <p class="home-title" id="homeTitle">Your Title / Tagline</p> <!-- REPLACE: Your title -->
+                        <button class="cta-button" id="homeCTA" onclick="switchTab('contact')">Get Started</button>
+                        
+                        <div class="home-services">
+                            <span id="homeService1">Service 1</span> <!-- REPLACE: Your services -->
+                            <span id="homeService2">Service 2</span>
+                            <span id="homeService3">Service 3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Tab -->
+                <div id="services" class="tab-pane">
+                    <div class="services-minimal">
+                        <!-- REPLACE: Add your service items -->
+                        <div class="service-item" onclick="openServiceModal('SERVICE1')">
+                            <div class="service-code">SVC1</div>
+                            <div class="service-content">
+                                <h3 class="service-name">Service Name</h3>
+                                <p class="service-desc">Service description</p>
+                            </div>
+                            <div class="service-price">€XX+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Tab -->
+                <div id="portfolio" class="tab-pane">
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <!-- REPLACE: Add your filter categories -->
+                    </div>
+                    <div class="portfolio-grid" id="portfolioGrid">
+                        <!-- Portfolio items will be rendered by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Contact Tab -->
+                <div id="contact" class="tab-pane">
+                    <div class="contact-content">
+                        <h2>Get in Touch</h2> <!-- REPLACE: Contact heading -->
+                        <p>Contact description text</p> <!-- REPLACE: Contact description -->
+                        
+                        <div class="contact-methods">
+                            <a href="mailto:your@email.com" class="contact-method"> <!-- REPLACE: Your email -->
+                                <span class="contact-icon">✉️</span>
+                                <span>your@email.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span class="status-item" id="statusName">Your Name</span> <!-- REPLACE: Your name -->
+            </div>
+            <div class="status-right">
+                <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Change language">
+                    <span id="langText">EN</span>
+                </button>
+                <a href="https://github.com/yourusername" target="_blank" class="status-item status-link" title="GitHub"> <!-- REPLACE: Your GitHub -->
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="service-modal">
+        <div class="service-modal-content">
+            <button class="service-modal-close" onclick="closeServiceModal()">&times;</button>
+            <div id="serviceModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Command Palette -->
+    <div id="commandPalette" class="command-palette">
+        <div class="command-palette-content">
+            <input type="text" id="commandInput" placeholder="Type a command..." autocomplete="off">
+            <div id="commandResults" class="command-results"></div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
