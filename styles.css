@@ -79,7 +79,7 @@ body {
 
 
 
-/* Tabs */
+/* Tabs - Desktop only */
 .tabs {
     display: flex;
     border-top: 1px solid var(--border-color);
@@ -94,9 +94,9 @@ body {
     display: none;
 }
 
-/* Mobile Tab Dropdown - Hidden by default */
+/* Mobile Tab Dropdown - Hidden by default on desktop */
 .mobile-tab-selector {
-    display: none;
+    display: none !important;
     position: relative;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
@@ -1502,22 +1502,24 @@ body {
         border: 1px solid var(--border-color);
         border-top: 2px solid var(--accent-teal);
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
     }
 
     /* Hide regular tabs, show dropdown */
     .tabs {
-        display: none;
+        display: none !important;
     }
 
     .mobile-tab-selector {
-        display: block;
+        display: block !important;
     }
 
     .home-center {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: calc(100vh - 120px);
+        flex: 1;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -1574,7 +1576,7 @@ body {
 
     .tab-content {
         padding: 16px;
-        height: calc(100vh - 120px);
+        flex: 1;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -1690,22 +1692,24 @@ body {
         border-top: 2px solid var(--accent-teal);
         position: relative;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
     }
 
     /* Hide regular tabs, show dropdown */
     .tabs {
-        display: none;
+        display: none !important;
     }
 
     .mobile-tab-selector {
-        display: block;
+        display: block !important;
     }
 
     /* Home page - full screen centered content */
     .home-center {
         padding: 20px 16px;
         overflow-y: auto;
-        height: calc(100vh - 116px);
+        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1772,7 +1776,7 @@ body {
     /* Content area - full height with proper spacing */
     .tab-content {
         padding: 16px;
-        height: calc(100vh - 116px);
+        flex: 1;
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
