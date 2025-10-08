@@ -271,6 +271,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setupPortfolioFilter();
     updateTime();
     setInterval(updateTime, 1000);
+
+    // Hide scroll hint after user scrolls tabs
+    const tabsContainer = document.querySelector('.tabs');
+    if (tabsContainer) {
+        let hasScrolled = false;
+        tabsContainer.addEventListener('scroll', () => {
+            if (!hasScrolled && tabsContainer.scrollLeft > 10) {
+                hasScrolled = true;
+                tabsContainer.style.setProperty('--hide-hint', '1');
+            }
+        });
+    }
 });
 
 // Smooth scroll for tab content
