@@ -2,7 +2,7 @@
 const translations = {
     en: {
         // Status Bar
-        statusName: "Alexandros Liaskos",
+        statusName: "Your Name",
         statusGitHub: "GitHub",
         
         // Tabs
@@ -15,7 +15,7 @@ const translations = {
         tabContact: "Contact",
         
         // Home/About
-        name: "Alexandros Liaskos",
+        name: "Your Name",
         title: "SOFTWARE ENGINEER",
         services: ["Websites", "Web Apps", "DevOps", "AI"],
         consulting: "Consulting",
@@ -196,7 +196,7 @@ const translations = {
     },
     gr: {
         // Status Bar
-        statusName: "Αλέξανδρος Λιάσκος",
+        statusName: "Το Όνομά Σας",
         statusGitHub: "GitHub",
         
         // Tabs
@@ -209,7 +209,7 @@ const translations = {
         tabContact: "Επικοινωνία",
         
         // Home/About
-        name: "Αλέξανδρος Λιάσκος",
+        name: "Το Όνομά Σας",
         title: "ΜΗΧΑΝΙΚΟΣ ΛΟΓΙΣΜΙΚΟΥ",
         services: ["Ιστοσελίδες", "Εφαρμογές", "DevOps", "AI"],
         consulting: "Συμβουλευτική",

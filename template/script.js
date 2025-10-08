@@ -1,78 +1,61 @@
 // Portfolio Data
 const portfolioProjects = [
     {
-        title: "Chilling Vibes",
-        stars: "35",
-        tech: "Python",
-        category: "tools",
-        description: "Automation tool bridging RooCode with Google AI Studio using PyAutoGUI.",
-        repo: "https://github.com/AlexandrosLiaskos/Chilling-Vibes",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/Chilling-Vibes"
+        title: "Project Alpha",
+        stars: "42",
+        tech: "React/TypeScript",
+        category: "web",
+        description: "A modern web application showcasing advanced UI/UX patterns and best practices.",
+        demo: "https://example.com/alpha",
+        repo: "https://github.com/yourusername/project-alpha",
+        image: "https://via.placeholder.com/600x400/1a1f3a/64ffda?text=Project+Alpha"
     },
     {
-        title: "Awesome Wallpapers",
-        stars: "4",
+        title: "Dashboard Pro",
+        stars: "28",
         tech: "Vue.js",
         category: "web",
-        description: "Vue/TailwindCSS web app for browsing and downloading wallpapers.",
-        demo: "https://alexandrosliaskos.github.io/Awesome_Wallpapers/",
-        repo: "https://github.com/AlexandrosLiaskos/Awesome_Wallpapers",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/Awesome_Wallpapers"
+        description: "Professional admin dashboard with real-time analytics and data visualization.",
+        demo: "https://example.com/dashboard",
+        repo: "https://github.com/yourusername/dashboard-pro",
+        image: "https://via.placeholder.com/600x400/1a1f3a/64ffda?text=Dashboard+Pro"
     },
     {
-        title: "CVIc Web Platform",
-        stars: "Research",
-        tech: "React/TypeScript",
-        category: "research",
-        description: "Web platform automating Coastal Vulnerability Index calculations.",
-        demo: "https://alexandrosliaskos.github.io/CVIc/",
-        repo: "https://github.com/AlexandrosLiaskos/CVIc",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/CVIc"
-    },
-    {
-        title: "LazyLS",
-        stars: "3",
-        tech: "Go",
-        category: "tools",
-        description: "Lazy-loaded terminal file browser built with Go and Gocui.",
-        repo: "https://github.com/AlexandrosLiaskos/lazyls",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/lazyls"
-    },
-    {
-        title: "Obsidian Web Scraper",
-        stars: "5",
-        tech: "JavaScript",
-        category: "tools",
-        description: "NPM/MCP tools for web content scraping via Readability & Turndown.",
-        repo: "https://github.com/AlexandrosLiaskos/obsidian-scraper",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/obsidian-scraper"
-    },
-    {
-        title: "PyBoost",
-        stars: "3",
+        title: "DevTools Suite",
+        stars: "156",
         tech: "Python",
         category: "tools",
-        description: "Comprehensive toolkit for cleaning and optimizing Python code.",
-        repo: "https://github.com/AlexandrosLiaskos/pyboost",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/pyboost"
+        description: "Collection of developer productivity tools and automation scripts.",
+        repo: "https://github.com/yourusername/devtools-suite",
+        image: "https://via.placeholder.com/600x400/1a1f3a/64ffda?text=DevTools+Suite"
     },
     {
-        title: "PyTutor",
-        stars: "1",
-        tech: "Python",
+        title: "API Gateway",
+        stars: "89",
+        tech: "Node.js",
         category: "tools",
-        description: "Interactive TUI application for teaching Python fundamentals.",
-        repo: "https://github.com/AlexandrosLiaskos/PyTutor",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/PyTutor"
+        description: "High-performance API gateway with rate limiting and authentication.",
+        repo: "https://github.com/yourusername/api-gateway",
+        image: "https://via.placeholder.com/600x400/1a1f3a/64ffda?text=API+Gateway"
     },
     {
-        title: "SatShor",
-        stars: "Research",
-        tech: "Python",
-        category: "research",
-        description: "Satellite-derived shoreline extraction from S2L2AB08 imagery.",
-        repo: "https://github.com/AlexandrosLiaskos/SatShor",
-        image: "https://opengraph.githubassets.com/1/AlexandrosLiaskos/SatShor"
+        title: "E-Commerce Platform",
+        stars: "203",
+        tech: "Next.js",
+        category: "web",
+        description: "Full-featured e-commerce solution with payment integration and admin panel.",
+        demo: "https://example.com/shop",
+        repo: "https://github.com/yourusername/ecommerce",
+        image: "https://via.placeholder.com/600x400/1a1f3a/64ffda?text=E-Commerce"
+    },
+    {
+        title: "Mobile App",
+        stars: "67",
+        tech: "React Native",
+        category: "web",
+        description: "Cross-platform mobile application with offline-first architecture.",
+        repo: "https://github.com/yourusername/mobile-app",
+        image: "https://via.placeholder.com/600x400/1a1f3a/64ffda?text=Mobile+App"
     }
 ];
 
@@ -83,9 +66,9 @@ const commands = [
     { title: "Portfolio", desc: "View portfolio projects", action: () => switchTab('portfolio') },
     { title: "Stack", desc: "View technical stack", action: () => switchTab('stack') },
     { title: "Contact", desc: "Get in touch", action: () => switchTab('contact') },
-    { title: "GitHub", desc: "Open GitHub profile", action: () => window.open('https://github.com/AlexandrosLiaskos', '_blank') },
-    { title: "LinkedIn", desc: "Open LinkedIn profile", action: () => window.open('https://www.linkedin.com/in/alexandros-liaskos-a92a46254/', '_blank') },
-    { title: "Email", desc: "Send an email", action: () => window.location.href = 'mailto:alexliaskos@geol.uoa.gr' }
+    { title: "GitHub", desc: "Open GitHub profile", action: () => window.open('https://github.com/yourusername', '_blank') },
+    { title: "LinkedIn", desc: "Open LinkedIn profile", action: () => window.open('https://linkedin.com/in/yourprofile', '_blank') },
+    { title: "Email", desc: "Send an email", action: () => window.location.href = 'mailto:hello@yourbusiness.com' }
 ];
 
 // Tab Switching
