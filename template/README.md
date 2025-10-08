@@ -1,36 +1,45 @@
 # Business SPA Template
 
-A clean, minimal single-page application template with:
+This is a complete copy of the business-spa with all the layout, theme, and styling intact.
 
-## Features
+## What to Replace
 
-- ✅ **Responsive Design** - Mobile-first with tablet and desktop breakpoints
-- ✅ **Dark Theme** - Professional dark color scheme with teal accents
-- ✅ **Tab Navigation** - Desktop horizontal tabs + mobile dropdown
-- ✅ **Modal System** - Centered modal with smooth animations
-- ✅ **Bilingual Support** - Built-in translation system (EN/GR template)
-- ✅ **Status Bar** - Bottom status bar with language toggle
-- ✅ **Service Cards** - Minimal service item layout
-- ✅ **Portfolio Grid** - Filterable project cards
-- ✅ **Contact Form** - Email integration ready
-- ✅ **Command Palette** - Cmd+K quick navigation
+### 1. **Personal Information** (Search & Replace)
+- `Alexandros Liaskos` → Your name
+- `alexliaskos@geol.uoa.gr` → Your email
+- `https://github.com/AlexandrosLiaskos` → Your GitHub
+- `https://www.linkedin.com/in/alexandros-liaskos-a92a46254/` → Your LinkedIn
+- `https://www.instagram.com/alexandros_liaskos/` → Your Instagram
 
-## Files
+### 2. **Services** (in `index.html` and `script.js`)
+Replace the service items in:
+- Services tab (`#services`)
+- Special Services tab (`#special`)
+- Service modal data (`serviceDetailsEN` and `serviceDetailsGR` in `script.js`)
+- Form dropdown options
 
-- `index.html` - Main HTML structure with placeholder content
-- `styles.css` - Complete styling (no changes needed)
-- `script.js` - Core functionality with placeholder data
-- `translations.js` - Translation system structure
+### 3. **Portfolio Projects** (in `script.js`)
+Replace the `portfolioProjects` array with your own projects.
 
-## Quick Start
+### 4. **Translations** (in `translations.js`)
+Update all text in both `en` and `gr` objects with your content.
 
-1. Replace placeholder content in `index.html`
-2. Update data arrays in `script.js` (services, portfolio, etc.)
-3. Add your translations in `translations.js`
-4. Customize theme colors in `styles.css` (optional)
+### 5. **Tech Stack** (in `index.html`)
+Update the stack section with your technologies.
 
-## Theme Colors
+### 6. **Meta Tags** (in `index.html`)
+- Update `<title>` tag
+- Add your own meta description, keywords, etc.
 
+## What NOT to Change
+
+- ✅ **styles.css** - Keep as-is (or only modify theme colors)
+- ✅ **HTML structure** - Keep the layout intact
+- ✅ **JavaScript functionality** - Keep the core functions
+
+## Theme Colors (Optional Customization)
+
+In `styles.css`, you can change:
 ```css
 --bg-primary: #0a0e27
 --bg-secondary: #151932
@@ -40,7 +49,24 @@ A clean, minimal single-page application template with:
 --text-secondary: #8892b0
 ```
 
-## Customization
+## Quick Start
 
-All content is marked with `<!-- REPLACE: ... -->` comments for easy identification.
+1. Copy this `template/` folder to your new project
+2. Search for "Alexandros" and replace with your info
+3. Update service data in `script.js`
+4. Update portfolio projects in `script.js`
+5. Update translations in `translations.js`
+6. Test locally, then deploy!
+
+## Features Included
+
+- ✅ Responsive design (mobile, tablet, desktop)
+- ✅ Dark theme with teal accents
+- ✅ Tab navigation (desktop + mobile dropdown)
+- ✅ Bilingual support (EN/GR)
+- ✅ Service modals
+- ✅ Portfolio grid with filtering
+- ✅ Contact form with email integration
+- ✅ Command palette (Cmd+K)
+- ✅ Status bar with language toggle
 
