@@ -143,8 +143,8 @@ function renderPortfolio(filter = 'all') {
                 </div>
                 <p>${project.description}</p>
                 <div class="portfolio-links">
-                    ${project.demo ? `<a href="${project.demo}" target="_blank" class="portfolio-link">Live Demo →</a>` : ''}
-                    ${project.repo ? `<a href="${project.repo}" target="_blank" class="portfolio-link">GitHub →</a>` : ''}
+                    ${project.demo ? `<a href="${project.demo}" target="_blank" class="portfolio-link">${t('viewDemo')} →</a>` : ''}
+                    ${project.repo ? `<a href="${project.repo}" target="_blank" class="portfolio-link">${t('viewRepo')} →</a>` : ''}
                 </div>
             </div>
         </div>
@@ -323,13 +323,199 @@ function setupMobileTabDropdown() {
     });
 }
 
+// Language Management
+function detectLanguageFromURL() {
+    const path = window.location.pathname;
+    if (path.includes('/gr') || path.endsWith('/gr.html')) {
+        return 'gr';
+    }
+    return 'en';
+}
+
+function toggleLanguage() {
+    const newLang = currentLang === 'en' ? 'gr' : 'en';
+    setLanguage(newLang);
+
+    // Update URL
+    if (newLang === 'gr') {
+        window.history.pushState({}, '', '/gr');
+    } else {
+        window.history.pushState({}, '', '/');
+    }
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('preferredLanguage', lang);
+    updatePageLanguage();
+}
+
+function updatePageLanguage() {
+    // Update language toggle button
+    document.getElementById('langText').textContent = currentLang === 'en' ? 'EN' : 'ΕΛ';
+
+    // Update status bar
+    document.getElementById('statusName').textContent = t('statusName');
+
+    // Update tabs
+    const tabs = document.querySelectorAll('.tab');
+    const tabKeys = ['tabAbout', 'tabServices', 'tabSpecial', 'tabPortfolio', 'tabStack', 'tabRequest', 'tabContact'];
+    tabs.forEach((tab, index) => {
+        tab.textContent = t(tabKeys[index]);
+    });
+
+    // Update mobile dropdown
+    const mobileOptions = document.querySelectorAll('.mobile-tab-option');
+    mobileOptions.forEach((option, index) => {
+        option.textContent = t(tabKeys[index]);
+    });
+
+    // Update current tab name in mobile dropdown button
+    const currentTabName = document.getElementById('currentTabName');
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab && currentTabName) {
+        const activeIndex = Array.from(tabs).indexOf(activeTab);
+        currentTabName.textContent = t(tabKeys[activeIndex]);
+    }
+
+    // Update home page
+    updateHomePage();
+
+    // Update services
+    updateServicesPage();
+
+    // Update special services
+    updateSpecialServicesPage();
+
+    // Update portfolio
+    updatePortfolioPage();
+
+    // Update stack
+    updateStackPage();
+
+    // Update contact
+    updateContactPage();
+
+    // Update request workflow
+    updateRequestPage();
+}
+
+function updateHomePage() {
+    const nameEl = document.querySelector('.home-name');
+    const titleEl = document.querySelector('.home-title');
+    const servicesEls = document.querySelectorAll('.home-services .service-tag');
+    const consultingEl = document.querySelector('.home-services .service-tag:last-child');
+    const ctaBtn = document.querySelector('.home-cta');
+
+    if (nameEl) nameEl.textContent = t('name');
+    if (titleEl) titleEl.textContent = t('title');
+    if (servicesEls.length >= 4) {
+        t('services').forEach((service, i) => {
+            if (servicesEls[i]) servicesEls[i].textContent = service;
+        });
+    }
+    if (consultingEl) consultingEl.textContent = t('consulting');
+    if (ctaBtn) ctaBtn.textContent = t('ctaButton');
+}
+
+function updateServicesPage() {
+    const serviceItems = document.querySelectorAll('#services .service-item');
+    const serviceKeys = ['serviceWeb', 'serviceFix', 'serviceQA', 'serviceCons'];
+
+    serviceItems.forEach((item, index) => {
+        const codeEl = item.querySelector('.service-code');
+        const nameEl = item.querySelector('.service-name');
+        const descEl = item.querySelector('.service-desc');
+        const service = t(serviceKeys[index]);
+
+        if (codeEl) codeEl.textContent = service.code;
+        if (nameEl) nameEl.textContent = service.name;
+        if (descEl) descEl.textContent = service.desc;
+    });
+}
+
+function updateSpecialServicesPage() {
+    const serviceItems = document.querySelectorAll('#special .service-item');
+    const serviceKeys = ['serviceApp', 'serviceOps', 'serviceAI', 'serviceI2P'];
+
+    serviceItems.forEach((item, index) => {
+        const codeEl = item.querySelector('.service-code');
+        const nameEl = item.querySelector('.service-name');
+        const descEl = item.querySelector('.service-desc');
+        const service = t(serviceKeys[index]);
+
+        if (codeEl) codeEl.textContent = service.code;
+        if (nameEl) nameEl.textContent = service.name;
+        if (descEl) descEl.textContent = service.desc;
+    });
+}
+
+function updatePortfolioPage() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterKeys = ['filterAll', 'filterWeb', 'filterTools', 'filterResearch'];
+
+    filterBtns.forEach((btn, index) => {
+        btn.textContent = t(filterKeys[index]);
+    });
+
+    // Re-render portfolio with translations
+    renderPortfolio(currentFilter);
+}
+
+function updateStackPage() {
+    const stackGroups = document.querySelectorAll('.stack-group h3');
+    const stackKeys = ['stackFrontend', 'stackBackend', 'stackDevOps', 'stackTools'];
+
+    stackGroups.forEach((h3, index) => {
+        h3.textContent = t(stackKeys[index]);
+    });
+}
+
+function updateContactPage() {
+    const sections = document.querySelectorAll('.contact-section-title');
+    if (sections[0]) sections[0].textContent = t('contactEmail');
+    if (sections[1]) sections[1].textContent = t('contactSocial');
+}
+
+function updateRequestPage() {
+    const steps = document.querySelectorAll('.workflow-stage');
+    const stepData = [
+        { title: 'step1Title', desc: 'step1Desc' },
+        { title: 'step2Title', desc: 'step2Desc' },
+        { title: 'step3Title', desc: 'step3Desc' }
+    ];
+
+    steps.forEach((step, index) => {
+        const titleEl = step.querySelector('.workflow-title');
+        const textEl = step.querySelector('.workflow-text');
+
+        if (titleEl) titleEl.textContent = t(stepData[index].title);
+        if (textEl) textEl.textContent = t(stepData[index].desc);
+    });
+
+    const startBtn = document.querySelector('.request-form-btn');
+    if (startBtn) startBtn.textContent = t('startButton');
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    // Detect language from URL or localStorage
+    const urlLang = detectLanguageFromURL();
+    const savedLang = localStorage.getItem('preferredLanguage');
+    const initialLang = urlLang !== 'en' ? urlLang : (savedLang || 'en');
+
+    if (initialLang !== 'en') {
+        currentLang = initialLang;
+    }
+
     renderPortfolio();
     setupPortfolioFilter();
     updateTime();
     setInterval(updateTime, 1000);
     setupMobileTabDropdown();
+
+    // Apply language after DOM is ready
+    updatePageLanguage();
 });
 
 // Smooth scroll for tab content

@@ -1399,6 +1399,30 @@ body {
     color: var(--accent-color);
 }
 
+/* Language Toggle */
+.lang-toggle {
+    background: transparent;
+    border: 1px solid var(--accent-teal);
+    color: var(--accent-teal);
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.lang-toggle:hover {
+    background: var(--accent-teal);
+    color: var(--bg-dark);
+}
+
+.lang-toggle:active {
+    transform: scale(0.95);
+}
+
 .status-separator {
     opacity: 0.3;
 }
