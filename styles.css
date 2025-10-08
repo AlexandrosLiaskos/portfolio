@@ -94,6 +94,99 @@ body {
     display: none;
 }
 
+/* Mobile Tab Dropdown - Hidden by default */
+.mobile-tab-selector {
+    display: none;
+    position: relative;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.mobile-tab-button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 48px;
+}
+
+.mobile-tab-button:active {
+    background: rgba(100, 255, 218, 0.05);
+}
+
+.mobile-tab-button svg {
+    transition: transform 0.3s ease;
+}
+
+.mobile-tab-button.active svg {
+    transform: rotate(180deg);
+}
+
+.mobile-tab-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-modal);
+    border-bottom: 1px solid var(--border-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-tab-dropdown.active {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.mobile-tab-dropdown.active::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-tab-option {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.05);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-tab-option:hover,
+.mobile-tab-option:active {
+    background: rgba(100, 255, 218, 0.05);
+    color: var(--text-primary);
+}
+
+.mobile-tab-option.active {
+    color: var(--accent-teal);
+    background: rgba(100, 255, 218, 0.08);
+}
+
 .tab {
     background: transparent;
     border: none;
@@ -116,6 +209,16 @@ body {
 .tab.active {
     color: var(--accent-teal);
     border-bottom-color: var(--accent-teal);
+}
+
+/* Hide all scrollbars globally */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 /* Tab Content */
@@ -1378,6 +1481,9 @@ body {
     body {
         overflow: hidden;
         touch-action: pan-y;
+        position: fixed;
+        width: 100%;
+        height: 100%;
     }
 
     .container {
@@ -1398,11 +1504,20 @@ body {
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     }
 
+    /* Hide regular tabs, show dropdown */
+    .tabs {
+        display: none;
+    }
+
+    .mobile-tab-selector {
+        display: block;
+    }
+
     .home-center {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: calc(100vh - 144px);
+        height: calc(100vh - 120px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -1457,54 +1572,9 @@ body {
         height: 16px;
     }
 
-    .tabs {
-        overflow-x: auto;
-        scrollbar-width: thin;
-        -webkit-overflow-scrolling: touch;
-        justify-content: flex-start;
-        position: relative;
-        padding-right: 40px;
-        --hide-hint: 0;
-        min-height: 48px;
-    }
-
-    .tabs::after {
-        content: '→';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(to right, transparent, var(--bg-modal) 50%);
-        color: var(--accent-teal);
-        font-size: 16px;
-        pointer-events: none;
-        animation: slideHint 1.5s ease-in-out infinite;
-        opacity: calc(1 - var(--hide-hint));
-        transition: opacity 0.5s ease;
-    }
-
-    @keyframes slideHint {
-        0%, 100% { opacity: calc(0.6 - (0.6 * var(--hide-hint))); transform: translateX(0); }
-        50% { opacity: calc(1 - var(--hide-hint)); transform: translateX(4px); }
-    }
-
-    .tab {
-        padding: 12px 18px;
-        font-size: 10px;
-        letter-spacing: 0.5px;
-        flex-shrink: 0;
-        min-height: 48px;
-        display: inline-flex;
-        align-items: center;
-    }
-
     .tab-content {
         padding: 16px;
-        height: calc(100vh - 144px);
+        height: calc(100vh - 120px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -1622,11 +1692,20 @@ body {
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
     }
 
+    /* Hide regular tabs, show dropdown */
+    .tabs {
+        display: none;
+    }
+
+    .mobile-tab-selector {
+        display: block;
+    }
+
     /* Home page - full screen centered content */
     .home-center {
         padding: 20px 16px;
         overflow-y: auto;
-        height: calc(100vh - 140px);
+        height: calc(100vh - 116px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1690,58 +1769,10 @@ body {
         height: 18px;
     }
 
-    /* Tabs - larger touch targets */
-    .tabs {
-        overflow-x: auto;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-        justify-content: flex-start;
-        flex-shrink: 0;
-        position: relative;
-        padding-right: 35px;
-        --hide-hint: 0;
-        min-height: 48px;
-    }
-
-    .tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-    .tabs::after {
-        content: '→';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(to right, transparent, var(--bg-modal) 50%);
-        color: var(--accent-teal);
-        font-size: 16px;
-        pointer-events: none;
-        animation: slideHint 1.5s ease-in-out infinite;
-        opacity: calc(1 - var(--hide-hint));
-        transition: opacity 0.5s ease;
-    }
-
-    .tab {
-        padding: 14px 18px;
-        font-size: 10px;
-        letter-spacing: 0.5px;
-        flex-shrink: 0;
-        min-width: fit-content;
-        min-height: 48px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     /* Content area - full height with proper spacing */
     .tab-content {
         padding: 16px;
-        height: calc(100vh - 140px);
+        height: calc(100vh - 116px);
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;

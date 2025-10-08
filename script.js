@@ -108,6 +108,18 @@ document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
         const tabName = tab.getAttribute('data-tab');
         switchTab(tabName);
+
+        // Update mobile dropdown if it exists
+        const currentTabName = document.getElementById('currentTabName');
+        const mobileOptions = document.querySelectorAll('.mobile-tab-option');
+        if (currentTabName) {
+            currentTabName.textContent = tab.textContent;
+        }
+        if (mobileOptions.length > 0) {
+            mobileOptions.forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.tab === tabName);
+            });
+        }
     });
 });
 
@@ -265,24 +277,59 @@ function updateTime() {
     document.getElementById('localTime').textContent = timeString;
 }
 
+// Mobile Tab Dropdown
+function setupMobileTabDropdown() {
+    const mobileButton = document.getElementById('mobileTabButton');
+    const mobileDropdown = document.getElementById('mobileTabDropdown');
+    const currentTabName = document.getElementById('currentTabName');
+    const mobileOptions = document.querySelectorAll('.mobile-tab-option');
+
+    if (!mobileButton || !mobileDropdown) return;
+
+    // Toggle dropdown
+    mobileButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileButton.classList.toggle('active');
+        mobileDropdown.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileButton.contains(e.target) && !mobileDropdown.contains(e.target)) {
+            mobileButton.classList.remove('active');
+            mobileDropdown.classList.remove('active');
+        }
+    });
+
+    // Handle mobile tab selection
+    mobileOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const tabName = option.dataset.tab;
+
+            // Update active states
+            mobileOptions.forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+
+            // Update button text
+            currentTabName.textContent = option.textContent;
+
+            // Switch tab
+            switchTab(tabName);
+
+            // Close dropdown
+            mobileButton.classList.remove('active');
+            mobileDropdown.classList.remove('active');
+        });
+    });
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderPortfolio();
     setupPortfolioFilter();
     updateTime();
     setInterval(updateTime, 1000);
-
-    // Hide scroll hint after user scrolls tabs
-    const tabsContainer = document.querySelector('.tabs');
-    if (tabsContainer) {
-        let hasScrolled = false;
-        tabsContainer.addEventListener('scroll', () => {
-            if (!hasScrolled && tabsContainer.scrollLeft > 10) {
-                hasScrolled = true;
-                tabsContainer.style.setProperty('--hide-hint', '1');
-            }
-        });
-    }
+    setupMobileTabDropdown();
 });
 
 // Smooth scroll for tab content
