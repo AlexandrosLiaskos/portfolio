@@ -1,0 +1,178 @@
+<!-- 
+    COMPONENT: Tab Navigation
+    
+    Desktop horizontal tabs + mobile dropdown alternative.
+    
+    Features:
+    - Horizontal tabs on desktop
+    - Dropdown menu on mobile
+    - Active state styling
+    - Smooth transitions
+    
+    Usage:
+    - Add data-tab="tabname" to each tab
+    - Call switchTab('tabname') to switch tabs
+-->
+
+<!-- Desktop Tabs (hidden on mobile) -->
+<div class="tabs">
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="about">About</button>
+    <button class="tab" data-tab="services">Services</button>
+    <button class="tab" data-tab="contact">Contact</button>
+</div>
+
+<!-- Mobile Dropdown (hidden on desktop) -->
+<div class="mobile-tab-selector">
+    <button class="mobile-tab-button" id="mobileTabButton">
+        <span id="currentTabName">Home</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+    <div class="mobile-tab-dropdown" id="mobileTabDropdown">
+        <button class="mobile-tab-option active" data-tab="home">Home</button>
+        <button class="mobile-tab-option" data-tab="about">About</button>
+        <button class="mobile-tab-option" data-tab="services">Services</button>
+        <button class="mobile-tab-option" data-tab="contact">Contact</button>
+    </div>
+</div>
+
+<style>
+/* Desktop Tabs */
+.tabs {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow-x: auto;
+    scrollbar-width: none;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab:hover {
+    color: var(--text-primary);
+}
+
+.tab.active {
+    color: var(--accent-teal);
+    border-bottom-color: var(--accent-teal);
+}
+
+/* Mobile Dropdown */
+.mobile-tab-selector {
+    display: none !important;
+    position: relative;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.mobile-tab-button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 48px;
+}
+
+.mobile-tab-button:active {
+    background: rgba(100, 255, 218, 0.05);
+}
+
+.mobile-tab-button svg {
+    transition: transform 0.3s ease;
+}
+
+.mobile-tab-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-modal);
+    border-bottom: 1px solid var(--border-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-tab-dropdown.show {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.mobile-tab-option {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.05);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-tab-option:hover,
+.mobile-tab-option:active {
+    background: rgba(100, 255, 218, 0.05);
+    color: var(--text-primary);
+}
+
+.mobile-tab-option.active {
+    color: var(--accent-teal);
+    background: rgba(100, 255, 218, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tabs {
+        display: none !important;
+    }
+
+    .mobile-tab-selector {
+        display: block !important;
+    }
+}
+</style>
+
+<script src="../js/tabs.js"></script>
+

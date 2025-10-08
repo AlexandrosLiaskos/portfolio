@@ -1,0 +1,101 @@
+<!-- 
+    COMPONENT: Central Modal
+    
+    Responsive modal container with cross-platform viewport handling.
+    
+    Features:
+    - Centered on desktop (max-width: 800px)
+    - Full-width on mobile
+    - Smooth shadow and animations
+    - Scrollable body area
+    - 100dvh for proper mobile viewport
+-->
+
+<div class="container">
+    <div class="modal">
+        <div class="modal-header">
+            <!-- Navigation goes here -->
+        </div>
+        <div class="modal-body">
+            <!-- Your content goes here -->
+        </div>
+    </div>
+</div>
+
+<style>
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Central Modal */
+.modal {
+    background: var(--bg-modal);
+    backdrop-filter: blur(20px);
+    border: none;
+    border-top: 1px solid var(--accent-teal);
+    border-radius: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalFadeIn 0.5s ease-out;
+}
+
+.modal-header {
+    flex-shrink: 0;
+}
+
+.modal-body {
+    padding: 24px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+        min-height: 100dvh;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .modal {
+        max-height: calc(100dvh - 24px);
+        height: calc(100dvh - 24px);
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        border-top: 2px solid var(--accent-teal);
+    }
+
+    .modal-body {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .modal {
+        border-radius: 10px;
+        max-height: calc(100dvh - 20px);
+        height: calc(100dvh - 20px);
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+    }
+}
+</style>
+

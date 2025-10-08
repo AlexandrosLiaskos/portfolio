@@ -1,0 +1,116 @@
+<!-- 
+    COMPONENT: Service Card
+    
+    Minimal service display with hover effects.
+    
+    Features:
+    - Code, name, description, price layout
+    - Hover animations
+    - Click to open modal
+-->
+
+<div class="services-minimal">
+    <div class="service-item" onclick="openServiceModal('SERVICE_CODE')">
+        <div class="service-code">CODE</div>
+        <div class="service-content">
+            <h3 class="service-name">Service Name</h3>
+            <p class="service-desc">Brief description of the service offering</p>
+        </div>
+        <div class="service-price">€XX+</div>
+    </div>
+    
+    <div class="service-item" onclick="openServiceModal('DEMO')">
+        <div class="service-code">DEMO</div>
+        <div class="service-content">
+            <h3 class="service-name">Another Service</h3>
+            <p class="service-desc">Another service description example</p>
+        </div>
+        <div class="service-price">€YY+</div>
+    </div>
+</div>
+
+<style>
+/* Services - Minimal Design */
+.services-minimal {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-item:hover {
+    padding-left: 12px;
+}
+
+.service-item:hover .service-code {
+    color: var(--accent-teal);
+    opacity: 1;
+}
+
+.service-item:hover .service-name {
+    color: var(--accent-teal);
+}
+
+.service-item:hover .service-price {
+    color: var(--accent-teal);
+    opacity: 1;
+}
+
+.service-code {
+    font-family: 'Space Grotesk', 'Inter', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    line-height: 1;
+    min-width: 60px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-name {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease;
+}
+
+.service-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.service-price {
+    font-family: 'Space Grotesk', 'Inter', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+</style>
+

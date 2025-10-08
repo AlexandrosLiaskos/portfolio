@@ -1,0 +1,144 @@
+<!-- 
+    COMPONENT: Buttons
+    
+    Various button styles used throughout the app.
+    
+    Types:
+    - CTA Button (primary action)
+    - Filter Button (active/inactive states)
+    - Secondary Button
+-->
+
+<!-- CTA Button -->
+<button class="cta-button">Call to Action</button>
+
+<!-- Filter Buttons -->
+<div class="portfolio-filter">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Web</button>
+    <button class="filter-btn">Tools</button>
+    <button class="filter-btn">Research</button>
+</div>
+
+<!-- Primary/Secondary Buttons -->
+<div class="form-actions">
+    <button class="btn-primary">Primary Action</button>
+    <button class="btn-secondary">Secondary Action</button>
+</div>
+
+<style>
+/* CTA Button */
+.cta-button {
+    background: transparent;
+    border: 1px solid var(--accent-teal);
+    color: var(--accent-teal);
+    padding: 8px 28px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--accent-teal);
+    color: var(--gradient-start);
+    box-shadow: 0 0 20px var(--shadow-glow);
+}
+
+/* Filter Buttons */
+.portfolio-filter {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-teal);
+}
+
+.filter-btn.active {
+    background: var(--accent-teal);
+    color: var(--gradient-start);
+    border-color: var(--accent-teal);
+}
+
+/* Primary/Secondary Buttons */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 8px 28px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    background: transparent;
+    border: 1px solid var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.btn-primary:hover {
+    background: var(--accent-teal);
+    color: var(--gradient-start);
+    box-shadow: 0 0 20px var(--shadow-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        min-height: 48px;
+        font-size: 14px;
+    }
+
+    .cta-button {
+        min-height: 44px;
+        padding: 10px 24px;
+        font-size: 12px;
+    }
+}
+</style>
+
