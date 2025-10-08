@@ -1377,6 +1377,7 @@ body {
 @media (max-width: 768px) {
     body {
         overflow: hidden;
+        touch-action: pan-y;
     }
 
     .container {
@@ -1397,39 +1398,63 @@ body {
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     }
 
+    .home-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100vh - 114px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .home-avatar {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
+        width: 110px;
+        height: 110px;
+        margin-bottom: 12px;
     }
 
     .home-name {
         font-family: 'Dancing Script', cursive;
-        font-size: 24px;
+        font-size: 28px;
         font-weight: 600;
     }
 
     .home-title {
-        font-size: 11px;
-        margin-bottom: 16px;
+        font-size: 13px;
+        margin-bottom: 18px;
     }
 
     .home-services {
-        gap: 8px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
     .hs-label {
-        font-size: 10px;
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .home-cta {
+        min-height: 44px;
+        padding: 10px 24px;
+        font-size: 12px;
     }
 
     .home-social {
-        gap: 10px;
+        gap: 12px;
+    }
+
+    .home-social a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .home-social a svg {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
     }
 
     .tabs {
@@ -1440,6 +1465,7 @@ body {
         position: relative;
         padding-right: 40px;
         --hide-hint: 0;
+        min-height: 48px;
     }
 
     .tabs::after {
@@ -1467,30 +1493,39 @@ body {
     }
 
     .tab {
-        padding: 10px 16px;
-        font-size: 9px;
+        padding: 12px 18px;
+        font-size: 10px;
         letter-spacing: 0.5px;
         flex-shrink: 0;
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
     }
 
     .tab-content {
-        padding: 12px;
-        height: calc(100vh - 114px);
+        padding: 16px;
+        height: calc(100vh - 122px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
 
     .tab-pane {
-        height: 100%;
+        min-height: 100%;
     }
 
     .tab-pane h2 {
-        font-size: 16px;
-        margin-bottom: 12px;
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .tab-pane p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     .lead {
-        font-size: 12px;
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     .contact-methods {
@@ -1499,6 +1534,7 @@ body {
 
     .investment-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .includes-grid {
@@ -1507,6 +1543,7 @@ body {
 
     .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .cta-section {
@@ -1515,17 +1552,19 @@ body {
 
     .btn-primary, .btn-secondary {
         width: 100%;
+        min-height: 48px;
+        font-size: 14px;
     }
 
     .status-bar {
-        font-size: 8px;
-        padding: 0 8px;
-        height: 22px;
+        font-size: 9px;
+        padding: 0 10px;
+        height: 24px;
         flex-shrink: 0;
     }
 
     .status-left, .status-right {
-        gap: 4px;
+        gap: 5px;
         overflow: hidden;
     }
 
@@ -1544,9 +1583,9 @@ body {
     }
 
     .status-link svg {
-        width: 10px;
-        height: 10px;
-        margin-right: 2px;
+        width: 11px;
+        height: 11px;
+        margin-right: 3px;
     }
 }
 
@@ -1556,6 +1595,7 @@ body {
         position: fixed;
         width: 100%;
         height: 100%;
+        touch-action: pan-y;
     }
 
     .container {
@@ -1582,57 +1622,75 @@ body {
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
     }
 
+    /* Home page - full screen centered content */
     .home-center {
-        padding: 16px 12px 12px;
+        padding: 20px 16px;
         overflow-y: auto;
-        max-height: calc(100vh - 110px);
+        height: calc(100vh - 110px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         -webkit-overflow-scrolling: touch;
     }
 
     .home-avatar {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 8px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 12px;
     }
 
     .home-name {
         font-family: 'Dancing Script', cursive;
-        font-size: 22px;
+        font-size: 28px;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     .home-title {
-        font-size: 10px;
-        margin-bottom: 12px;
+        font-size: 12px;
+        margin-bottom: 16px;
     }
 
     .home-services {
-        gap: 6px;
-        margin-bottom: 14px;
+        gap: 8px;
+        margin-bottom: 18px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .hs-label {
-        font-size: 8px;
+        font-size: 10px;
+        padding: 6px 12px;
     }
 
     .home-cta {
-        margin-bottom: 12px;
-        padding: 8px 20px;
-        font-size: 10px;
+        margin-bottom: 16px;
+        padding: 10px 28px;
+        font-size: 12px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .home-social {
-        gap: 10px;
+        gap: 14px;
+    }
+
+    .home-social a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .home-social a svg {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
     }
 
+    /* Tabs - larger touch targets */
     .tabs {
         overflow-x: auto;
         scrollbar-width: none;
@@ -1642,6 +1700,7 @@ body {
         position: relative;
         padding-right: 35px;
         --hide-hint: 0;
+        min-height: 48px;
     }
 
     .tabs::-webkit-scrollbar {
@@ -1660,7 +1719,7 @@ body {
         justify-content: center;
         background: linear-gradient(to right, transparent, var(--bg-modal) 50%);
         color: var(--accent-teal);
-        font-size: 14px;
+        font-size: 16px;
         pointer-events: none;
         animation: slideHint 1.5s ease-in-out infinite;
         opacity: calc(1 - var(--hide-hint));
@@ -1668,16 +1727,21 @@ body {
     }
 
     .tab {
-        padding: 10px 14px;
-        font-size: 8px;
-        letter-spacing: 0.3px;
+        padding: 14px 18px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
         flex-shrink: 0;
         min-width: fit-content;
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    /* Content area - full height with proper spacing */
     .tab-content {
-        padding: 12px;
-        height: calc(100vh - 110px);
+        padding: 16px;
+        height: calc(100vh - 118px);
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
@@ -1689,32 +1753,73 @@ body {
     }
 
     .tab-pane h2 {
+        font-size: 20px;
+        margin-bottom: 14px;
+        line-height: 1.3;
+    }
+
+    .tab-pane h3 {
         font-size: 16px;
         margin-bottom: 10px;
     }
 
     .lead {
-        font-size: 11px;
+        font-size: 13px;
+        line-height: 1.6;
     }
 
+    .tab-pane p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    /* Grids - better spacing */
     .investment-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .investment-item {
+        padding: 16px;
     }
 
     .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
+    .portfolio-card {
+        padding: 16px;
+    }
+
+    .service-card {
+        padding: 16px;
+        margin-bottom: 14px;
+    }
+
+    /* Buttons - larger touch targets */
+    .btn-primary, .btn-secondary {
+        min-height: 48px;
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+
+    .home-cta, .cta-button {
+        min-height: 48px;
+    }
+
+    /* Status bar */
     .status-bar {
-        font-size: 7px;
-        height: 20px;
-        padding: 0 6px;
+        font-size: 8px;
+        height: 24px;
+        padding: 0 8px;
         flex-shrink: 0;
         position: relative;
     }
 
     .status-left, .status-right {
-        gap: 3px;
+        gap: 4px;
     }
 
     .status-separator {
@@ -1722,30 +1827,95 @@ body {
     }
 
     .status-link svg {
-        width: 9px;
-        height: 9px;
+        width: 10px;
+        height: 10px;
         margin-right: 2px;
     }
 
-    /* Ensure form modals work on mobile */
+    /* Contact section */
+    .contact-minimal {
+        padding: 20px 0;
+    }
+
+    .contact-section {
+        margin-bottom: 24px;
+    }
+
+    .contact-section-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .contact-email {
+        font-size: 16px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .contact-link {
+        font-size: 14px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 0;
+    }
+
+    /* Workflow items */
+    .workflow-item {
+        padding: 14px;
+        margin-bottom: 12px;
+    }
+
+    .workflow-number {
+        font-size: 16px;
+        min-width: 36px;
+        height: 36px;
+    }
+
+    .workflow-text {
+        font-size: 12px;
+    }
+
+    /* Form modals */
     .service-modal-content {
         max-height: 90vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        margin: 10px;
+        border-radius: 10px;
     }
 
     .request-form {
-        padding: 16px;
+        padding: 20px;
     }
 
     .form-group {
-        margin-bottom: 12px;
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 6px;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
-        font-size: 14px;
+        font-size: 16px;
+        padding: 12px;
+        min-height: 48px;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    /* Email selector */
+    .email-option {
+        min-height: 56px;
+        font-size: 15px;
+        margin-bottom: 12px;
     }
 }
 
