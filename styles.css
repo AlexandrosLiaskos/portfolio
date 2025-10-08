@@ -1375,61 +1375,94 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+
     .container {
-        padding: 8px;
+        padding: 0;
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .modal {
-        max-height: 95vh;
-        width: 100%;
+        max-height: 100vh;
+        height: 100vh;
+        width: 100vw;
+        max-width: 100vw;
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid var(--accent-teal);
     }
 
     .home-avatar {
-        width: 130px;
-        height: 130px;
-        margin-bottom: 14px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
     }
 
     .home-name {
         font-family: 'Dancing Script', cursive;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 600;
     }
 
     .home-title {
-        font-size: 12px;
-        margin-bottom: 20px;
+        font-size: 11px;
+        margin-bottom: 16px;
     }
 
     .home-services {
-        gap: 10px;
+        gap: 8px;
         flex-wrap: wrap;
     }
 
     .hs-label {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .home-social {
-        gap: 12px;
+        gap: 10px;
+    }
+
+    .home-social a svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
     }
 
     .tab {
-        padding: 10px 12px;
+        padding: 10px 16px;
         font-size: 9px;
         letter-spacing: 0.5px;
+        flex-shrink: 0;
     }
 
     .tab-content {
-        padding: 14px;
+        padding: 12px;
+        height: calc(100vh - 90px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-pane {
+        height: 100%;
     }
 
     .tab-pane h2 {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 12px;
     }
 
     .lead {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .contact-methods {
@@ -1458,8 +1491,9 @@ body {
 
     .status-bar {
         font-size: 8px;
-        padding: 0 6px;
-        height: 20px;
+        padding: 0 8px;
+        height: 22px;
+        flex-shrink: 0;
     }
 
     .status-left, .status-right {
@@ -1489,86 +1523,143 @@ body {
 }
 
 @media (max-width: 480px) {
+    body {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
     .container {
-        padding: 3px;
+        padding: 0;
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .modal {
         border-radius: 0;
         max-height: 100vh;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
+        max-width: 100vw;
+        border: none;
+        border-top: 1px solid var(--accent-teal);
+        position: relative;
     }
 
     .home-center {
-        padding: 12px;
+        padding: 16px 12px 12px;
+        overflow-y: auto;
+        max-height: calc(100vh - 90px);
+        -webkit-overflow-scrolling: touch;
     }
 
     .home-avatar {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 8px;
     }
 
     .home-name {
         font-family: 'Dancing Script', cursive;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 600;
+        margin-bottom: 6px;
     }
 
     .home-title {
         font-size: 10px;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .home-services {
         gap: 6px;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hs-label {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .home-cta {
-        margin-bottom: 14px;
-        padding: 6px 20px;
-        font-size: 9px;
+        margin-bottom: 12px;
+        padding: 8px 20px;
+        font-size: 10px;
     }
 
     .home-social {
-        gap: 8px;
+        gap: 10px;
     }
 
     .home-social a svg {
-        width: 12px;
-        height: 12px;
-    }
-
-    .tab {
-        padding: 8px 8px;
-        font-size: 8px;
-        letter-spacing: 0.3px;
-        flex: 1;
-        min-width: 0;
+        width: 14px;
+        height: 14px;
     }
 
     .tabs {
-        justify-content: space-between;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        flex-shrink: 0;
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab {
+        padding: 10px 14px;
+        font-size: 8px;
+        letter-spacing: 0.3px;
+        flex-shrink: 0;
+        min-width: fit-content;
     }
 
     .tab-content {
-        padding: 10px;
+        padding: 12px;
+        height: calc(100vh - 90px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+    }
+
+    .tab-pane {
+        min-height: 100%;
+    }
+
+    .tab-pane h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .lead {
+        font-size: 11px;
     }
 
     .investment-grid {
         grid-template-columns: 1fr;
     }
 
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
     .status-bar {
         font-size: 7px;
-        height: 18px;
-        padding: 0 4px;
+        height: 20px;
+        padding: 0 6px;
+        flex-shrink: 0;
+        position: relative;
     }
 
     .status-left, .status-right {
@@ -1580,9 +1671,30 @@ body {
     }
 
     .status-link svg {
-        width: 8px;
-        height: 8px;
-        margin-right: 1px;
+        width: 9px;
+        height: 9px;
+        margin-right: 2px;
+    }
+
+    /* Ensure form modals work on mobile */
+    .service-modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .request-form {
+        padding: 16px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
     }
 }
 
