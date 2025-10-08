@@ -1,201 +1,324 @@
-# Business SPA Template
+# Business SPA - UI Component Library
 
-A modern, professional single-page application template with dark theme, responsive design, and bilingual support.
+A complete set of reusable UI components with dark theme, responsive design, and cross-platform support.
 
-## ✨ Features
+## 🎨 What's Included
 
-- 🎨 **Dark Theme** - Professional dark color scheme with teal accents
-- 📱 **Fully Responsive** - Mobile-first design with tablet and desktop breakpoints
-- 🌍 **Bilingual Support** - Built-in English/Greek translation system (easily adaptable)
-- ⚡ **Fast & Lightweight** - Pure vanilla JavaScript, no frameworks required
-- 🎯 **Tab Navigation** - Desktop horizontal tabs + mobile dropdown menu
-- 🔍 **Command Palette** - Quick navigation with Cmd+K (Mac) or Ctrl+K (Windows)
-- 📊 **Portfolio Grid** - Filterable project showcase
-- 💼 **Service Cards** - Clean service presentation with modal details
-- 📧 **Contact Integration** - Email form with multiple email client support
-- 🎭 **Modal System** - Smooth animations and transitions
+This is a **component library**, not a template. It contains all the reusable UI pieces you can copy into your projects.
 
-## 🚀 Quick Start
+### Core Components
 
-1. **Clone or download** this template folder
-2. **Customize content** (see below)
-3. **Test locally** - Open `index.html` in your browser
-4. **Deploy** - Upload to GitHub Pages, Netlify, Vercel, or any static host
+1. **Central Modal** - Responsive modal container with cross-platform viewport handling
+2. **Tab Navigation** - Desktop horizontal tabs + mobile dropdown alternative
+3. **Status Bar** - Bottom fixed bar with language toggle and links
+4. **Service Cards** - Minimal service display with modal details
+5. **Portfolio Cards** - Project showcase with images and links
+6. **Service Modal** - Full-screen modal for detailed content
+7. **Command Palette** - Quick navigation (Cmd/Ctrl + K)
+8. **Buttons** - CTA buttons and filter buttons
+9. **Contact Methods** - Styled contact links
+10. **Tech Stack Items** - Technology badges/pills
+11. **Color System** - CSS custom properties
+12. **Typography** - Font system with Dancing Script + Space Grotesk
 
-## 📝 Customization Guide
+## 📱 Responsive Design
 
-### 1. Personal Information
+### Breakpoints
+- **Mobile**: `< 768px` - Full-width, mobile dropdown navigation
+- **Tablet**: `768px - 1024px` - Adjusted spacing and sizing
+- **Desktop**: `> 1024px` - Max-width 800px, horizontal tabs
 
-**Search and replace** these placeholders:
+### Cross-Platform Features
+- `100dvh` for proper mobile viewport height
+- Apple mobile web app support
+- Touch-friendly tap targets (min 44px)
+- No horizontal scroll on mobile
+- Smooth scrolling and transitions
 
-| Placeholder | Replace With |
-|------------|--------------|
-| `Your Name` | Your actual name |
-| `Your Business Name` | Your business/brand name |
-| `Professional Services` | Your title/tagline |
-| `hello@yourbusiness.com` | Your email address |
-| `https://github.com/yourusername` | Your GitHub URL |
-| `https://linkedin.com/in/yourprofile` | Your LinkedIn URL |
-| `https://instagram.com/yourprofile` | Your Instagram URL |
+## 🎨 Theme System
 
-### 2. Services
-
-Edit services in `index.html`:
-- **Services tab** (`#services`) - Regular services
-- **Special tab** (`#special`) - Premium/special services
-
-Edit service modal content in `script.js`:
-- `serviceDetailsEN` - English service descriptions
-- `serviceDetailsGR` - Greek service descriptions
-
-### 3. Portfolio Projects
-
-Edit the `portfolioProjects` array in `script.js`:
-
-```javascript
-const portfolioProjects = [
-    {
-        title: "Your Project",
-        stars: "42",
-        tech: "Technology Stack",
-        category: "web", // or "tools", "research"
-        description: "Project description",
-        demo: "https://demo-url.com", // optional
-        repo: "https://github.com/you/repo",
-        image: "https://your-image-url.com/image.png"
-    }
-];
-```
-
-### 4. Tech Stack
-
-Edit the stack section in `index.html` (around line 280):
-
-```html
-<div class="stack-group">
-    <h3>Frontend</h3>
-    <div class="stack-items">
-        <span class="stack-item">Your Tech</span>
-    </div>
-</div>
-```
-
-### 5. Translations
-
-Edit `translations.js` to update all text in both languages:
-
-```javascript
-const translations = {
-    en: {
-        name: "Your Name",
-        title: "Your Title",
-        // ... add your translations
-    },
-    gr: {
-        name: "Το Όνομά Σας",
-        title: "Ο Τίτλος Σας",
-        // ... add your translations
-    }
-};
-```
-
-### 6. Theme Colors (Optional)
-
-Customize colors in `styles.css`:
+### CSS Variables
 
 ```css
 :root {
     --bg-primary: #0a0e27;      /* Main background */
     --bg-secondary: #151932;    /* Secondary background */
-    --bg-modal: #1a1f3a;        /* Modal background */
-    --accent-teal: #64ffda;     /* Accent color */
+    --bg-modal: #1a1f3a;        /* Modal/card background */
+    --accent-teal: #64ffda;     /* Primary accent color */
     --text-primary: #e6f1ff;    /* Primary text */
-    --text-secondary: #8892b0;  /* Secondary text */
+    --text-secondary: #8892b0;  /* Secondary/muted text */
+    --border-color: #2d3561;    /* Borders and dividers */
 }
 ```
 
-## 📁 File Structure
+### Customizing Colors
+
+Change any color by overriding the CSS variable:
+
+```css
+:root {
+    --accent-teal: #ff6b6b;  /* Change to red accent */
+}
+```
+
+## 📦 Component Usage
+
+### 1. Central Modal
+
+The main container for your content:
+
+```html
+<div class="container">
+    <div class="modal">
+        <div class="modal-header">
+            <!-- Navigation goes here -->
+        </div>
+        <div class="modal-body">
+            <!-- Your content goes here -->
+        </div>
+    </div>
+</div>
+```
+
+**Features:**
+- Centered on desktop (max-width: 800px)
+- Full-width on mobile
+- Smooth shadow and border-radius
+- Scrollable body area
+
+### 2. Tab Navigation
+
+Desktop tabs + mobile dropdown:
+
+```html
+<!-- Desktop Tabs -->
+<div class="tabs">
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="about">About</button>
+</div>
+
+<!-- Mobile Dropdown -->
+<div class="mobile-tab-selector">
+    <button class="mobile-tab-button" id="mobileTabButton">
+        <span id="currentTabName">Home</span>
+        <svg><!-- Chevron icon --></svg>
+    </button>
+    <div class="mobile-tab-dropdown" id="mobileTabDropdown">
+        <button class="mobile-tab-option active" data-tab="home">Home</button>
+        <button class="mobile-tab-option" data-tab="about">About</button>
+    </div>
+</div>
+```
+
+**JavaScript:**
+```javascript
+switchTab('about');  // Switch to a tab programmatically
+```
+
+### 3. Status Bar
+
+Bottom fixed bar:
+
+```html
+<div class="status-bar">
+    <div class="status-left">
+        <span class="status-item">Your App Name</span>
+    </div>
+    <div class="status-right">
+        <button class="lang-toggle">EN</button>
+        <a href="#" class="status-item status-link">Link</a>
+    </div>
+</div>
+```
+
+### 4. Service Cards
+
+```html
+<div class="services-minimal">
+    <div class="service-item" onclick="openServiceModal()">
+        <div class="service-code">CODE</div>
+        <div class="service-content">
+            <h3 class="service-name">Service Name</h3>
+            <p class="service-desc">Description</p>
+        </div>
+        <div class="service-price">€XX+</div>
+    </div>
+</div>
+```
+
+### 5. Portfolio Cards
+
+```html
+<div class="portfolio-grid">
+    <div class="portfolio-card">
+        <img src="image.jpg" class="portfolio-image">
+        <div class="portfolio-info">
+            <div class="portfolio-header">
+                <h3 class="portfolio-title">Project</h3>
+                <span class="portfolio-stars">⭐ 42</span>
+            </div>
+            <p class="portfolio-tech">Tech Stack</p>
+            <p class="portfolio-desc">Description</p>
+            <div class="portfolio-links">
+                <a href="#" class="portfolio-link">Demo</a>
+                <a href="#" class="portfolio-link">Code</a>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+### 6. Service Modal
+
+```html
+<div id="serviceModal" class="service-modal">
+    <div class="service-modal-content">
+        <button class="service-modal-close" onclick="closeServiceModal()">&times;</button>
+        <div id="serviceModalBody">
+            <!-- Your modal content -->
+        </div>
+    </div>
+</div>
+```
+
+**JavaScript:**
+```javascript
+openServiceModal();   // Open modal
+closeServiceModal();  // Close modal
+```
+
+### 7. Command Palette
+
+```html
+<div id="commandPalette" class="command-palette hidden">
+    <div class="command-palette-content">
+        <input type="text" id="commandInput" placeholder="Type a command...">
+        <div id="commandResults" class="command-results">
+            <!-- Command items -->
+        </div>
+    </div>
+</div>
+```
+
+**Keyboard Shortcut:** `Cmd+K` (Mac) or `Ctrl+K` (Windows)
+
+### 8. Buttons
+
+```html
+<button class="cta-button">Call to Action</button>
+<button class="filter-btn active">Active Filter</button>
+<button class="filter-btn">Inactive Filter</button>
+```
+
+### 9. Contact Methods
+
+```html
+<div class="contact-methods">
+    <a href="mailto:hello@example.com" class="contact-method">
+        <span class="contact-icon">✉️</span>
+        <span>hello@example.com</span>
+    </a>
+</div>
+```
+
+### 10. Tech Stack Items
+
+```html
+<div class="stack-group">
+    <h3>Frontend</h3>
+    <div class="stack-items">
+        <span class="stack-item">React</span>
+        <span class="stack-item">TypeScript</span>
+    </div>
+</div>
+```
+
+## 🚀 Quick Start
+
+1. **Copy the files:**
+   ```
+   template/
+   ├── index.html    # Component showcase
+   ├── styles.css    # All component styles
+   ├── script.js     # Component interactions
+   └── README.md     # This file
+   ```
+
+2. **Include in your project:**
+   ```html
+   <link rel="stylesheet" href="styles.css">
+   <script src="script.js"></script>
+   ```
+
+3. **Copy components you need** from `index.html`
+
+4. **Customize colors** via CSS variables
+
+## 📐 Layout System
+
+### Container Structure
 
 ```
-template/
-├── index.html          # Main HTML structure
-├── styles.css          # All styling (no changes needed)
-├── script.js           # Core functionality
-├── translations.js     # Bilingual content
-└── README.md          # This file
+.container (full viewport)
+  └── .modal (centered, max-width 800px)
+      ├── .modal-header (fixed height, navigation)
+      └── .modal-body (scrollable content)
 ```
 
-## 🎨 Design System
+### Spacing
 
-### Breakpoints
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
+- **Padding**: 20px on mobile, 30px on desktop
+- **Gaps**: 15px between items, 30px between sections
+- **Border radius**: 12px for cards, 8px for buttons
 
-### Typography
-- **Headings**: Space Grotesk
-- **Signature/Name**: Dancing Script
-- **Body**: System fonts
+## 🎯 JavaScript Functions
 
-### Components
-- Tab navigation (desktop + mobile)
-- Service cards with modals
-- Portfolio grid with filters
-- Contact form
-- Status bar
-- Command palette
+### Tab Navigation
+```javascript
+switchTab(tabName)           // Switch to a specific tab
+closeMobileDropdown()        // Close mobile dropdown
+```
 
-## 🌐 Deployment
+### Modals
+```javascript
+openServiceModal()           // Open service modal
+closeServiceModal()          // Close service modal
+```
 
-### GitHub Pages
-1. Push to GitHub repository
-2. Go to Settings → Pages
-3. Select branch and folder
-4. Your site will be live at `https://username.github.io/repo`
+### Command Palette
+- Opens with `Cmd/Ctrl + K`
+- Closes with `Escape` or click outside
 
-### Netlify
-1. Drag and drop the template folder
-2. Site is live instantly
-
-### Vercel
-1. Import from GitHub
-2. Deploy with one click
-
-## 📱 Browser Support
+## 🌐 Browser Support
 
 - ✅ Chrome/Edge (latest)
 - ✅ Firefox (latest)
 - ✅ Safari (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+- ✅ iOS Safari
+- ✅ Chrome Mobile
 
-## 🔧 Advanced Customization
+## 📝 Notes
 
-### Adding New Tabs
-1. Add tab button in `index.html` (desktop + mobile)
-2. Add tab pane with content
-3. Add translation keys in `translations.js`
-4. Update `updatePageLanguage()` in `script.js`
+- All components use **vanilla JavaScript** (no frameworks)
+- **Mobile-first** responsive design
+- **Accessible** with keyboard navigation
+- **Performant** with CSS transforms and transitions
+- **Cross-platform** with proper viewport handling
 
-### Removing Bilingual Support
-1. Remove language toggle buttons
-2. Remove `translations.js` script tag
-3. Replace all `t('key')` calls with hardcoded text
-4. Remove language-related functions from `script.js`
+## 🎨 Typography
 
-### Adding More Languages
-1. Add new language object in `translations.js`
-2. Update language toggle to cycle through languages
-3. Add language codes to `setCurrentLang()` function
+- **Headings**: Space Grotesk (Google Fonts)
+- **Signature/Names**: Dancing Script (Google Fonts)
+- **Body**: System font stack
 
-## 📄 License
+## 💡 Tips
 
-This template is free to use for personal and commercial projects.
-
-## 🤝 Support
-
-For issues or questions, please open an issue on GitHub.
+1. **Customize colors** by changing CSS variables
+2. **Add new components** following the existing patterns
+3. **Test on mobile** - use Chrome DevTools device mode
+4. **Use the showcase** - Open `index.html` to see all components
 
 ---
 
-**Made with ❤️ using vanilla JavaScript**
+**Made with ❤️ using vanilla JavaScript, CSS, and HTML**
 

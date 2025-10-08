@@ -5,454 +5,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Your Business Name - Professional Services Provider</title>
+    <title>Business SPA - UI Component Library</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/128935863?v=4" type="image/png">
 </head>
 <body>
-    <!-- Command Palette -->
-    <div id="commandPalette" class="command-palette hidden">
-        <div class="command-palette-content">
-            <input type="text" id="commandInput" placeholder="Type a command..." autocomplete="off">
-            <div id="commandResults" class="command-results"></div>
-        </div>
-    </div>
-
-    <!-- Main Container -->
+    <!-- COMPONENT: Main Container -->
     <div class="container">
-        <!-- Central Modal -->
+        
+        <!-- COMPONENT: Central Modal -->
         <div class="modal">
-
-
-            <!-- Tab Navigation -->
-            <div class="tabs">
-                <button class="tab active" data-tab="about">About</button>
-                <button class="tab" data-tab="services">Services</button>
-                <button class="tab" data-tab="special">Special</button>
-                <button class="tab" data-tab="portfolio">Portfolio</button>
-                <button class="tab" data-tab="stack">Stack</button>
-                <button class="tab" data-tab="request">Request</button>
-                <button class="tab" data-tab="contact">Contact</button>
-                <button class="tab tab-lang" onclick="toggleLanguage(); event.stopPropagation();" title="Change language">
-                    <span id="navLangText">EN</span>
-                </button>
-            </div>
-
-            <!-- Mobile Tab Dropdown -->
-            <div class="mobile-tab-selector">
-                <button class="mobile-tab-button" id="mobileTabButton">
-                    <span id="currentTabName">About</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-                <div class="mobile-tab-dropdown" id="mobileTabDropdown">
-                    <button class="mobile-tab-option active" data-tab="about">About</button>
-                    <button class="mobile-tab-option" data-tab="services">Services</button>
-                    <button class="mobile-tab-option" data-tab="special">Special</button>
-                    <button class="mobile-tab-option" data-tab="portfolio">Portfolio</button>
-                    <button class="mobile-tab-option" data-tab="stack">Stack</button>
-                    <button class="mobile-tab-option" data-tab="request">Request</button>
-                    <button class="mobile-tab-option" data-tab="contact">Contact</button>
-                    <button class="mobile-tab-option mobile-lang-option" onclick="toggleLanguage(); event.stopPropagation();">
-                        <span id="mobileLangText">EN / ΕΛ</span>
+            
+            <!-- COMPONENT: Modal Header with Navigation -->
+            <div class="modal-header">
+                
+                <!-- COMPONENT: Desktop Tab Navigation -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="components">Components</button>
+                    <button class="tab" data-tab="colors">Colors</button>
+                    <button class="tab" data-tab="typography">Typography</button>
+                    <button class="tab" data-tab="layouts">Layouts</button>
+                    <button class="tab tab-lang" onclick="alert('Language toggle component')" title="Language Toggle">
+                        <span>EN</span>
                     </button>
                 </div>
-            </div>
 
-            <!-- Tab Content -->
-            <div class="tab-content" id="tabContent">
-                <!-- About Tab -->
-                <div id="about" class="tab-pane active">
-                    <div class="home-center">
-                        <img src="https://avatars.githubusercontent.com/u/128935863?v=4" alt="Your Name" class="home-avatar">
-                        <h1 class="home-name" id="homeName">Your Name</h1>
-                        <p class="home-title" id="homeTitle">Professional Services Provider</p>
-
-                        <div class="home-services">
-                            <div class="home-service" onclick="switchTab('services')">
-                                <span class="hs-label" id="homeService1">Websites</span>
-                            </div>
-                            <div class="home-service" onclick="switchTab('special')">
-                                <span class="hs-label" id="homeService2">Web Apps</span>
-                            </div>
-                            <div class="home-service" onclick="switchTab('special')">
-                                <span class="hs-label" id="homeService3">DevOps</span>
-                            </div>
-                            <div class="home-service" onclick="switchTab('special')">
-                                <span class="hs-label" id="homeService4">AI</span>
-                            </div>
-                            <div class="home-service" onclick="switchTab('services')">
-                                <span class="hs-label" id="homeService5">Consulting</span>
-                            </div>
-                        </div>
-
-                        <button class="home-cta" id="homeCTA" onclick="switchTab('request')">Request a Service</button>
-
-                        <div class="home-social">
-                            <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/alex_liaskos_/" target="_blank" title="Instagram">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:hello@yourbusiness.com" title="Email">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Services Tab -->
-                <div id="services" class="tab-pane">
-                    <div class="services-minimal">
-                        <div class="service-item" onclick="openServiceModal('CONS')">
-                            <div class="service-code">CONS</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Consulting & Strategy</h3>
-                                <p class="service-desc">Turn your idea into an executable plan</p>
-                            </div>
-                            <div class="service-price">€10+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('FIX')">
-                            <div class="service-code">FIX</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Bug Fixes & Optimization</h3>
-                                <p class="service-desc">Fix and improve existing projects</p>
-                            </div>
-                            <div class="service-price">€15+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('QA')">
-                            <div class="service-code">QA</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Code Review & QA</h3>
-                                <p class="service-desc">Expert assessment of quality and security</p>
-                            </div>
-                            <div class="service-price">€15+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('WEB')">
-                            <div class="service-code">WEB</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Websites</h3>
-                                <p class="service-desc">Professional websites that look great and load fast</p>
-                            </div>
-                            <div class="service-price">€20+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('IDEA')">
-                            <div class="service-code">IDEA</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Idea to Project</h3>
-                                <p class="service-desc">Transform your concept into a working project</p>
-                            </div>
-                            <div class="service-price">€20+</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Special Services Tab -->
-                <div id="special" class="tab-pane">
-                    <div class="services-minimal">
-                        <div class="service-item" onclick="openServiceModal('AI')">
-                            <div class="service-code">AI</div>
-                            <div class="service-content">
-                                <h3 class="service-name">AI Automations</h3>
-                                <p class="service-desc">Intelligent automation solutions powered by AI</p>
-                            </div>
-                            <div class="service-price">€50+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('BOOST')">
-                            <div class="service-code">BOOST</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Business Boosting</h3>
-                                <p class="service-desc">Accelerate your business growth with strategic solutions</p>
-                            </div>
-                            <div class="service-price">€50+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('OPS')">
-                            <div class="service-code">OPS</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Cloud & DevOps</h3>
-                                <p class="service-desc">Automated deployments and infrastructure</p>
-                            </div>
-                            <div class="service-price">€60+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('APP')">
-                            <div class="service-code">APP</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Web Applications</h3>
-                                <p class="service-desc">Custom platforms built for your business needs</p>
-                            </div>
-                            <div class="service-price">€100+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('PROD')">
-                            <div class="service-code">PROD</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Idea to Product</h3>
-                                <p class="service-desc">Full-scale product development from concept to launch</p>
-                            </div>
-                            <div class="service-price">€150+</div>
-                        </div>
-
-                        <div class="service-item" onclick="openServiceModal('I2P')">
-                            <div class="service-code">I2P</div>
-                            <div class="service-content">
-                                <h3 class="service-name">Other Projects</h3>
-                                <p class="service-desc">Custom solutions for unique needs</p>
-                            </div>
-                            <div class="service-price"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Tab -->
-                <div id="portfolio" class="tab-pane">
-                    <div class="portfolio-filter">
-                        <button class="filter-btn active" data-filter="all">All Projects</button>
-                        <button class="filter-btn" data-filter="web">Web Apps</button>
-                        <button class="filter-btn" data-filter="tools">Tools</button>
-                        <button class="filter-btn" data-filter="research">Research</button>
-                    </div>
-                    <div class="portfolio-grid" id="portfolioGrid"></div>
-                </div>
-
-                <!-- Stack Tab -->
-                <div id="stack" class="tab-pane">
-                    <div class="stack-minimal">
-                        <div class="stack-group">
-                            <h3 class="stack-group-title">Frontend</h3>
-                            <div class="tech-list">
-                                <span class="tech-item">Next.js</span>
-                                <span class="tech-item">React</span>
-                                <span class="tech-item">TypeScript</span>
-                                <span class="tech-item">Vue.js</span>
-                                <span class="tech-item">Tailwind CSS</span>
-                            </div>
-                        </div>
-
-                        <div class="stack-group">
-                            <h3 class="stack-group-title">Backend</h3>
-                            <div class="tech-list">
-                                <span class="tech-item">Node.js</span>
-                                <span class="tech-item">Python</span>
-                                <span class="tech-item">Nest.js</span>
-                                <span class="tech-item">Go</span>
-                            </div>
-                        </div>
-
-                        <div class="stack-group">
-                            <h3 class="stack-group-title">Database</h3>
-                            <div class="tech-list">
-                                <span class="tech-item">PostgreSQL</span>
-                                <span class="tech-item">SQLite</span>
-                                <span class="tech-item">Supabase</span>
-                            </div>
-                        </div>
-
-                        <div class="stack-group">
-                            <h3 class="stack-group-title">DevOps</h3>
-                            <div class="tech-list">
-                                <span class="tech-item">Docker</span>
-                                <span class="tech-item">GitHub Actions</span>
-                                <span class="tech-item">Coolify</span>
-                                <span class="tech-item">Dokploy</span>
-                                <span class="tech-item">npm</span>
-                                <span class="tech-item">PyPI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Tab -->
-                <div id="contact" class="tab-pane">
-                    <div class="contact-minimal">
-                        <div class="contact-section">
-                            <h3 class="contact-section-title">Email</h3>
-                            <a href="mailto:hello@yourbusiness.com" class="contact-email">hello@yourbusiness.com</a>
-                        </div>
-
-                        <div class="contact-section">
-                            <h3 class="contact-section-title">Connect</h3>
-                            <div class="contact-links">
-                                <a href="https://github.com/yourusername" target="_blank" class="contact-link">GitHub</a>
-                                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">LinkedIn</a>
-                                <a href="https://instagram.com/yourprofile" target="_blank" class="contact-link">Instagram</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Request Tab -->
-                <div id="request" class="tab-pane">
-                    <div class="request-workflow">
-                        <div class="workflow-stage">
-                            <span class="workflow-number">01</span>
-                            <span class="workflow-text" id="workflowStep1">Submit Request</span>
-                        </div>
-                        <div class="workflow-stage">
-                            <span class="workflow-number">02</span>
-                            <span class="workflow-text" id="workflowStep2">Discovery Call</span>
-                        </div>
-                        <div class="workflow-stage">
-                            <span class="workflow-number">03</span>
-                            <span class="workflow-text" id="workflowStep3">Quote & Timeline</span>
-                        </div>
-                        <div class="workflow-stage">
-                            <span class="workflow-number">04</span>
-                            <span class="workflow-text" id="workflowStep4">Contract Agreement</span>
-                        </div>
-                        <div class="workflow-stage">
-                            <span class="workflow-number">05</span>
-                            <span class="workflow-text" id="workflowStep5">Development</span>
-                        </div>
-                        <div class="workflow-stage">
-                            <span class="workflow-number">06</span>
-                            <span class="workflow-text" id="workflowStep6">Delivery & Handover</span>
-                        </div>
-                    </div>
-
-                    <button class="request-form-btn" id="requestStartBtn" onclick="openRequestForm()">Start Request</button>
-                </div>
-            </div>
-
-            <!-- Status Bar -->
-            <div class="status-bar">
-                <div class="status-left">
-                    <span class="status-item" id="statusName">Your Name</span>
-                </div>
-                <div class="status-right">
-                    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Change language">
-                        <span id="langText">EN</span>
-                    </button>
-                    <span class="status-item status-separator">|</span>
-                    <span class="status-item" id="localTime"></span>
-                    <span class="status-item status-separator">|</span>
-                    <a href="https://github.com/yourusername" target="_blank" class="status-item status-link" id="statusGitHub" title="View source code">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 4px;">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                <!-- COMPONENT: Mobile Dropdown Navigation -->
+                <div class="mobile-tab-selector">
+                    <button class="mobile-tab-button" id="mobileTabButton">
+                        <span id="currentTabName">Components</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
-                        GitHub
-                    </a>
+                    </button>
+                    <div class="mobile-tab-dropdown" id="mobileTabDropdown">
+                        <button class="mobile-tab-option active" data-tab="components">Components</button>
+                        <button class="mobile-tab-option" data-tab="colors">Colors</button>
+                        <button class="mobile-tab-option" data-tab="typography">Typography</button>
+                        <button class="mobile-tab-option" data-tab="layouts">Layouts</button>
+                        <button class="mobile-tab-option mobile-lang-option" onclick="alert('Language toggle')">
+                            <span>EN / ΕΛ</span>
+                        </button>
+                    </div>
                 </div>
+            </div>
+
+            <!-- COMPONENT: Modal Body (Scrollable Content Area) -->
+            <div class="modal-body">
+                
+                <!-- TAB: Components Showcase -->
+                <div id="components" class="tab-pane active">
+                    <h2>UI Components</h2>
+                    
+                    <!-- COMPONENT: Service Cards -->
+                    <section class="component-section">
+                        <h3>Service Cards</h3>
+                        <div class="services-minimal">
+                            <div class="service-item" onclick="openServiceModal()">
+                                <div class="service-code">CODE</div>
+                                <div class="service-content">
+                                    <h3 class="service-name">Service Name</h3>
+                                    <p class="service-desc">Brief description of the service offering</p>
+                                </div>
+                                <div class="service-price">€XX+</div>
+                            </div>
+                            
+                            <div class="service-item">
+                                <div class="service-code">DEMO</div>
+                                <div class="service-content">
+                                    <h3 class="service-name">Another Service</h3>
+                                    <p class="service-desc">Another service description example</p>
+                                </div>
+                                <div class="service-price">€YY+</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- COMPONENT: Portfolio Cards -->
+                    <section class="component-section">
+                        <h3>Portfolio Cards</h3>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-card">
+                                <img src="https://via.placeholder.com/600x400/1a1f3a/64ffda?text=Project" alt="Project" class="portfolio-image">
+                                <div class="portfolio-info">
+                                    <div class="portfolio-header">
+                                        <h3 class="portfolio-title">Project Title</h3>
+                                        <span class="portfolio-stars">⭐ 42</span>
+                                    </div>
+                                    <p class="portfolio-tech">Technology Stack</p>
+                                    <p class="portfolio-desc">Project description goes here with details about what it does.</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link">Demo</a>
+                                        <a href="#" class="portfolio-link">Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- COMPONENT: Buttons -->
+                    <section class="component-section">
+                        <h3>Buttons</h3>
+                        <button class="cta-button">Primary CTA Button</button>
+                        <button class="filter-btn active">Active Filter</button>
+                        <button class="filter-btn">Inactive Filter</button>
+                    </section>
+
+                    <!-- COMPONENT: Contact Methods -->
+                    <section class="component-section">
+                        <h3>Contact Methods</h3>
+                        <div class="contact-methods">
+                            <a href="mailto:hello@example.com" class="contact-method">
+                                <span class="contact-icon">✉️</span>
+                                <span>hello@example.com</span>
+                            </a>
+                            <a href="#" class="contact-method">
+                                <span class="contact-icon">💼</span>
+                                <span>LinkedIn Profile</span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- COMPONENT: Stack Items -->
+                    <section class="component-section">
+                        <h3>Tech Stack Items</h3>
+                        <div class="stack-group">
+                            <h3>Category Name</h3>
+                            <div class="stack-items">
+                                <span class="stack-item">React</span>
+                                <span class="stack-item">TypeScript</span>
+                                <span class="stack-item">Node.js</span>
+                                <span class="stack-item">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- TAB: Colors -->
+                <div id="colors" class="tab-pane">
+                    <h2>Color System</h2>
+                    <div class="color-grid">
+                        <div class="color-swatch" style="background: var(--bg-primary)">
+                            <span>--bg-primary</span>
+                            <code>#0a0e27</code>
+                        </div>
+                        <div class="color-swatch" style="background: var(--bg-secondary)">
+                            <span>--bg-secondary</span>
+                            <code>#151932</code>
+                        </div>
+                        <div class="color-swatch" style="background: var(--bg-modal)">
+                            <span>--bg-modal</span>
+                            <code>#1a1f3a</code>
+                        </div>
+                        <div class="color-swatch" style="background: var(--accent-teal)">
+                            <span>--accent-teal</span>
+                            <code>#64ffda</code>
+                        </div>
+                        <div class="color-swatch" style="background: var(--text-primary)">
+                            <span>--text-primary</span>
+                            <code>#e6f1ff</code>
+                        </div>
+                        <div class="color-swatch" style="background: var(--text-secondary)">
+                            <span>--text-secondary</span>
+                            <code>#8892b0</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: Typography -->
+                <div id="typography" class="tab-pane">
+                    <h2>Typography</h2>
+                    <h1 class="home-name">Heading 1 - Dancing Script</h1>
+                    <h2>Heading 2 - Space Grotesk</h2>
+                    <h3>Heading 3 - Space Grotesk</h3>
+                    <p class="home-title">Subtitle Text</p>
+                    <p>Regular paragraph text with normal weight and spacing.</p>
+                    <p class="service-desc">Secondary description text with muted color.</p>
+                </div>
+
+                <!-- TAB: Layouts -->
+                <div id="layouts" class="tab-pane">
+                    <h2>Layout Examples</h2>
+                    <p>The main layout uses a centered modal with:</p>
+                    <ul>
+                        <li>Max-width: 800px on desktop</li>
+                        <li>Full-width on mobile</li>
+                        <li>Responsive breakpoints at 768px and 480px</li>
+                        <li>Flexbox for content organization</li>
+                        <li>100dvh for mobile viewport handling</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COMPONENT: Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span class="status-item">Component Library</span>
+            </div>
+            <div class="status-right">
+                <button class="lang-toggle" onclick="alert('Language toggle')" title="Change language">
+                    <span>EN</span>
+                </button>
+                <a href="#" class="status-item status-link" title="GitHub">
+                    <span>GitHub</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Service Detail Modal -->
+    <!-- COMPONENT: Service Modal -->
     <div id="serviceModal" class="service-modal">
-        <div class="service-modal-overlay" onclick="closeServiceModal()"></div>
         <div class="service-modal-content">
             <button class="service-modal-close" onclick="closeServiceModal()">&times;</button>
-            <div id="serviceModalBody"></div>
-        </div>
-    </div>
-
-    <!-- Request Form Modal -->
-    <div id="requestFormModal" class="service-modal">
-        <div class="service-modal-overlay" onclick="closeRequestForm()"></div>
-        <div class="service-modal-content">
-            <button class="service-modal-close" onclick="closeRequestForm()">&times;</button>
-            <div class="request-form">
-                <h2 class="service-modal-title" id="formTitle">Service Request</h2>
-                <p class="service-modal-subtitle" id="formSubtitle">Fill in the details below</p>
-
-                <form id="requestForm" onsubmit="return false;">
-                    <div class="form-group">
-                        <label for="requestName" id="formLabelName">Name</label>
-                        <input type="text" id="requestName" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="requestOrg"><span id="formLabelOrg">Organization</span> <span class="optional" id="formOptionalText">(optional)</span></label>
-                        <input type="text" id="requestOrg">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="requestEmail" id="formLabelEmail">Email</label>
-                        <input type="email" id="requestEmail" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="requestService" id="formLabelService">Service</label>
-                        <select id="requestService" required>
-                            <option value="" id="formServicePlaceholder">Select a service...</option>
-                            <option value="CONS" id="serviceOptCons">CONS - Consulting & Strategy</option>
-                            <option value="FIX" id="serviceOptFix">FIX - Bug Fixes & Optimization</option>
-                            <option value="QA" id="serviceOptQA">QA - Code Review & QA</option>
-                            <option value="WEB" id="serviceOptWeb">WEB - Websites</option>
-                            <option value="IDEA" id="serviceOptIdea">IDEA - Idea to Project</option>
-                            <option value="AI" id="serviceOptAI">AI - AI Automations</option>
-                            <option value="BOOST" id="serviceOptBoost">BOOST - Business Boosting</option>
-                            <option value="OPS" id="serviceOptOps">OPS - Cloud & DevOps</option>
-                            <option value="APP" id="serviceOptApp">APP - Web Applications</option>
-                            <option value="PROD" id="serviceOptProd">PROD - Idea to Product</option>
-                            <option value="I2P" id="serviceOptI2P">I2P - Other Projects</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="requestDesc" id="formLabelDesc">Description</label>
-                        <textarea id="requestDesc" rows="5" required></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-secondary" onclick="copyRequest()">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                            <span id="formCopyBtn">Copy</span>
-                        </button>
-                        <button type="button" class="btn-primary" id="formSendBtn" onclick="openEmailSelector()">Send Email</button>
-                    </div>
-                </form>
+            <div id="serviceModalBody">
+                <div class="service-modal-header">
+                    <h2 class="service-modal-title">Service Modal Example</h2>
+                    <div class="service-modal-price">€XX+</div>
+                </div>
+                <p class="service-modal-subtitle">This is how service modals look</p>
+                <div class="service-modal-section">
+                    <h3 class="service-modal-section-title">Features</h3>
+                    <ul class="service-modal-list">
+                        <li>Feature one</li>
+                        <li>Feature two</li>
+                        <li>Feature three</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Email Selector Modal -->
-    <div id="emailSelectorModal" class="service-modal">
-        <div class="service-modal-overlay" onclick="closeEmailSelector()"></div>
-        <div class="service-modal-content email-selector-content">
-            <button class="service-modal-close" onclick="closeEmailSelector()">&times;</button>
-            <h2 class="service-modal-title" id="emailSelectorTitle">Choose Email App</h2>
-            <div class="email-options">
-                <button class="email-option" onclick="sendViaEmail('default')">
-                    <span id="emailDefaultText">Default Email App</span>
-                </button>
-                <button class="email-option" onclick="sendViaEmail('gmail')">
-                    <span id="emailGmailText">Gmail</span>
-                </button>
-                <button class="email-option" onclick="copyEmailContent()">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    <span id="copyEmailText">Copy Content</span>
-                </button>
+    <!-- COMPONENT: Command Palette -->
+    <div id="commandPalette" class="command-palette hidden">
+        <div class="command-palette-content">
+            <input type="text" id="commandInput" placeholder="Type a command... (Cmd/Ctrl + K)" autocomplete="off">
+            <div id="commandResults" class="command-results">
+                <div class="command-item">
+                    <div class="command-title">Example Command</div>
+                    <div class="command-desc">Command description</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
