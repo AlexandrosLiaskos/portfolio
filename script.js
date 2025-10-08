@@ -433,7 +433,7 @@ function updateHomePage() {
 
 function updateServicesPage() {
     const serviceItems = document.querySelectorAll('#services .service-item');
-    const serviceKeys = ['serviceWeb', 'serviceFix', 'serviceQA', 'serviceCons', 'serviceIdea'];
+    const serviceKeys = ['serviceCons', 'serviceFix', 'serviceQA', 'serviceWeb', 'serviceIdea'];
 
     serviceItems.forEach((item, index) => {
         const codeEl = item.querySelector('.service-code');
@@ -449,7 +449,7 @@ function updateServicesPage() {
 
 function updateSpecialServicesPage() {
     const serviceItems = document.querySelectorAll('#special .service-item');
-    const serviceKeys = ['serviceApp', 'serviceOps', 'serviceAI', 'serviceBoost', 'serviceProd', 'serviceI2P'];
+    const serviceKeys = ['serviceAI', 'serviceBoost', 'serviceOps', 'serviceApp', 'serviceProd', 'serviceI2P'];
 
     serviceItems.forEach((item, index) => {
         const codeEl = item.querySelector('.service-code');
