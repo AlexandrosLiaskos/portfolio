@@ -323,25 +323,11 @@ function setupMobileTabDropdown() {
     });
 }
 
-// Language Management
-function detectLanguageFromURL() {
-    const path = window.location.pathname;
-    if (path.includes('/gr') || path.endsWith('/gr.html')) {
-        return 'gr';
-    }
-    return 'en';
-}
+// Language Management (removed URL-based detection to prevent 404s)
 
 function toggleLanguage() {
     const newLang = currentLang === 'en' ? 'gr' : 'en';
     setLanguage(newLang);
-
-    // Update URL
-    if (newLang === 'gr') {
-        window.history.pushState({}, '', '/gr');
-    } else {
-        window.history.pushState({}, '', '/');
-    }
 }
 
 function setLanguage(lang) {
@@ -534,12 +520,12 @@ function updateFormTranslations() {
     if (servicePlaceholder) servicePlaceholder.textContent = t('formServicePlaceholder');
 
     const serviceOptions = [
-        'serviceOptWeb', 'serviceOptFix', 'serviceOptQA', 'serviceOptCons',
-        'serviceOptApp', 'serviceOptOps', 'serviceOptAI', 'serviceOptI2P'
+        'serviceOptCons', 'serviceOptFix', 'serviceOptQA', 'serviceOptWeb', 'serviceOptIdea',
+        'serviceOptAI', 'serviceOptBoost', 'serviceOptOps', 'serviceOptApp', 'serviceOptProd', 'serviceOptI2P'
     ];
     const serviceKeys = [
-        'serviceOptionWeb', 'serviceOptionFix', 'serviceOptionQA', 'serviceOptionCons',
-        'serviceOptionApp', 'serviceOptionOps', 'serviceOptionAI', 'serviceOptionI2P'
+        'serviceOptionCons', 'serviceOptionFix', 'serviceOptionQA', 'serviceOptionWeb', 'serviceOptionIdea',
+        'serviceOptionAI', 'serviceOptionBoost', 'serviceOptionOps', 'serviceOptionApp', 'serviceOptionProd', 'serviceOptionI2P'
     ];
 
     serviceOptions.forEach((optId, index) => {
@@ -567,10 +553,9 @@ function updateFormTranslations() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Detect language from URL or localStorage
-    const urlLang = detectLanguageFromURL();
+    // Detect language from localStorage only (no URL routing to prevent 404s)
     const savedLang = localStorage.getItem('preferredLanguage');
-    const initialLang = urlLang !== 'en' ? urlLang : (savedLang || 'en');
+    const initialLang = savedLang || 'en';
 
     if (initialLang !== 'en') {
         currentLang = initialLang;

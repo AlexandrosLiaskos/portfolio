@@ -128,13 +128,16 @@ const translations = {
         formSend: "Send Email",
 
         // Service Options
-        serviceOptionWeb: "WEB - Websites",
+        serviceOptionCons: "CONS - Consulting & Strategy",
         serviceOptionFix: "FIX - Bug Fixes & Optimization",
         serviceOptionQA: "QA - Code Review & QA",
-        serviceOptionCons: "CONS - Consulting & Strategy",
-        serviceOptionApp: "APP - Web Applications",
-        serviceOptionOps: "OPS - Cloud & DevOps",
+        serviceOptionWeb: "WEB - Websites",
+        serviceOptionIdea: "IDEA - Idea to Project",
         serviceOptionAI: "AI - AI Automations",
+        serviceOptionBoost: "BOOST - Business Boosting",
+        serviceOptionOps: "OPS - Cloud & DevOps",
+        serviceOptionApp: "APP - Web Applications",
+        serviceOptionProd: "PROD - Idea to Product",
         serviceOptionI2P: "I2P - Other Projects",
         
         // Email Selector
@@ -319,13 +322,16 @@ const translations = {
         formSend: "Αποστολή Email",
 
         // Service Options
-        serviceOptionWeb: "WEB - Ιστοσελίδες",
+        serviceOptionCons: "CONS - Συμβουλευτική & Στρατηγική",
         serviceOptionFix: "FIX - Διορθώσεις & Βελτιστοποίηση",
         serviceOptionQA: "QA - Έλεγχος Κώδικα & Ποιότητα",
-        serviceOptionCons: "CONS - Συμβουλευτική & Στρατηγική",
-        serviceOptionApp: "APP - Διαδικτυακές Εφαρμογές",
-        serviceOptionOps: "OPS - Cloud & DevOps",
+        serviceOptionWeb: "WEB - Ιστοσελίδες",
+        serviceOptionIdea: "IDEA - Από Ιδέα σε Έργο",
         serviceOptionAI: "AI - Αυτοματισμοί AI",
+        serviceOptionBoost: "BOOST - Ενίσχυση Επιχείρησης",
+        serviceOptionOps: "OPS - Cloud & DevOps",
+        serviceOptionApp: "APP - Διαδικτυακές Εφαρμογές",
+        serviceOptionProd: "PROD - Από Ιδέα σε Προϊόν",
         serviceOptionI2P: "I2P - Άλλα Έργα",
         
         // Email Selector
